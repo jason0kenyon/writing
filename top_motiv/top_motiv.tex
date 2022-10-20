@@ -1,0 +1,184 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{excs}{Exercise}[section]
+\numberwithin{equation}{section}
+\title{Topology Motivation}
+\author{Jason Kenyon}
+\date{26 August 2022}
+\begin{document}
+    \maketitle
+    \section{Introduction}
+    \section{Number Systems}
+    \begin{defn}
+        The set $\mathbb{N}$ is the set such that $\emptyset \in \mathbb{N}$
+        and for all $n \in \mathbb{N}$, $\emptyset \cup n \in \mathbb{N}$.
+    \end{defn}
+    Notice that the axiom of infinity justifies our assumption that $\mathbb{N}$ does indeed exist.
+    \begin{defn}
+        The set $\mathbb{Z}$ is the set $\mathbb{N}$ combined with an element, called the additive inverse, $z^{-}$ for each element $z^{+} \in \mathbb{N}$. This $z^{-}$ satisfies the property that
+        for each $z^{+} \in \mathbb{N}$, there corresponds a $z^{-}$ such that $z^{-}+z^{+}=0$.
+    \end{defn}
+    Hence, by definition, the set $\mathbb{Z}$ is a totally ordered group under addition. 
+    \begin{defn}
+        The set $\mathbb{Q}:=\{\frac{p}{q}: \ p,q \in \mathbb{N} \ \mathrm{and} \ \mathrm{CD}(p,q)=1 \}$
+    \end{defn}
+    It is clear that the rational numbers are well-defined. The difficult next step is to 
+    make precise what we know as real numbers; that is, how do we fill in the gaps of $\mathbb{Q}$?
+    We begin with the formal notion of an ordering relation. Additionally, we see that, again, $\mathbb{Q}$ is a linearly ordered group under addition.
+    \begin{defn}
+        A partial ordering $\leq$ on a set X is a relation on X satisfying:
+        \begin{enumerate}
+            \item $x \leq x$ for all $x \in X$
+            \item $x \leq y$ and $y \leq x$ implies that $x=y$ for all $x,y \in X$
+            \item $x \leq y$ and $y \leq z$ implies that $x \leq z$ for all $x, y, z \in X$
+        \end{enumerate}
+        Furthermore, if, in addition to the above, we have that only $x \leq y$ or  $y \leq x$ or $x=y$,
+        we say that the partial ordering $\leq$ is a linear partial ordering.
+    \end{defn}
+    This definition clearly encapsulates the intuitive ideas we have about order. For one cannot be less than two and equal to two
+    simultaneously. The primary aim now is to demonstrate that our real numbers are unique, ordered, and operable---we can add and multiply.
+    In other words, we want to show that $\mathbb{R}$ is the unique linearly ordered field such that any subset of $\mathbb{R}$ has a least upper bound. This is how
+    we "fill in the gaps" of $\mathbb{Q}$. To begin, we investigate what we mean by distance.
+    \begin{defn}
+        A metric space $(X,d)$ on a set $X$ with distance function $d$ is a set $X$ along with a function $d: \ X^{2} \to [0, \infty)$ satisfying the following:
+        \begin{enumerate}
+            \item $d(x, y)=0$ if and only if $x=y$ for all $x,y \in X$
+            \item $d(x,y)=d(y,x)$ for all $x,y \in X$
+            \item $d(x,z) \leq d(x,y) + d(y,z)$ for all $x,y,z \in X$
+        \end{enumerate}
+    \end{defn}
+    Note that the notation $[0, \infty)$ could be misleading. We have yet to define real numbers; therefore, we interpret that set 
+    as a half open interval of rational numbers, not real numbers. And once we have defined the real numbers rigorously, we may bootstrap our definitions
+    without fear of poor reasoning. Now we may quantify what it means for elements of a metric space to \emph{approach}
+    others.
+
+
+
+    \begin{defn}
+        A sequence $a_n$ is a function $a_n: \ \mathbb{N} \to X$ for some set $X$.
+    \end{defn}
+    \begin{defn}
+        A sequence $a_n$ is a Cauchy sequence if $$\forall \epsilon \in \mathbb{Q}( \epsilon>0 \implies (\exists N \in \mathbb{N} \ \forall n, m \in \mathbb{N} (n, m \geq N \implies d(a_n, a_m)< \epsilon)))$$
+    \end{defn}
+    \begin{defn}
+        A sequence $a_n$ converges to $L \in \mathbb{Q}$ if  $$\forall \epsilon \in \mathbb{Q}( \epsilon>0 \implies (\exists N \in \mathbb{N} \ \forall n \in \mathbb{N} (n \geq N \implies d(a_n, L)< \epsilon)))$$
+    \end{defn}
+    The previous two definitions, as you can see, are nearly the same. A Cauchy sequence is a sequence whose outputs 
+    become arbitrarily close; a convergent sequence is a sequence whose outputs tend toward some value. There ought to be some connection here; indeed,
+    we call a metric space \emph{complete} if any Cauchy sequence converges.
+    \begin{thm}
+        If a sequence $a_n$ of rational numbers converges to $L$, then $a_n$ is a Cauchy sequence.
+    \end{thm}
+    \begin{proof}
+        Suppose that $a_n$ is a convergent rational sequence. Let $\epsilon>0$. We know that, $|a_n-L|<\frac{\epsilon}{2}$ provided that $n \geq N$ for some $N \in \mathbb{N}$. If, in addicting, we have that for $m \geq N$ for an $m \in \mathbb{N}$, we have
+        \begin{align}
+            |a_n-a_m|&=|(a_n-L)-(a_m-L)| \\
+            &\leq |a_n-L|+|a_m-L| \\
+            &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+            &= \epsilon
+        \end{align}
+        which is to say that $a_n$ is Cauchy.
+    \end{proof}
+    One can also prove the converse; that is, $(\mathbb{R}, d)$ is a complete metric space, where d is the euclidean norm.
+    \begin{thm}
+    Any rational Cauchy sequence $a_n$ is bounded (there exists some $M \in \mathbb{N}$ such that $a_n \leq M$ for all $n \in \mathbb{N}$). 
+    \end{thm}
+    \begin{proof}
+        If $a_n$ is a rational Cauchy sequence, we know that there is an $N \in \mathbb{N}$ such that when $n,m \geq N$, then $ |a_n-a_m|< 1$. Clearly, then,
+        $a_{N+1}-1<a_n<a_{N+1}+1$. Taking $M=\mathrm{max}\{|a_0|, |a_1|, \cdots |a_n|, |a_{N+1}+1|, |a_{N+1}-1| \}$, we find our bound.
+    \end{proof}
+
+    \begin{defn}
+        Let $a_n$ and $b_n$ be rational Cauchy sequences. Then we define $a_n \approx b_n$ if the sequence $a_n-b_n$ converges to $0$.
+    \end{defn}
+    It should be clear that $\approx$ is an equivalence relation; that is,
+    it is symmetric, reflexive, and transitive.
+    \begin{defn}
+        The real numbers $\mathbb{R}$, the equivalence classes $[a_n]$ where the $a_n$ are rational Cay sequences.
+    \end{defn}
+    Now we define addition and multiplication. Afterward, we will show that $\mathbb{R}$ is a field.
+    \begin{defn}
+        Let $a,b \in \mathbb{R}$. Then:
+        \begin{enumerate}
+            \item $a+b:=[a+b]$
+            \item $a\cdot b:=[a \cdot b]$
+        \end{enumerate}
+        \end{defn}
+        To convince yourself that the above is well defined, notice that 
+        the sum and product of any two Cauchy sequences must necessarily also be Cauchy. And that our equivalence relation $\approx$
+        is closed under addition and multiplication. Now, let us verify that $\mathbb{R}$ forms an ordered field.
+        \begin{thm}
+            Let $a \in \mathbb{R}$ be nonzero. Then there exists an $a^{-1} \in \mathbb{R}$ such that $a \cdot a^{-1}=1$
+        \end{thm}
+        \begin{proof}
+            Suppose that $[a_n]$ does not converge to zero. Let $N$ be such that $a_n\neq 0$ for all $n\geq N$
+            Define the rational Cauchy sequence $(b_n):=(0, 0, \cdots \frac{1}{a_N}, \frac{1}{a_{N+1}}, \cdots)$. Clearly, $a_n \cdot b_n=(0, 0, \cdots, 1, 1, \cdots)$, which converges to 1. Therefore, $[a_n \cdot b_n]=1$.
+        \end{proof}
+        It is trivial to verify that $\mathbb{R}$ also contains an additive inverse for each element.
+        Associativity, commutativity, and distributively follow directly from our definition of $\mathbb{R}$ and that $\mathbb{Q}$ is a linearly ordered field.
+        \begin{thm}
+            Let $a,b,c \in \mathbb{R}$. If $a \leq b$ then $a+c \leq b+c$.
+        \end{thm} 
+        This fact is verified by, again, using our knowledge of $\mathbb{Q}$ and the transitivity of $\leq$ Theron.
+        One can also verify that 
+        \begin{thm}
+            If $a,b \in \mathbb{R}$ and $a>0$ and $b>0$, then $a \cdot b > 0$
+        \end{thm}
+        And most importantly 
+        \begin{thm}
+            If $u \subseteq \mathbb{R}$ is nonempty and $u$ has an upper bound, then $u$ has a least upper bound.
+        \end{thm}
+        The proof will not be shown here, nor will the proof of uniqueness, for the sake of brevity.
+        However, the reader should be able to convince themselves of this with an extrapolation from $\mathbb{Q}$ and
+        our results on Cauchy sequences from before. The details are not necessarily important; what matters now is that
+        we can safely work with the familiar field of real numbers, just as we have hitherto done, without the additional rigor.
+    \section{Topology}
+    With the real numbers in our toolkit, we can now investigate limits of functions from $\mathbb{R}^{n}$ to $\mathbb{R}$, what open sets are,
+    and, of course, why topology is the way it is.
+    \begin{defn}
+        Let $X$ be a set. A topology $\mathcal{T}$ on $X$ is a collection of subsets of $S$ satisfying:
+        \begin{enumerate}
+            \item $X \in \mathcal{T}$
+            \item If $I$ is an arbitrary index set and $a_i \in \mathcal{T}$ for all $i \in I$, then $\bigcup \limits_{i \in I}a_i \in \mathcal{T}$
+            \item If $a,b \in \mathcal{T}$ then $a \cap b \in \mathcal{T}$
+        \end{enumerate}
+        Furthermore, we call the tuple $(X,\mathcal{T})$ a topological space on $X$.
+    \end{defn}
+    The question is why? Why should a topology be closed under arbitrary unions and finite intersections?
+    To answer these questions, we use metric spaces. In particular, metric spaces entirely motivate
+    what is done in topology; topology is but a fruitful abstraction from the familiar metric space structure. When we are no longer constrained by 
+    geometric concerns, we are more able to answer some important questions about 
+    the structure of sets, or geometric objects if you prefer.
+    In analysis, we are familiar with the following notion of openness:
+    \begin{defn}
+        An open rectangle in $\mathbb{R}^{n}$ for an $n \in \mathbb{N}$ is a set $R \subset \mathbb{R}^{n}$ of the form
+        $$R=\prod\limits_{i=1}^{n} \{x \in \mathbb{R}: a_i<x<b_i \ \mathrm{where} \ a_i,b_i \in \mathbb{R} \} $$
+        And a set is open if it is of the above form, or an arbitrary union of such sets.
+    \end{defn}
+    In the case where $n=1$, we have only open intervals. This is, then, a natural extension
+    of an open interval with which we are acquainted.
+    \begin{thm}
+        A finite intersection of open rectangles is an open rectangle. Thus, open sets (in the metric sense) are closed under arbitrary unions and finite intersections.
+    \end{thm}
+    \begin{proof}
+        Let $R_1=(a_1, b_1) \times (a_2, b_2) \times \cdots (a_n, b_n)$ and $R_2=(c_1,d_1) \times (c_2, d_2) \times \cdots (c_n, d_n)$ be open rectangles in $\mathbb{R}^{n}$. Suppose $R_1 \cap R_2 \neq \emptyset$. If $A \subseteq B$ or $B \subseteq A$, then $A \cap B=A$ or $A \cap B=B$, which are certainly open rectangles. If this is not the case, then
+        the boundary of $A$ and the boundary of $B$ must necessarily intersect, forming another open rectangle $A \cap B$.
+    \end{proof}
+  %Metric topology from open balls= metric topology from open rectangles
+  %neighborhoods and limit points
+  %demorgan, preimage
+  %continuity
+
+
+\end{document}
