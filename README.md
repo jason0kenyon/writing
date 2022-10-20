@@ -1,1 +1,2 @@
-This is a collection of my personal writing on a variety of topics. 
+This is a collection of solutions to textbooks and my personal writing on a variety of topics.
+My personal writing is precisely that, personal; if you disagree with something I have written, feel free to raise and issue. I will gladly discuss my views with you, and search for truth together. If you convince my that I am wrong, fantastic; I welcome this. I am often wrong, although I wish that were not the case. 

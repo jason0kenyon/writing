@@ -1,0 +1,201 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fphw Assignment
+% LaTeX Template
+% Version 1.0 (27/04/2019)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Class by Felipe Portales-Oliva (f.portales.oliva@gmail.com) with template 
+% content and modifications by Vel (vel@LaTeXTemplates.com)
+%
+% Template (this file) License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[
+	12pt, % Default font size, values between 10pt-12pt are allowed
+	%letterpaper, % Uncomment for US letter paper size
+	%spanish, % Uncomment for Spanish
+]{fphw}
+
+% Template-specific packages
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+
+\usepackage{booktabs} % Required for better horizontal rules in tables
+
+\usepackage{listings} % Required for insertion of code
+
+\usepackage{enumerate} % To modify the enumerate environment
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Advanced Calculus of Several Variables by C.H Edwards: Selected Solutions} % Assignment title
+
+\author{Jason Kenyon} % Student name
+
+\date{\today} % Due date
+
+\institute{Binghamton University \\ Department of Mathematical Sciences} % Institute or school name
+
+\class{Independent Study} % Course or class name
+
+\professor{David Biddle} % Professor or teacher in charge of the assignment
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Output the assignment title, created automatically using the information in the custom commands above
+\section*{Section 1}
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT CONTENT
+%----------------------------------------------------------------------------------------
+
+\section*{Question 1.2}
+
+\begin{problem}
+	Let $V$ and $W$ be subspaces of $\mathbb{R}^n$. Then $V \cap W$ is too. 
+\end{problem}
+%------------------------------------------------
+
+\subsection*{Answer}
+
+Let $v_i \in V \cap W$ for $1 \leq i \leq n $ We know that each of these vectors must be in both $V$ and $W$, whence any linear combination of vectors in $V$ is in $V$, and similarly, any linear combination of vectors in $W$ is in $W$. 
+Thus, any linear combination involving $v_i$ must necessarily be in $V \cap W$
+%----------------------------------------------------------------------------------------
+
+\section*{Question 1.3}
+
+\begin{problem}
+	If $V$ and $W$ are subspaces of $\mathbb{R}^n$, then the set $V+W=\{v+w: \ v \in V \text{ and }  w \in W\}$ is too.
+\end{problem}
+
+%------------------------------------------------
+
+\subsection*{Answer}
+
+If $v_1+w_1 \in V+W$ then,since $V and W$ are closed under scalar multiplication,
+$av_1+aw_1 \in V+W$ for any scalar $a \in \mathbb{R}$.
+Furthermore, supposing $v_1 + w_1 \in V+W$ and $v_2 + w_2 \in V+W$ for $v_1, v_2 \in V$
+and $w_1, w_2 \in W$, we have: 
+	$$(v_1+w_1)+(v_2+w_2)=(v_1+v_2)+(w_1+w_2) \in V+W $$
+because both $V$ and $W$ are closed under vector addition.
+
+	
+%----------------------------------------------------------------------------------------
+
+\section*{Question 1.5}
+
+\begin{problem}
+	Let $D_0$ be the set of all real-valued differentiable functions on $[0,1]$
+where $f(0)=f(1)=0$. Then $D_0$ is a vector space if we define scalar multiplication and vector addition in the natural way.
+\end{problem}
+
+%------------------------------------------------
+
+\subsection*{Answer} 
+If $f,g \in D_0$ then $f+g$ must necessarily have the same domain as its component functions 
+and be differentiable. Additionally, adding any two such functions will give you another, and multiplying by scalars does as well. Thus, it is clear that $D_0$ is a vector space. 
+
+However, if we, instead, have that $f(0)=0$ and $f(1)=1$ for any function $f \in D_0$
+$D_0$ can not be a vector space, for if $f \in D_0$ and $a \in \mathbb{R}$, we have
+$af(1)=a \neq 1$. 
+And so $af(1) \notin D_0$.
+
+%----------------------------------------------------------------------------------------
+\section*{Section 2}
+\section*{Question 2.5}
+\begin{problem}
+	Let $V_1, \dots V_k$ be a set of linearly independent vectors in a vector space V. 
+	If $k<n=\text{dim} V$, then there exist vectors $V_{k+1}, \dots V_n$
+	in $V$ such that $V_1, \dots, V_k, V_{k+1}, \dots V_n$ is a basis 
+	for $V$.
+\end{problem}
+
+\subsection*{Answer} 
+By Zorn's Lemma, we know that any vector space has a basis. Furthermore, by definition of dimension, we know that any set of linearly independent vectors in $V$ has at most $n$ elements. Thus, since a basis is a linear independent generating set of vectors, and such a set must necessarily contain as many elements as the dimension of the space, it is clear that the set 
+$$\{V_1, \dots, V_k\} \cup \{V_{k+1}, \dots V_n\}$$
+is a basis for $V$, where $\{V_{k+1}, \dots V_n\}$ is the unique set of 
+remaining vectors such that the union with our original set constitutes a basis.
+
+\section*{Question 2.6}
+\begin{problem}
+	The following two statements are equivalent:
+	\begin{enumerate}
+		\item If $\text{dim}V=n$, then each basis for $V$ has exactly$n$ vectors.
+		\item If the system \begin{align*} a_{11}x_1 + \dots  a_{1n}x_n&=0  \\ &\vdots\\ a_{n1}x_1+ \dots a_{nn}x_n&=0   \end{align*} has only the trivial solution, then if the zero vector is replaced by $b=(b_1, \dots b_n)$ above, the system has a unique solution.
+	\end{enumerate}
+\end{problem}
+\subsection*{Answer}
+Suppose that the first statement is true. Now, if our system above has only trivial solution, then that means the vectors
+\begin{align*}
+     \begin{bmatrix}
+           a_{11} \\
+           a_{12} \\
+           \vdots \\
+           a_{1n}
+         \end{bmatrix} \dots
+     \begin{bmatrix}
+	     a_{n1} \\
+	     a_{n2} \\
+	     \vdots \\
+	     a_{nn}
+     \end{bmatrix}
+  \end{align*}
+are linearly independent by definition. Furthermore, by assumption they must 
+form a basis for $V$. Hence, we can uniquely express any vector
+$b=(b_1, \dots b_n) \in V$ uniquely as a linear combination of the above linearly independent vectors, which is to say that there is a unique solution to the above system where the zero vector is replaced by $b$.
+
+Conversely, assuming the second statement, it is clear that the vectors
+\begin{align*}
+     \begin{bmatrix}
+           a_{11} \\
+           a_{12} \\
+           \vdots \\
+           a_{1k}
+         \end{bmatrix} \dots
+     \begin{bmatrix}
+	     a_{k1} \\
+	     a_{k2} \\
+	     \vdots \\
+	     a_{kk}
+     \end{bmatrix}
+  \end{align*}
+  form a basis for the space consisting of all vectors $b=(b_1, \dots b_k)$,
+  by the same logic. Therefore if we suppose that $\text{dim}V=n$ and $k<n$
+  then clearly there exist vectors in $V$ that are not generated by our linearly independent vectors because the dimension of our space is strictly less than $\text{dim}V$. Similarly, if $k>n$, our space will generate vectors that are not in $V$.
+\section*{Question 2.7}
+\begin{problem}
+	Any two colinear vectors are linearly dependent. And any 3 coplanar vectors are 
+	linearly dependent. 
+\end{problem}
+\subsection*{Answer}
+	Any vector space of dimension $n$ can have at most $n$ linearly independent vectors. Therefore, along any line (a one dimensional vector space), there can exist at most one linearly independent vector, and within a plane, two. 
+\section*{Section 3}
+\section*{Question 3.5}
+\begin{problem}
+	If $\cdot$ is the standard inner product on $\mathbb{R}^n$, then 
+	$X \cdot Y = \frac{1}{4}(|X+Y|^2-|X-Y|^2)$
+for any two vectors $X, Y \in \mathbb{R}^n$.
+\end{problem}
+\subsection*{Answer}
+Applying the definition of the Euclidean norm, we have \\
+$\frac{1}{4}(|X+Y|^2-|X-Y|^2) = \frac{1}{4}((X+Y) \cdot (X-Y))$. And by definition of the dot product, we have \\
+$\frac{1}{4}((X+Y) \cdot (X-Y)) = \frac{1}{4}((x_1+y_1)^2 + \dots + (x_n+y_n)^2 -((x_1-y_1)^2 + \dots (x_n-y_n)^2))$. 
+Multiplying our terms, it is clear that we are left with \\
+$$\frac{1}{4}(4x_1y_1 + \dots 4x_ny_n )=X \cdot Y$$
+
+\end{document}
