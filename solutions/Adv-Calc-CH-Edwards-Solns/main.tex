@@ -197,5 +197,37 @@ $\frac{1}{4}(|X+Y|^2-|X-Y|^2) = \frac{1}{4}((X+Y) \cdot (X-Y))$. And by definiti
 $\frac{1}{4}((X+Y) \cdot (X-Y)) = \frac{1}{4}((x_1+y_1)^2 + \dots + (x_n+y_n)^2 -((x_1-y_1)^2 + \dots (x_n-y_n)^2))$. 
 Multiplying our terms, it is clear that we are left with \\
 $$\frac{1}{4}(4x_1y_1 + \dots 4x_ny_n )=X \cdot Y$$
-
+\section*{Question 3.6}
+\begin{problem}
+	Let $a_1, \dots a_n $ be an orthonormal basis for $\mathbb{R}^n$. If $x=s_1a_1+ \dots s_na_n$ and 
+	$y=t_1a_1 + \dots t_na_n$, then $x \cdot y=s_1t_1+ \dots s_nt_n$. 
+\end{problem}
+\subsection*{Answer}
+Suppose that $a_i=e_i+v_i$ for some $v_i \in \mathbb{R}^n$ for all $i\leq n$. We may do so due to closeure of vector addition. 
+Furthermore, we know that $|a_i|=|e_i+v_i|=1$, which implies that the ith components of $x$ and $y$ are $s_i$ and $t_i$ respectively. Hence, by definition of the dot product, $x \cdot y = t_1s_1 + \dots t_1s_2$. 
+\section*{Question 3.8}
+\begin{problem}
+	Orthogonalize the vectors $e_i'=(1,1, \dots, 1, \underbrace{0}_{\text{ith component}}, \dots, 0)$ 
+\end{problem}
+\subsection*{Answer}
+It is trivial to show that $\frac{<e_{k+1}', e_k>}{<e_k,e_k>}=1$. Thus, apply the Graham-Schmidt orthogonalization process, we find
+$$e_{k}=e_{k}'-e_{k-1}-\dots = (0,0, \dots, 0, \underbrace{1}_{\text{k+1th component}}, 0, \dots, 0)$$
+\section*{Question 3.11}
+\begin{problem}
+	The vectors $\frac{1}{\sqrt{2\pi}}, \frac{cos(x)}{\sqrt{\pi}}, \frac{sin(x)}{\sqrt{\pi}}, \dots $
+form an orthogonal basis for the space of continuous functions on $[-\pi,\pi]$.
+\end{problem}
+\subsection*{Answer}
+Firstly, note that $\int_{-\pi}^{\pi}\frac{cos(nx)}{\sqrt{2\pi}}  \ dx = \int_{-\pi}^{\pi}\frac{sin(nx)}{\sqrt{2\pi}} \ dx = 0 $ as we are merely integrating sinusoids over a single period, and sinusoids attain an equal but opposite value for each value they attain within a period. Therefore, we know that the first vector is orthogonal to the rest. 
+Now, 
+\begin{align}
+	\int_{-\pi}^{\pi}sin(nx)cos(mx) \ dx & = \frac{1}{2}\int_{-\pi}^{\pi}sin((n+m)x)+sin((n-m)x) \ dx \\ 
+&=0 
+\end{align}
+due to the angle-sum identities for trigonometric functions, linearity of the integral,  and the same argument as before.
+\begin{align}
+\int_{-\pi}^{\pi}sin(nx)sin(mx) \ dx &= \frac{1}{2}\int_{-\pi}^{\pi}cos(nx+mx)-cos(nx-mx) \ dx	\\
+&= 0  
+\end{align}
+provided that $n\neq m$ (otherwise, our expression is not defined). Similarly, we may deduce the same for $cos$.
 \end{document}
