@@ -230,4 +230,32 @@ due to the angle-sum identities for trigonometric functions, linearity of the in
 &= 0  
 \end{align}
 provided that $n\neq m$ (otherwise, our expression is not defined). Similarly, we may deduce the same for $cos$.
+<<<<<<< HEAD
+=======
+\section*{Section 4}
+\section*{Question 4.6}
+\begin{problem}
+	For a linear mapping $L:\mathbb{R}^n \to \mathbb{R}^n$, $|X|=|L(X)|$ if and only if 
+	$L(X) \cdot L(Y) = X \cdot Y$ for all $X,Y \in \mathbb{R}^n$.
+
+	
+\end{problem}
+\subsection*{Answer}
+Applying the polarization identity, we have $X \cdot Y=\frac{1}{4}(|X+Y|^2-|X-Y|^2)$. Thus, by definition of the norm, $$X \cdot Y=\frac{1}{4}(<X+Y,X+Y>-<X-Y,X-Y>)=<L(X),L(Y)>$$ by multilinearity of the inner product. The converse is shown by applying the same manipulations, but in the opposite direction.
+\section*{Question 4.8 and Question 4.9}
+\begin{problem}
+	Deduce the matrix of a reflection in terms of rotations. Show that a translation is a rotation.
+	
+\end{problem}
+\subsection*{Answer}
+Geometrically, it is trivial to show that a reflection is but a composition of rotations of equal magnitude. That is to say, $$ T(\alpha)=R^2(\alpha)$$ where $T$ is the reflection of a point about the line through the origin at angle $\alpha$ with the horizontal, and $R$ is the reflection of a point about the origin by $\alpha$. Additionally, it is easy to show that the matrix for a reflection $R(\alpha)=\begin{pmatrix} cos(\alpha) & -sin(\alpha)\\ sin(\alpha) & cos(\alpha) \end{pmatrix}$ 
+Matrix multiplaction yields 
+\begin{align}
+	T(\alpha)&=R^2(\alpha) \\
+	&=\begin{pmatrix} cos(\alpha) & -sin(\alpha)\\ sin(\alpha) & cos(\alpha) \end{pmatrix}^2 \\
+		&=\begin{pmatrix} cos^2(\alpha)-sin^2(\alpha) & -cos(\alpha)sin(\alpha)-sin(\alpha)cos(\alpha)\\ sin(\alpha)cos(\alpha)+cos(\alpha)sin(\alpha) & -sin^2(\alpha)+cos^2(\alpha) \end{pmatrix} \\
+		&=\begin{pmatrix} cos(2\alpha) & -sin(2\alpha)\\ sin(2\alpha) & cos(2\alpha) \end{pmatrix}
+\end{align}
+
+>>>>>>> 5e197a0 (sec 3)
 \end{document}

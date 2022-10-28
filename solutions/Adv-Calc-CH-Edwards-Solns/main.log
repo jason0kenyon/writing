@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.20)  21 OCT 2022 17:19
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  28 OCT 2022 14:29
+>>>>>>> 5e197a0 (sec 3)
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -343,7 +347,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--199
 
  []
 
+<<<<<<< HEAD
 [3] [4] (./main.aux) ) 
+=======
+[3] [4] [5] (./main.aux) ) 
+>>>>>>> 5e197a0 (sec 3)
 Here is how much of TeX's memory you used:
  5043 strings out of 478238
  74270 string characters out of 5850455
@@ -351,6 +359,7 @@ Here is how much of TeX's memory you used:
  23199 multiletter control sequences out of 15000+600000
  498457 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
+<<<<<<< HEAD
  70i,15n,76p,400b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-di
@@ -365,6 +374,22 @@ Output written on ./main.pdf (4 pages, 111294 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream
+=======
+ 70i,15n,76p,538b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</
+usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmbb.p
+fb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/te
+xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1
+/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8
+a.pfb>
+Output written on ./main.pdf (5 pages, 117188 bytes).
+PDF statistics:
+ 66 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
+>>>>>>> 5e197a0 (sec 3)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
