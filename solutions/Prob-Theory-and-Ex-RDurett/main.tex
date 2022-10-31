@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fphw Assignment
+% LaTeX Template
+% Version 1.0 (27/04/2019)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Class by Felipe Portales-Oliva (f.portales.oliva@gmail.com) with template 
+% content and modifications by Vel (vel@LaTeXTemplates.com)
+%
+% Template (this file) License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	12pt, % Default font size, values between 10pt-12pt are allowed
+	%letterpaper, % Uncomment for US letter paper size
+	%spanish, % Uncomment for Spanish
+]{fphw}
+
+% Template-specific packages
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+
+\usepackage{booktabs} % Required for better horizontal rules in tables
+
+\usepackage{listings} % Required for insertion of code
+
+\usepackage{enumerate} % To modify the enumerate environment
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Selected Solutions to Probability Theory and Examples by Rick Durrett} % Assignment title
+
+\author{Jason Kenyon} % Student name
+
+\date{\today} % Due date
+
+\institute{Binghamton University \\ Department of Mathematics} % Institute or school name
+
+\class{Independent Study} % Course or class name
+
+\professor{Professor David Biddle} % Professor or teacher in charge of the assignment
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Output the assignment title, created automatically using the information in the custom commands above
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT CONTENT
+%----------------------------------------------------------------------------------------
+
+\section*{Question 1.1.1}
+
+\begin{problem}
+	Let $\Omega=\mathbb{R}$, $\mathcal{F}$ be the set of all subsets of $\mathbb{R}$ such that it or it's complement is countable. Let $P(A)=0$ if $A$ is countable and $P(A)=1$ if $A^{c}$ is countable. Then $(\Omega, \mathcal{F}, P)$ is a probability space.
+\end{problem}
+
+
+\subsection*{Answer}
+We begin by showing that $\mathbb{F}$ is a sigma algebra. Suppose that $x \in \mathcal{F}$. Then either $x$ countable or $\mathbb{R} \backslash x$ is countable. In the first case,
+$\mathbb{R} \backslash(\mathbb{R} \backslash x)=x \in \mathcal{F}$. 
+In the latter, $\mathbb{R} \in \mathcal(F)$. Now suppose that
+$x_1, x_2, \dots \in \mathcal{F}$. If at least one of $\mathbb{R} \backslash x_i$ is countable, then
+so must $\bigcap_i\mathbb{R} \backslash x_i$. Otherwise, it must be that all $x_i$ are uncountable, in which case $\bigcup_i x_i$ is too. Now, to demonstrate that our probability measure is well-defined, it is clear that by definition $P(x)\geq 0$ for any set $x \in \mathcal{F}$. Additionally, supposing $x_1, x_2, \dots \in \mathcal{F}$ are disjoint sets
+we have either $P(\bigcup_ix_i)=0$ or $P(\bigcup_ix_i)=1$. In the first case, we know that the union is countable, which implies that each of $x_i$ must be countable, lest our union be uncountable. This is to say $P(\bigcup_ix_i)=\sum_i0=\sum_iP(x_i)$. In the second case, we have that $P(\bigcup_ix_i)=1$. And notice that if $x_i$ are disjoint then only a single member of that collection can have an uncountable complement, for otherwise they could not be disjoint. This is to say that $P(\bigcup_ix_i)=1+0+0+ \dots=\sum_iP(x_i)$.
+
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
