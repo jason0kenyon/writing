@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+
+\title{Multilinearity and the Determinant}
+\date{\today}
+\author{Jason Kenyon}
+
+\begin{document}
+\maketitle
+\section{Multilinearity}
+Here, we define the determinant as the unique multilinear function that is alternating, and zero when given the identity matrix.
+We then deduce some familiar properties thereof. Finally, we investigate other familiar multilinear functions, as well as introduce sequilinearity---(multi)linear(ish) functions. 
+
+Henceforth, arguments of functions will be assumed to be vectors, not scalars, of an arbitrary space over an arbitrary field,
+unless we state otherwise.
+\begin{defn}
+$det(A)=\sum_{i=1}^{n}(-1)^iA_{ij}det(A_{*ij})$ where the matrix $A_{*ij}$ is the matrix found by eliminating the $i^{th}$ row and $j^{th}$ column of A.
+\end{defn}
+\begin{defn}
+An n-linear function $f:X \to Y$ is a function such that for all $1\leq i\leq n$ 
+$$f(x_1, \dots, ax+y, \dots, x_n)=af(x_1, \dots, x, \dots, x_n)+f(x_1,\dots, y,\dots,x_n)$$,
+where $ax+y$ is the $i^{th}$ argument of $f$.
+\end{defn}
+Now that we have our primary object of concern, let's estalish the properties our function must have:
+\begin{defn}
+An n linear function $f:X \to Y$ is alternating if $$f(x_1, \dots, x_n)=0$$ whenever $x_i=x_{i+1}$ for $1\leq i\leq n$
+	
+\end{defn}
+Furthermore, suppose that 
+
+$f(x_1, \dots, x_n)=1$ whenever $\begin{pmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{pmatrix}=I$
+
+\begin{thm}
+Suppose $f$ satisfies the above properties. Let $A= \begin{pmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{pmatrix}$ and $B=\begin{pmatrix}
+x_1 \\
+\vdots \\ 
+x_{i+1} \\ 
+x_{i} \\ 
+\vdots \\ 
+x_n
+\end{pmatrix}$
+for $1\leq i\leq n$. Then $f(B)=-f(A)$. 
+\end{thm}
+\begin{proof}
+By the alternating condition and multilinearity of $f$, we have 
+\begin{align}
+0&=f\begin{pmatrix}x \\ \vdots \\ x+y \\ x+y \\ \vdots \\ x_n \end{pmatrix} \\
+&=f\begin{pmatrix} x_1 \\ \vdots \\ x \\ x \\ x_n\end{pmatrix} + f\begin{pmatrix} x_1 \\ \vdots \\ y \\ y \\ x_n\end{pmatrix} + f(B)+f(A) \\ 
+&=f(B)+f(A)
+\end{align}	
+\end{proof}
+\begin{thm}
+Let $A=\begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix}$ with $x_i=x_j$ for $1\leq i,j \leq n$. Then $f(A)=0$
+	
+\end{thm}
+\begin{proof}
+By the previous theorem, $-f\begin{pmatrix}x_1 \\ \vdots \\ x_i \\ x_i+1 \\ \vdots \\ x_n \end{pmatrix}=f\begin{pmatrix}x_1 \\ \vdots \\ x_j \\ x_i+1 \\ \vdots \\ x_i \\ x_n \end{pmatrix}=0$	
+\end{proof}
+\begin{thm}
+Let $A=\begin{pmatrix}x_1 \\ \vdots \\ x_n	\end{pmatrix}$ and $B=\begin{pmatrix}x_1 \\ \vdots \\ x_i+ax_j \\ \vdots \\ x_n \end{pmatrix}$
+for $1 \leq j \leq n$.
+	
+\end{thm}
+\begin{proof}
+By the previous theorem and multilinearity of $f$:
+\begin{align}
+f(B)&= f(A)+af\begin{pmatrix}x_1 \\ \vdots \\ x_j \\ \vdots \\ x_n\end{pmatrix} \\ 
+&=f(A)
+\end{align}.
+\end{proof}
+\begin{thm}
+Let $A=\begin{pmatrix}x_1 \\ \vdots \\ x_n\end{pmatrix}$. If $rank(A)<n$, then $f(A)=0$.
+	
+\end{thm}
+\begin{proof}
+Since $rank(A)<n$ we may deduce $f(A)=f\begin{pmatrix}e_1 \\ \vdots \\ 0 \\ \vdots \\ 0\end{pmatrix}$ with zero vectors beginning at the $rank(A)^{th}$ row. Therefore, we may rewrite $$f(A)=\begin{pmatrix}e_1 \\ \vdots \\ e_{rank(A)+i} - e_{rank(A)+i} \\ \vdots \\ e_n-e_n \end{pmatrix}$$ for $0 \leq i \leq n-rank(A)$. By multilinearity, it is clear that we may decompose this into permutations $f(A)=\sum_{i}^{n-rank(A)}f\begin{pmatrix}e_1 \\ \vdots \\ e_{rank(A)+i} \\ \vdots \\ e_n \end{pmatrix}-f\begin{pmatrix}e_1 \\ \vdots \\  e_{rank(A)+i} \\ \vdots \\ e_n \end{pmatrix}$=0
+	
+\end{proof}
+\begin{thm}
+For elementary matrices $E_1, E_2, and E_3$ of type 1,2, and 3 respectively $f(E_1)=-1$, $f(E_2)=kf(E_2)$ \text{, and} $f(E_3)=1$.
+\end{thm}
+Each of the above follow directly from the multilinearity of $f$ and the assumption that $f(I)=1$. Hence, we shall omit the proof.
+\begin{thm}
+f(AB)=det(A)f(B).	
+\end{thm}
+\begin{proof}
+We start by proving the theorem for elementary matrices then extend that to arbitrary ones. 
+By the previous theorem, $f(E_1)=-1$ and $f(E_1A)=-f(A)$ by theorem 1. Thus, $f(E_1A)=det(E_1)f(A)$ since $E_1$ is the result of swapping a row in the identy matrix. Next, $f(E_2)=k$ by the previous theorem and $det(E_2)=kdet(I)=k$. Since $f(E_2A)=kf(B)$, we have $f(E_2A)=det(E_2)f(A)$. Finally, by the previous theorem, we have $f(E_3)=1$ and $det(E_3)=det(I)+kdet(E)$ for some matrix $E$ with two equivalent rows. Therefore, $f(E_3A)=f(A)=det(E_3)f(A)$.
+
+We know that $rank(AB)\leq rank(A)$ by definition of matrix multiplication, and $f(A)=0 if rank(A)<n$ by theorem 4. Thus if $rank(A)<n$, 
+$f(AB)=0$ and similarly, $det(A)=0$. So $f(AB)=det(A)f(B)=0$. 
+If $A$ is full rank, then we may represent $A=E_1E_2\dots E_n$ as full rank implies that $A$ may be completely row reduced. This means that 
+\begin{align}
+f(AB)&=f(E_1\dots E_nB) \\ 
+&=det(E_1)f(E_2\dots E_nB) \\ 
+&= \dots \\
+&=det(E_1)\dots det(E_n)f(B) \\ 
+&=det(E_1\dots E_n)f(B) \\ 
+&=det(A)f(B)
+\end{align}
+\end{proof}
+\begin{thm}
+f(A)=det(A)	
+\end{thm}
+\begin{proof}
+If $rank(A)<n$ then $f(A)=0$ by theorem 4. Similarly, $det(A)=0$. 
+Otherwise, just as before we may represent $A=E_1 \dots E_n$. Hence  
+\begin{align}
+f(A)&=f(E_1\dots E_n) \\
+&=det(E_1)f(E_2 \dots E_n) \\
+&= \dots \\ 
+&=det(E_1)\dots det(E_n) \\ 
+&=det(E_1\dots E_n) \\
+&=det(A)
+\end{align}
+\end{proof}
+Therefore we have shown that the determinant is nothing but the alternating, multilinear function that evaluates to 1 given the identity.
+\end{document}
