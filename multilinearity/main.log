@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  4 NOV 2022 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  5 NOV 2022 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -118,7 +118,7 @@ LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 
-Overfull \hbox (0.11168pt too wide) in paragraph at lines 17--19
+Overfull \hbox (0.11168pt too wide) in paragraph at lines 17--20
 []\OT1/cmr/m/n/10 Henceforth, ar-gu-ments of func-tions will be as-sumed to be 
 vec-tors, not scalars,
  []
@@ -128,13 +128,13 @@ vec-tors, not scalars,
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] (./main.aux) )
  
 Here is how much of TeX's memory you used:
- 1247 strings out of 478238
- 18958 string characters out of 5850455
- 327772 words of memory out of 5000000
- 19533 multiletter control sequences out of 15000+600000
- 474681 words of font info for 47 fonts, out of 8000000 for 9000
+ 1250 strings out of 478238
+ 18991 string characters out of 5850455
+ 328772 words of memory out of 5000000
+ 19535 multiletter control sequences out of 15000+600000
+ 475379 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,15n,62p,626b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,15n,62p,635b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/
@@ -145,7 +145,7 @@ hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist
 blic/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
 sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on ./main.pdf (4 pages, 148595 bytes).
+Output written on ./main.pdf (4 pages, 149339 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
