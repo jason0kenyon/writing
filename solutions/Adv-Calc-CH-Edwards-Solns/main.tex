@@ -254,5 +254,45 @@ Matrix multiplaction yields
 		&=\begin{pmatrix} cos^2(\alpha)-sin^2(\alpha) & -cos(\alpha)sin(\alpha)-sin(\alpha)cos(\alpha)\\ sin(\alpha)cos(\alpha)+cos(\alpha)sin(\alpha) & -sin^2(\alpha)+cos^2(\alpha) \end{pmatrix} \\
 		&=\begin{pmatrix} cos(2\alpha) & -sin(2\alpha)\\ sin(2\alpha) & cos(2\alpha) \end{pmatrix}
 \end{align}
+\section*{Section 7}
+\section*{Question 7.2}
+\begin{problem}
+	The function $f(x,y,x)= x^2y+2xz^2$ is continuous at $(1,1,1)$ 
+\end{problem}
+\subsection*{Answer}
+To begin, let $\epsilon>0$ and assume that $\delta \leq 1$. This implies that when $|(x,y,z)-(1,1,1)|< \delta$
+$|x-1|<1$, $|y-1|<1$ and $|z-1|<1$. Furthermore $1<x,y,z<2$ $2<|x+1|<3$ $2<|y+1|<3$ and $2<|z+1|<3$. It then follows that:
+\begin{align}
+	|f(x,y,z)-3|&=|y(x-1)(x+1)+(y-1)+2x(z-1)(z+1)+2(x-1)| \\
+	&\leq |y||x-1||x+1|+|y-1|+2|x||z-1||z+1|+2|x-1| \\ 
+	&< 8|x-1|+|y-1|+18|z-1| \\
+	&< 27\delta
+\end{align}
+Therefore, taking $\delta=min(1,\frac{\epsilon}{27})$ we are done.
+\section*{Question 7.4}
+\begin{problem}
+	Let $f(x,y)=\frac{2x^2y}{x^4+y^2}$ except for when $x=y=0$, in which case $f(x,y)=0$. 
+	Then $f(x,y)$ is continuous on any line through the origin, but $f(x,y)$ is not continuous in general. 
+	
+\end{problem}
+\section*{Answer}
+Define $\phi(t)=(t,at)$. To show that $f(x,y)$ is continuous on any line through the origin, it suffices to show 
+$$\lim\limits_{t \to 0}f(\phi(t))=0$$
+$f(\phi(t))=\frac{2at}{t^2+a^2}$ by definition, and provided that $a\neq 0$, we have this. However if we redefine $\phi(t)=(t,t)$, which is the case of horizontal line through the origin, 
+$f(\phi(t))=\frac{t}{t^2+1}$. 
+And this approaches $0$ as $t$ does.Next, define $\psi(t)=(t,t^2)$. Taking the limit $$\lim\limits_{t \to 0}f(\phi(t))$$ we find that it is 1, as 
 
+$f(\phi(t))=\frac{2t^4}{t^4+t^4}$. This violates the continuity criterion that $\lim\limits_{(x,y) \to (a,b)}f(x,y)=f(a,b)$
+\section*{Question 7.6}
+\begin{problem}
+	Let $D \subseteq \mathbb{R}^n$. If $a \in \partial D$ then $a \in D$ or $a$ is a limit point of $D$. 
+\end{problem}
+\subsection*{Answer}
+This follows from the trivial fact that any set can either can contain elements or not. That is, either $\partial D \subseteq D$, in which case, $a \in D$(and is still a limit point), or $\partial D \not\subseteq D $, in which case $a\not\in D$ but is a limit point of A. 
+\section*{Question 7.8}
+\begin{problem}
+	If $f:\mathbb{R}^n \to \mathbb{R}^m$ is continuous at $a$ and the sequence $\{a_n\}_{n=1}^{\infty}$ converges to $a$, then the sequence $\{f(a_n)\}_{n=1}^{\infty}$ converges to $f(a)$. 
+\end{problem}
+\subsection*{Answer}
+Let $\epsilon>0$. Then for $n \in \mathbb{N}$ we have $\forall_{m\geq n} |a_m-a|<\epsilon_2$ for $\epsilon_2>0$. And since we know that $f$ is continuous at $a$, for all $m\geq n$ $|a_m-a|<\epsilon_2<\delta$ implies that $|f(a_m)-f(a)|<\epsilon$ . Therefore, for any $\epsilon>0$ there exists $n \in \mathbb{N}$ such that for all $m\geq n$ $|f(a_m)-f(a)|<\epsilon$.  
 \end{document}

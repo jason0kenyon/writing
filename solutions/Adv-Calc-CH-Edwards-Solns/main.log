@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  28 OCT 2022 14:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  7 NOV 2022 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -226,8 +226,7 @@ File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count286
 \l__pdf_internal_box=\box56
-)
-No file main.aux.
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -244,6 +243,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -343,28 +343,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--199
 
  []
 
-[3] [4] [5] (./main.aux) ) 
+[3] [4] [5] [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 5041 strings out of 478238
- 74240 string characters out of 5850455
- 385676 words of memory out of 5000000
+ 5043 strings out of 478238
+ 74270 string characters out of 5850455
+ 387667 words of memory out of 5000000
  23199 multiletter control sequences out of 15000+600000
  498457 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,15n,76p,538b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</
-usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmbb.p
-fb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/te
-xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1
-/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8
-a.pfb>
-Output written on main.pdf (5 pages, 117188 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.en
+c}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplm
+bb.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share
+/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts
+/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/
+uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on ./main.pdf (6 pages, 127661 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
