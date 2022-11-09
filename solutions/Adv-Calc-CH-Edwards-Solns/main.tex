@@ -295,4 +295,11 @@ This follows from the trivial fact that any set can either can contain elements 
 \end{problem}
 \subsection*{Answer}
 Let $\epsilon>0$. Then for $n \in \mathbb{N}$ we have $\forall_{m\geq n} |a_m-a|<\epsilon_2$ for $\epsilon_2>0$. And since we know that $f$ is continuous at $a$, for all $m\geq n$ $|a_m-a|<\epsilon_2<\delta$ implies that $|f(a_m)-f(a)|<\epsilon$ . Therefore, for any $\epsilon>0$ there exists $n \in \mathbb{N}$ such that for all $m\geq n$ $|f(a_m)-f(a)|<\epsilon$.  
+\section*{Section 8}
+\section*{Question 8.2}
+\begin{problem}
+	Let $f: \mathbb{R}^n \to \mathbb{R}^m$ be. If for any open set $U \subset \mathbb{R^m}$ $f^{-1}(U)$ is an open subset of $\mathbb{R}^n$, then $f$ is continuous. 
+\end{problem}
+\section*{Answer}
+Let $b=f(a)$ for some $a \in \mathbb{R}^n$. Then for any $\epsilon > 0$ we may consider the set $B_{\epsilon}(b)$. By definition, this set is open, and by assumption, its preimage $f^{-1}(B_{\epsilon}(b)) \subset \mathbb{R}^n$ is open. Therefore there exists a set $B_{\delta}(a) \subset f^{-1}(B_{\epsilon}(b))$. That is to say, if $|x-a|<\delta$ then $f(x)\in B_{\epsilon}(b)$, in which case $|f(x)-f(a)|<\epsilon$ by definition of the image.   
 \end{document}

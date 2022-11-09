@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amsfonts}
 \newtheorem{defn}{Definition}
 \newtheorem{thm}{Theorem}
 
@@ -12,11 +13,11 @@
 \maketitle
 \section{Multilinearity}
 Here, we define the determinant as the unique multilinear function that is alternating, and one when given the identity matrix.
-We then deduce some familiar properties thereof. Finally, we investigate other familiar multilinear functions, as well as introduce sequilinearity---(multi)linear(ish) functions. 
+We then deduce some familiar properties thereof. Finally, we investigate other familiar multilinear functions, as well as introduce sesquilinearity---(multi)linear(ish) functions. 
 
 Henceforth, arguments of functions will be assumed to be vectors, not scalars, of an arbitrary space over an arbitrary field,
 unless we state otherwise. 
-To begin, we define the determinant of an $n$ by $n$ matrix $A$.
+To begin, we define the determinant of an $n \times n$ matrix $A$.
 \begin{defn}
 $det(A)=\sum\limits_{i=1}^{n}(-1)^iA_{ij}det(A_{*ij})$ where $A_{*ij}$ is the matrix found by eliminating the $i^{th}$ row and $j^{th}$ column of A.
 \end{defn}
@@ -127,4 +128,60 @@ f(A)&=f(E_1\dots E_n) \\
 \end{align}
 \end{proof}
 Therefore we have shown that the determinant is nothing but the alternating, multilinear function that evaluates to 1 given the identity.
+\section{Inner Products and Definiteness}
+Inner products are of the the primary tools used in analysis and geometry. Their properties correspond directly to our idea of space, and are therefore of utmost import.
+\begin{defn}
+	An inner product is a function $\langle \cdot, \cdot \rangle : V \times V \to F$ for a given vector space $V$ over a field $F$ that satisfies the following:
+\begin{enumerate}
+\item $\langle v, w \rangle=\overline{\langle w, v \rangle}$
+\item $\langle rv+q, w \rangle=r\langle v, w \rangle + \langle q, w \rangle$
+\item $\langle v, v \rangle>0$
+\end{enumerate}
+	for all $v,w,q \in V$ and $r \in F$, with $v \neq \bold{0}$.  
+\end{defn}
+Note that $F$ is either $\mathbb{R}$ or $\mathbb{C}$. Also, if $F=\mathbb{R}$ then linearity in the first argument, coupled with symmetry, implies linearity in the second. The standard inner product on $\mathbb{C}^n$ is defined as follows:
+\begin{defn}
+	$ v \cdot w =\sum\limits_{i=1}^n \bar{v_i}w_i$ 
+\end{defn}
+As the conjugate of a real number is itself, this definition reduces to the familiar dot product on $\mathbb{R}^n$. Additionally, it should be clear that this definition satisfies the criteria defined previously for inner products. 
+Now we define what it means for a matrix to be positive definite: 
+\begin{defn}
+	An $n \times n$  matrix $A$ with entries in either $\mathbb{R}$ or $\mathbb{C}$ is called positive definite if 
+$v^*Av > 0$ for all nonzero $v \in F^n$. 
+\end{defn}
+Now we show that any positive definite $n \times n$ self-adjoint matrix defines an inner product. 
+\begin{thm}
+	Let $F$ be either the real or complex field and $A$ an $n \times n$ matrix with entries thereof. If $A^*=A$, then $\langle x, y \rangle:=x^*Ay$ is an inner product.
+\end{thm}
+\begin{proof}
+We begin by demonstrating conjugate symmetry:
+\begin{align}
+	\langle x, y \rangle &= x^*Ay \\
+	&= x \cdot Ay \\
+	&= \overline{Ay \cdot x} \\
+	&= \overline{(Ay)^*x} \\
+	&= \overline{y^*A^*x} \\
+	&= \overline{y^*Ax} \\
+	&= \overline{\langle y, x \rangle}
+\end{align}
+Next, linearity in the first argument:
+\begin{align}
+	\langle ax+b, y \rangle &= (ax+b)^*Ay \\
+	&= ((ax)^*+b^*)Ay \\ 
+	&= (ax)^*Ay +b^*Ay \\ 
+	&= \bar{a}x^*Ay + \langle b, y \rangle \\
+	&= \bar{a}x \cdot Ay + \langle b, y \rangle \\
+	&= (\bar{a}x)^*Ay + \langle b, y \rangle \\
+	&= x^*aAy + \langle b, y \rangle \\
+	&= ax^*Ay + \langle b, y \rangle \\
+	&= a \langle x, y \rangle + \langle b, y \rangle 
+\end{align}
+And finally,
+$\langle x, x \rangle =x^*Ax>0$ when $x$ is nonzero, by assumption. Furthermore, $\bold{0}A \bold{0}=0$. Thus 
+$\langle x, x \rangle =0$ if and only if $x=\bold{0}$.
+\end{proof}
+Additionally, it should be easy to see that conjugate symmetry and linearity in the first argument imply that 
+$\langle x, ay+b \rangle=\bar{a} \langle x, y \rangle + \langle x, b \rangle$ when $F \neq \mathbb{R}$. That is, the inner product is sesquilinear in general, but reduces to a bilinear function in the case of $\mathbb{R}$.
+
+With this result now proven, we see that the standard inner product on $\mathbb{C}^n$ is the inner product defined by the identity matrix.
 \end{document}
