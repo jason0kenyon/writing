@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.26)  9 NOV 2022 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.14)  16 NOV 2022 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**/home/jason/projects/writing/solutions/Adv-Calc-CH-Edwards-Solns/main.tex
+(/home/jason/projects/writing/solutions/Adv-Calc-CH-Edwards-Solns/main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-04-10> (./fphw.cls
 Document Class: fphw 2019/03/19
@@ -347,13 +347,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--199
 Missing character: There is no m in font fplmbb!
 [6] [7] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 5043 strings out of 478238
- 74270 string characters out of 5850455
+ 5044 strings out of 478238
+ 74451 string characters out of 5850455
  387667 words of memory out of 5000000
  23199 multiletter control sequences out of 15000+600000
  498457 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,15n,76p,538b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,15n,76p,603b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1
@@ -363,7 +363,7 @@ s/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb><
 ist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.p
 fb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ./main.pdf (7 pages, 129254 bytes).
+Output written on main.pdf (7 pages, 129399 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
