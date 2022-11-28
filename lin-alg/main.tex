@@ -1,0 +1,52 @@
+\documentclass{amsbook}
+\usepackage{amsthm}
+
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\title{Finite Dimensional Inner Product Spaces}
+\author{Jason Kenyon}
+\date{November 2022}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Vector Spaces}
+
+\chapter{Linear Functions}
+\chapter{Linear Systems of Equations}
+We now apply fruits of our investigation into vector spaces and linearity to solve systems of linear equations.
+\begin{defn}
+  A linear system of equations is a collection of $m$ equations of the form:
+  $$a_{1}x_{1}+ \cdots +a_{n}x_{n}=b$$ where $a_{i}, x_{i},b \in \mathbb{F}$ for $1 \leq i \leq n$. Equivalently, we may say
+  $Ax=b$ for an $m \times n$ matrix $A$, where $x= \begin{pmatrix} x_{1} \\ \vdots \\ x_{n}\end{pmatrix}$ and $b= \begin{pmatrix} b_{1} \\ \vdots \\ b_{m}\end{pmatrix}$.
+  If $b=\bold{0}$, the linear system is said to be homogenous.
+\end{defn}
+\begin{defn}
+A solution to a linear system is a vector $s \in \mathbb{F}^{n}$ such that $As=b$
+\end{defn}
+
+\begin{thm}
+Let $A$ be an $m \times n$ matrix over $\mathbb{F}$. If $m<n$, then the homogenous system $Ax=0$ has a nontrivial solution.
+\end{thm}
+\begin{proof}
+  Notice that, the solution set to the system $Ax=0$ is $Ker(L_{A})$, so by the dimension theorem, $dim(Ker(A))=n-rank(L_{A})$. Additionally,
+  we know that $rank(A)$ is nothing but the number of linearly independent vectors defined by its rows which certainly cannot exceed $m$. Therefore
+  $rank(A) \leq m < n$, in which case $n-rank(A)=dim(Ker(A))>0$, and so $ker(A)\neq \{0 \}$.
+\end{proof}
+\begin{thm}
+For any solution $s$ to the linear system $Ax=b$, $$S=\{s+s_{0}:As_{0}=\bold{0} \}$$ is its solution set.
+\end{thm}
+\begin{proof}
+Suppose that $As=b$ and $As'=b$. Then $A(s'-s)=As'-As=b-b=0$. It follows that $s+(s'-s) \in S$. Conversely, if $y \in S$, then $y=s+s'$, in which case $Ay=A(s+s')=As+As'=b+0=b$. That is, $Ay=b$.
+\end{proof}
+\chapter{Eigenspaces}
+\chapter{Orthogonality}
+
+Hello
+\begin{defn}
+  There exists
+\end{defn}
+\end{document}
