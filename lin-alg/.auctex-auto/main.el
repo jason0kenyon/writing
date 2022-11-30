@@ -6,7 +6,7 @@
     "amsbook"
     "amsbook10"
     "amsthm")
-   (LaTeX-add-environments
+   (LaTeX-add-amsthm-newtheorems
     "defn"
     "thm"
     "cor"

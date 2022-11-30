@@ -1,5 +1,7 @@
 \contentsline {chapter}{\tocchapter {Chapter}{1}{Vector Spaces}}{5}{}%
 \contentsline {chapter}{\tocchapter {Chapter}{2}{Linear Functions}}{7}{}%
 \contentsline {chapter}{\tocchapter {Chapter}{3}{Linear Systems of Equations}}{9}{}%
+\contentsline {section}{\tocsection {}{}{Form}}{9}{}%
+\contentsline {section}{\tocsection {}{}{Solution}}{10}{}%
 \contentsline {chapter}{\tocchapter {Chapter}{4}{Eigenspaces}}{11}{}%
 \contentsline {chapter}{\tocchapter {Chapter}{5}{Orthogonality}}{13}{}%
