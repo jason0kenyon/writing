@@ -42,6 +42,166 @@ test
 \end{thm}
 \chapter{Linear Functions}
 \chapter{Linear Systems of Equations}
+\section{Rank}
+\begin{defn}
+  \label{defn_elmop}
+  An elementary operation on an $m \times n$ matrix $A$ is
+  \begin{enumerate}
+    \item Interchanging any two rows or columns of $A$
+    \item Scaling each entry in a row or or column of $A$
+    \item Adding a multiple of one row or column to another row or column of $A$
+  \end{enumerate}
+  An elementary matrix is the result of applying one of the above to the $n \times n$ identity matrix $I_{n}$
+\end{defn}
+\begin{thm}
+  \label{thm_elmop}
+  Suppose that $B$ is the result of applying an elementary row operation to $B$. Then there exists an elementary matrix $E$ such that $B=EA$. Furthermore, $E$ is the matrix obtained by performing the same elementary row operation to $I_{n}$. Similarly if $B$ is the result of applying
+  an elementary column operation to $A$, then there exits an elementary matrix $E$ such that $B=AE$, and $E$ is the result of applying the same elementary column operation to $I_{m}$.
+\end{thm}
+The proof is a tedious verification of cases; the elementary matrices are defined precisely for this to work.
+\begin{defn}
+\label{defn_rnk}
+The rank of a matrix $A$ is defined as the rank of the linear function $L_{A}=Ax$
+\end{defn}
+\begin{thm}
+  \label{rnkeq}
+  Let $T: V \to W$ be linear and $A=[T]_{\beta}^{\gamma}$. Then $\rank(T)=\rank(L_{A})$
+\end{thm}
+\begin{proof}
+  Consider the map $\phi_{\beta}:V \to \mathbb{F}^{n}$. That is, the function mapping a vector to its representation in coordinates. This is linear by definition and invertible as we know that any basis represents a vector uniquely as a linear combination of its elements. We have
+  \[L_{A}(\mathbb{F}^{n})=L_{A}\phi_{\beta}(V)=\phi_{\gamma}(T(V))\]. It follows that \[\dim(\im(L_{A}))=\dim(\im(T))\] because $\phi_{\gamma}$ is an isomorphism.
+\end{proof}
+\begin{thm}
+  \label{thm_rnkprp}
+  Let $A$ be $m \times n$ and $P, Q$ $m \times m$ and $n \times n$.
+  Then
+  \begin{enumerate}
+    \item $\rank(AQ)=\rank(A)$
+    \item $\rank(PA)=\rank(A)$
+    \item $\rank(PAQ)$
+  \end{enumerate}
+  \begin{proof}
+    \begin{align}
+      \im(L_{AQ})&=\im(L_{A}L_{Q}) \\
+                 &= L_{A}L_{Q}(\mathbb{F}^{n}) \\
+                 &= L_{A}(L_{Q}((\mathbb{F}^{n})) \\
+                 &= L_{A}(\mathbb{F}^{n}) \\
+                 &=\im(L_{A})
+    \end{align}
+    Thus, $\rank(L_{AQ})=\rank(L_{A})$.
+    Similarly, $\im(L_{P}L_{A})=L_{P}(\im(L_{A}))=\im(L_{A})$
+    and so $\dim(\im(L_{P}L_{A}))=\dim(\im(L_{A}))$ since $P$ is an isomorphism.
+    It follows, by applying the previous two results that
+    $\rank(PAQ)=\rank(A)$.
+  \end{proof}
+\end{thm}
+\begin{thm}
+\label{thm_colm}
+Let \[A=\begin{pmatrix}
+          a_{11} & \cdots & a_{1n} \\
+          \vdots & \ddots & \vdots \\
+          a_{1m} & \cdots & a_{mn}
+
+        \end{pmatrix}.\] Then $\rank(A)=\dim \left(
+        \spn{ \left \{
+          \begin{pmatrix} a_{11} \\ \vdots \\ a_{1m}\end{pmatrix}, \cdots \begin{pmatrix} a_{1n}\\ \vdots \\ a_{mn} \end{pmatrix}
+        \right \}
+        }\right )
+        $
+\end{thm}
+\begin{proof}
+  \begin{align}
+    \im(L_{A}) &= L_{A}(\mathbb{F}^{n}) \\
+               &= L_{A}(\spn{\{e_{1}, \dots e_{n}\}}) \\
+               &= \spn{\{Ae_{1}, \dots, Ae_{n}\}} \\
+    &=
+        \spn{ \left \{
+          \begin{pmatrix} a_{11} \\ \vdots \\ a_{1m}\end{pmatrix}, \cdots \begin{pmatrix} a_{1n}\\ \vdots \\ a_{mn} \end{pmatrix}
+        \right \}
+        }
+  \end{align}
+  Furthermore, $\dim(\spn{(X)})$ is nothing but the number of linearly independent vectors in $X$ for any set of vectors $X$. Thus we have shown
+  that the rank of a matrix is nothing but the number of linearly independent vectors in its columns.
+\end{proof}
+\begin{thm}
+\label{thm_rrefrnk}
+Let $A$ be an $m \times n$ matrix. Then a finite composition of elementary row and column operations applied to $A$ results in a matrix
+of the form
+\[ \begin{pmatrix}
+     I_{\rank(A)} & O_{1} \\
+     O_{2} & O_{3}
+   \end{pmatrix}
+ \]
+ where $O_{1}, O_{2}, O_{3}$ are zero matrices.
+\end{thm}
+\begin{proof}
+  First, note that if $A$ is a zero matrix, then by theorem \ref{thm_colm} $\rank(A)=0$, and so $A=I_{0}$, the degenerate case of our claim.
+  Suppose otherwise.
+  We proceed by induction on $m$, the number of rows of $A$. In the case that $m=1$, we may convert $A$ to a matrix of the form
+  \[\begin{pmatrix}
+      1 & 0 & \cdots & 0
+    \end{pmatrix}\] by first making the leftmost entry $1$ and adding the corresponding additive inverses of the others to the other columns.
+  Clearly the rank of the above matrix is $1$ and is of the form
+  \[\begin{pmatrix}
+I_{1} & O
+    \end{pmatrix}\]
+  This is another degenerate case, as it lacks zeros below the identity.
+  Now suppose that our theorem holds when $A$ has $m-1$ rows.
+
+  To demonstrate that our theorem holds when $A$ is an $m \times n$ matrix, notice that when $n=1$, we can argue that our theorem holds as before, but
+  using row operations instead of column operations. This is another degenerate case. For $n>0$, note that there exists an entry $A_{ij}\neq0$
+  and by applying at most an elementary row and column operation, we can move $A_{ij}$ to position $1,1$. Additionally, we may transform $A_{ij}$ to
+  value $1$, and as before, transform all of the entries in row and column 1 besides $A_{ij}$ to $0$. Thus we have a matrix of the form
+  \[\begin{pmatrix}
+      1 & 0 & \cdots & 0 \\
+      0 & x_{11} & \cdots & x_{1 \ n-1}       \\
+      \vdots & \vdots & \ddots &  \vdots  \\
+      0 & x_{m-1 \ 1}& \cdots & x_{m-1 \ n-1}
+    \end{pmatrix}\]
+\end{proof}
+The submatrix defined by $x_{ij}$ is of dimension $m-1 \times n-1$ and so must have rank $\rank(A)-1$ as elementary opertations preserve rank and deleting a row and column of a matrix reduces its rank by 1. Furthermore, by our induction hypothesis the above matrix may be converted via a finite number
+of elementary operations to a matrix of the form
+\[\begin{pmatrix}
+    1 & 0 & \cdots & 0 \\
+    0 & I_{\rank(A)-1} & O_{1} \\
+    \vdots &  &   \\
+    0 & O_{2} & O_{3}
+  \end{pmatrix}\]
+Therefore, for an $m \times n$ matrix $A$, a finite number of elementary operations converts it into a matrix of the form
+\[\begin{pmatrix}
+    I_{\rank(A)} & O_{1} \\
+    O_{2} & O_{3} \\
+  \end{pmatrix}\].
+\begin{thm}
+  \label{thm_colrow}
+  For any matrix $A$, $\rank(A^{T})=\rank(A)$.
+\end{thm}
+\begin{proof}
+  By theorem \ref{thm_rrefrnk}, we may convert $A$ to a matrix $D=BAC$ where $B=E_{1}\cdots E_{p}$ and $C=G_{1}\cdots G_{q}$ where $E_{i}$ and $G_{i}$ are elementary row and column matrices respectively. It follows that $D^{T}=C^{T}A^{T}B^{T}$, whence $\rank(A^{T})=\rank(D^{T})$ by theorem (insert) because elementary
+  matrices are invertible, and so is the transpose of the compositions thereof. Further, $D^{T}$ must be of the same form as $D$ since the only nonzero entries of $D$ are along the diagonal from entry $1,1$ to entry $\rank(A), \rank(A)$. Hence, we have $\rank(A)$ linearly independent columns in the matrix $D^{T}$.
+
+  Since the columns of $D^{T}$ are the rows of $D$, we see that the number of linearly independent columns of $A$ is equal to the number of linearly
+  independent columns of $A^{T}$. In other words, the dimension of the space generated  by the columns of $A$ is equal to the dimension of the space generated by its rows.
+\end{proof}
+\begin{thm}
+  \label{thm_invm}
+  Let $A$ be an invertible $n \times n$ matrix. Then $A$ is a product of elementary matrices.
+\end{thm}
+\begin{proof}
+  By the dimension theorem, if $A$ is invertible,  then $\rank(A)=n$. So by theorem \ref{thm_rrefrnk} $A$ may converted into a matrix of the form
+  $I_{n}=E_{1}\cdots E_{p}AG_{1} \cdots G_{q}$, whence $A=E_{1}^{-1}\cdots E_{p}^{-1}I_{n}G_{1}^{-1}\cdots G_{q}^{-1}$.
+\end{proof}
+\begin{thm}
+  \label{thm_rnkinq}
+  Let $T:V \to W$ and $U:W \to Z$. Let $A$ and $B$ be matrices for which $AB$ is defined. Then
+  \begin{enumerate}
+    \item $\rank(TU)\leq \rank(U)$
+    \item $\rank(TU) \leq \rank(T)$
+    \item $\rank(AB) \leq \rank(A)$
+    \item $\rank(AB) \leq \rank(B)$
+  \end{enumerate}
+\end{thm}
+The proof follows from the fact that $\im(UT)=UT(V)=U(T(V)))= U(\im(T)) \subseteq U(W)=\im(U)$ and the isomorphism between linear functions and matrices.
 \section{Form}
 We now apply the fruits of our investigation into vector spaces and linearity to solve systems of linear equations.
 \begin{defn}
@@ -121,4 +281,12 @@ Hello
 \appendix
 \chapter{Determinants as Permutations}
 Hello
+
+
+
+
+
+
+
+
 \end{document}

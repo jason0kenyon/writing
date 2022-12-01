@@ -26,6 +26,16 @@
     "spn"
     "im")
    (LaTeX-add-labels
+    "defn_elmop"
+    "thm_elmop"
+    "defn_rnk"
+    "rnkeq"
+    "thm_rnkprp"
+    "thm_colm"
+    "thm_rrefrnk"
+    "thm_colrow"
+    "thm_invm"
+    "thm_rnkinq"
     "def_linsys"
     "def_soln"
     "thm_homsoln"
