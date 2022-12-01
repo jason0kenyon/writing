@@ -1,84 +1,124 @@
-\documentclass{amsbook}
-\usepackage{amsthm}
+\documentclass[oneside, 12pt]{book}
+\usepackage{indentfirst}
+\usepackage{amsthm, amsmath, amssymb, amsfonts}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\im}{im}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    bookmarks=true,
+  }
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{lem}{Lemma}[section]
 
-\newtheorem{defn}{Definition}
-\newtheorem{thm}{Theorem}
-\newtheorem{cor}{Corollary}
-\newtheorem{lem}{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
 \title{Finite Dimensional Inner Product Spaces}
 \author{Jason Kenyon}
 \date{November 2022}
 
 \begin{document}
+\frontmatter
 \maketitle
+\cleardoublepage
+\pdfbookmark{\contentsname}{toc}
 \tableofcontents
-
+\chapter*{Preface}
+Hello
+\addcontentsline{toc}{chapter}{Preface}
+\mainmatter
 \chapter{Vector Spaces}
-
+\section{test}
+\begin{thm}
+test
+\end{thm}
 \chapter{Linear Functions}
 \chapter{Linear Systems of Equations}
-\section*{Form}
+\section{Form}
 We now apply the fruits of our investigation into vector spaces and linearity to solve systems of linear equations.
 \begin{defn}
+\label{def_linsys}
   A linear system of equations is a collection of $m$ equations of the form:
-  $$a_{1}x_{1}+ \cdots +a_{n}x_{n}=b$$ where $a_{i}, x_{i},b \in \mathbb{F}$ for $1 \leq i \leq n$. Equivalently, we may say
+  \[ a_{1}x_{1}+ \cdots +a_{n}x_{n}=b \] where $a_{i}, x_{i},b \in \mathbb{F}$ for $1 \leq i \leq n$.
+  Equivalently, we may say
   $Ax=b$ for an $m \times n$ matrix $A$, where $x= \begin{pmatrix} x_{1} \\ \vdots \\ x_{n}\end{pmatrix}$ and $b= \begin{pmatrix} b_{1} \\ \vdots \\ b_{m}\end{pmatrix}$.
   If $b=\bold{0}$, the linear system is said to be homogenous.
 \end{defn}
 \begin{defn}
+\label{def_soln}
 A solution to a linear system is a vector $s \in \mathbb{F}^{n}$ such that $As=b$
 \end{defn}
 
 \begin{thm}
+\label{thm_homsoln}
 Let $A$ be an $m \times n$ matrix over $\mathbb{F}$. If $m<n$, then the homogenous system $Ax=0$ has a nontrivial solution.
 \end{thm}
 \begin{proof}
-  Notice that, the solution set to the system $Ax=0$ is $\ker(L_{A})$, so by the dimension theorem, $dim(\ker(A))=n-rank(L_{A})$. Additionally,
-  we know that $rank(A)$ is nothing but the number of linearly independent vectors defined by its rows which certainly cannot exceed $m$. Therefore
-  $rank(A) \leq m < n$, in which case $n-rank(A)=dim(\ker(A))>0$, and so $\ker(A)\neq \{0 \}$.
+  Notice that, the solution set to the system $Ax=0$ is $\ker(L_{A})$, so by the dimension theorem, $\dim(\ker(A))=n-\rank(L_{A})$. Additionally,
+  we know that $\rank(A)$ is nothing but the number of linearly independent vectors defined by its rows which certainly cannot exceed $m$. Therefore
+  $\rank(A) \leq m < n$, in which case $n-\rank(A)=\dim(\ker(A))>0$, and so $\ker(A)\neq \{0 \}$.
 \end{proof}
 \begin{thm}
-For any solution $s$ to the linear system $Ax=b$, $$S=\{s+s_{0}:As_{0}=\bold{0} \}$$ is its solution set.
+  \label{thm_gensoln}
+For any solution $s$ to the linear system $Ax=b$, \[\{s+s_{0}:As_{0}=\bold{0} \}\] is its solution set.
 \end{thm}
 \begin{proof}
 Suppose that $As=b$ and $As'=b$. Then $A(s'-s)=As'-As=b-b=0$. It follows that $s+(s'-s) \in S$. Conversely, if $y \in S$, then $y=s+s'$, in which case $Ay=A(s+s')=As+As'=b+0=b$. That is, $Ay=b$.
 \end{proof}
 \begin{thm}
+  \label{thm_uniqsoln}
   Let $Ax=b$ for an $n \times n$ matrix $A$. If $A$ is invertible, then the system has a single solution $A^{-1}b$. If the system has a single solution, then $A$ is invertible.
 \end{thm}
 \begin{proof}
-  Suppose $A$ is invertible. Then $A(A^{-1}b)=AA^{-1}(b)=b$. Furthermore, if $As=b$ for some $s \in \mathbb{F}^{n}$, then $A^{-1}(As)=A^{-1}b$ and so $s=A^{-1}b$.
-  Next, suppose that the system has a unique solution $s$. Then by theorem 2, we know that the solution set $S=\{s+s_{0}: As_{0}=0 \}$. But this
-  is only the case if $\ker(A)=\{0\}$, lest $s$ not be unique. And so, by the dimension theorem, $A$ is invertible.
+Suppose $A$ is invertible. Then $A(A^{-1}b)=AA^{-1}(b)=b$. Furthermore, if $As=b$ for some $s \in \mathbb{F}^{n}$, then $A^{-1}(As)=A^{-1}b$ and so $s=A^{-1}b$.
+Next, suppose that the system has a unique solution $s$. Then by theorem \ref{thm_gensoln}, we know that the solution set $S=\{s+s_{0}: As_{0}=0 \}$. But this is only the case if $\ker(A)=\{0\}$, lest $s$ not be unique. And so, by the dimension theorem, $A$ is invertible.
 \end{proof}
 \begin{thm}
-The linear system $Ax=b$ has a nonempty solution set if and only if $rank(A)=rank(A|b)$.
+\label{thm_nonemsoln}
+The linear system $Ax=b$ has a nonempty solution set if and only if $\rank(A)=\rank(A|b)$.
 \end{thm}
 \begin{proof}
-  If the system has a solution, then $b \in im(L_{A})$. Additionally, $im(L_{A})=L_{A}(F^{n})$ and $L_{A}(e_{i})=Ae_{i}=
-  \begin{pmatrix} a_{1i} \\ \vdots \\ a_{ni}   \end{pmatrix}$. Therefore, since $L_{A}(\mathbb{F}^{n})=span\{Ae_{1}, \dots Ae_{n}\}$,
-  $im(L_{A})=span\{A_{1}, \dots A_{n}\}$, where $A_{i}$ is the $i^{th}$ column of $A$.
-  Certainly, $b \in span\{A_{1}, \dots A_{n}\}$ if and only if $span\{A_{1}, \dots A_{n}\}=span\{A_{1}, \dots A_{n}, b\}$, which is to say
-  $dim(span\{A_{1}, \dots A_{n}\})=dim(span\{A_{1}, \dots A_{n}, b\})$, or, $rank(A)=rank(A|b)$.
+  If the system has a solution, then $b \in \im(L_{A})$. Additionally, $\im(L_{A})=L_{A}(F^{n})$ and $L_{A}(e_{i})=Ae_{i}=
+  \begin{pmatrix} a_{1i} \\ \vdots \\ a_{ni}   \end{pmatrix}$. Therefore, since $L_{A}(\mathbb{F}^{n})= \spn \{Ae_{1}, \dots Ae_{n}\}$,
+  $\im(L_{A})=\spn\{A_{1}, \dots A_{n}\}$, where $A_{i}$ is the $i^{th}$ column of $A$.
+  Certainly, $b \in \spn\{A_{1}, \dots A_{n}\}$ if and only if $\spn\{A_{1}, \dots A_{n}\}=\spn\{A_{1}, \dots A_{n}, b\}$, which is to say
+  $\dim(\spn\{A_{1}, \dots A_{n}\})=\im(\spn\{A_{1}, \dots A_{n}, b\})$, or, $\rank(A)=\rank(A|b)$.
 \end{proof}
-
-\section*{Solution}
+\pagebreak
+\section{Solution}
 \begin{defn}
-  A matrix of the form $\begin{pmatrix} a_{11} & \cdots & a_{1n}\\ \vdots & \ddots & \vdots \\a_{m1} & \cdots & a_{mn}\end{pmatrix}$. Is said to be in reduced echelon form if $a_{ii}\neq 0$ implies that $a_{ij}=1$ and all other entries $a_{lj}=0$. Additionally, if $a_{ij}=0$
-  for all $1\leq j \leq n$, then $i < r$ for all nonzero rows $a_{r1}, \dots a_{rm}$.
+\label{defn_rref}
+A matrix of the form \[\begin{pmatrix} a_{11} & \cdots & a_{1n}\\ \vdots & \ddots & \vdots \\a_{m1} & \cdots & a_{mn}\end{pmatrix}\] is said to be in reduced echelon form if
+\begin{enumerate}
+  \item $a_{ii}\neq 0$ implies that $a_{ij}=1$
+  \item $a_{ij} \neq 1$ implies that $a_{ij}=0$
+  \item $a_{ij}=0$ for all $1\leq j \leq n$ implies that $i < r$ for all nonzero rows $\begin{pmatrix}a_{r1} & \cdots & a_{rn}\end{pmatrix}$
+\end{enumerate}
 \end{defn}
 \begin{thm}
+\label{thm_rref}
 Any matrix can be converted into reduced echelon form via a finite number of elementary row operations.
 \end{thm}
 The proof should be clear from the definitions of the three elementary.
 This form is of particular interest because reducing an augmented matrix is equivalent to solving a linear system of equations. We now have a
 procedure for solving arbitrary systems of linear equations. For example, we may now demonstrate that a set of vectors is linearly dependent by
-finding a nontrivial solution to a linear system of equations; similarly we may apply theorem 4 to demonstrate that a set of vectors is linearly dependent. In the following chapter, we will also see that computing the elements of an eigenspace is made possible by reducing a matrix.
+finding a nontrivial solution to a linear system of equations; similarly we may apply theorem \ref{thm_nonemsoln} to demonstrate that a set of vectors is linearly dependent. In the following chapter, we will also see that computing the elements of an eigenspace is made possible by reducing a matrix.
 \chapter{Eigenspaces}
 \chapter{Orthogonality}
-
+\section{Inner Products}
 Hello
 \begin{defn}
   There exists
 \end{defn}
+\appendix
+\chapter{Determinants as Permutations}
+Hello
 \end{document}
