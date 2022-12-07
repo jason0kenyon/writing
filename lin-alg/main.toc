@@ -6,7 +6,9 @@
 \contentsline {section}{\numberline {3.1}Rank}{3}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Form}{8}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Solution}{10}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Eigenspaces}{11}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Orthogonality}{12}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Inner Products}{12}{section.5.1}%
-\contentsline {chapter}{\numberline {A}Determinants as Permutations}{13}{appendix.A}%
+\contentsline {chapter}{\numberline {4}Eigenspaces}{12}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Orthogonality}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Inner Products}{13}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Projections}{13}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Orthogonal Projection}{13}{section.5.3}%
+\contentsline {chapter}{\numberline {A}Determinants as Permutations}{15}{appendix.A}%

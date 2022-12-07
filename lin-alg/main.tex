@@ -330,6 +330,60 @@ This follow directly from the invertibility, and fits with our intuition: as we 
 \chapter{Orthogonality}
 \section{Inner Products}
 Hello
+\section{Projections}
+\begin{defn}
+\label{defn_prj}
+Let $V=W_{1}\oplus W_{2}$. A projection of $V$ on $W_{1}$ along $W_{2}$ is a linear function $T:V \to V$ such that for any $x \in V$ where $x=x_{1}+x_{2}$ $x_{1} \in W_{1}$ and $x_{2} \in W_{2}$ $T(x)=x_{1}$.
+\end{defn}
+\begin{thm}
+\label{projiff}
+A linear function $T:V \to V$ is a projection of $V$ on $W_{1}=\{x : T(x)=x \}$ along $\ker{T}$ if and only if $T=T^{2}$.
+\end{thm}
+\begin{proof}
+Trivial
+\end{proof}
+\section{Orthogonal Projection}
+\begin{defn}
+\label{orthcomp}
+Let $W \subseteq V$. The orthogonal complement of $W$ is defined as $W^{\perp}=\{v \in V : \langle v, w \rangle=0 for all w \in W\}$.
+\end{defn}
+\begin{thm}
+The following statments are true
+\begin{enumerate}
+  \item $W^{\perp}$ is a subspace of $V$
+  \item $\dim(W^{\perp})=\dim(V)-\dim(W)$
+\end{enumerate}
+\end{thm}
+\begin{proof}
+Trivial
+\end{proof}
+\begin{thm}
+\label{thm_orthodecomp}
+  Let $W \subseteq V$.Then for any $x \in V$ there exist unique vectors $y \in W$ and $z \in W^{\perp}$ such that $x=y+z$. Furthermore, for all $w \in W$
+s  \[ ||y-x|| \leq ||w-x||\] and we call $y$ the orthogonal projection of $z$ on $w$, denoted $x_{w}$. Similarly, $z$ is denoted $x_{\perp}$.
+\end{thm}
+\begin{proof}
+trivial
+\end{proof}
+
+\begin{thm}
+Let $W \subseteq V$ $x \in V$ and $\beta=\{v_{1}, \dots v_{n}\}$ be an orthonormal basis for $W$ and $A$ be the matrix whose $j^{th}$ column is $v_{j}$. Then the orthogonal projection of $x$ on $W$ $x_{w}=AA^{*}x$.
+\end{thm}
+
+\begin{proof}
+  We begin by demonstrating that $W^{\perp}=\ker A^{*}$. We have
+  \[A^{*}x= \begin{pmatrix}v_{1}^{*}x \\ \vdots \\ v_{n}^{*}x \end{pmatrix}=\begin{pmatrix}\langle v_{1}, x \rangle \\  \vdots \\ \langle v_{n}, x \rangle\end{pmatrix}.\] Certainly
+  $Ax=\bold{0}$ if and only if $\langle v_{i}, x \rangle=0$ for all $1 \leq i \leq n$. But that is to say $x \in W^{\perp}$, and so \[\ker(A^{*})=W^{\perp}.\]
+  Note that $Ax=\spn\beta$ by definition. Therefore, for some $c \in \mathbb{F}^{n}$ $Ac=x_{w}$, which means that $x-x_{W}=x-Ac \in W^{\perp}$. It follows that
+  $A^{*}(x-Ac)=0$ and so \[A^{*}Ac=A^{*}x.\] Thus, if we see that $x_{w}=Ac$. Furthermore, since $\beta$ is orthonormal, $A$ must be unitary, in which case \[Ac=AA^{*}x=x_{W}.\]
+\end{proof}
+\begin{cor}
+  \label{cor_orthproj}
+$A^{*}A$ is a projection and $\im(A^{*}A)^{\perp}=\ker(A^{*}A)$.
+\end{cor}
+\begin{proof}
+trivial
+\end{proof}
 \begin{defn}
   There exists
 \end{defn}
