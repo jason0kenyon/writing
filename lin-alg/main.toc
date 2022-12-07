@@ -4,7 +4,7 @@
 \contentsline {chapter}{\numberline {2}Linear Functions}{2}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Linear Systems of Equations}{3}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Rank}{3}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Form}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Form}{8}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Solution}{10}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Eigenspaces}{11}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Orthogonality}{12}{chapter.5}%

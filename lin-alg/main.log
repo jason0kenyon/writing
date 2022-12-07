@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.17)  1 DEC 2022 14:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.17)  2 DEC 2022 13:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -366,13 +366,13 @@ Chapter 2.
 Chapter 3.
 [3
 
-] [4] [5] [6]
+] [4] [5] [6] [7]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 213.
+d on input line 230.
 
-[7]
-Overfull \hbox (33.41454pt too wide) in paragraph at lines 249--254
+[8]
+Overfull \hbox (33.41454pt too wide) in paragraph at lines 266--271
 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and
  $\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 e[]\OT1/cmr/m/n/12 ) = 
 \OML/cmm/m/it/12 Ae[] \OT1/cmr/m/n/12 = []$. There-fore, since $\OML/cmm/m/it/1
@@ -380,7 +380,7 @@ Overfull \hbox (33.41454pt too wide) in paragraph at lines 249--254
 \OML/cmm/m/it/12 Ae[]; [] Ae[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
  []
 
-[8] [9] [10]
+[9] [10]
 Chapter 4.
 [11
 
@@ -397,13 +397,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 3228BA9C99B3CF45710FDDA2F9B7EF68;1425.
  ) 
 Here is how much of TeX's memory you used:
- 9275 strings out of 478238
- 140633 string characters out of 5850455
- 440962 words of memory out of 5000000
- 27339 multiletter control sequences out of 15000+600000
+ 9291 strings out of 478238
+ 140881 string characters out of 5850455
+ 439989 words of memory out of 5000000
+ 27340 multiletter control sequences out of 15000+600000
  479641 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,17n,63p,348b,416s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,17n,63p,430b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -415,10 +415,10 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (16 pages, 177094 bytes).
+Output written on main.pdf (16 pages, 180406 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 222 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
+ 87 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

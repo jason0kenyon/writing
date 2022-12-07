@@ -21,10 +21,6 @@
     "amssymb"
     "amsfonts"
     "hyperref")
-   (TeX-add-symbols
-    "rank"
-    "spn"
-    "im")
    (LaTeX-add-labels
     "defn_elmop"
     "thm_elmop"
@@ -42,8 +38,11 @@
     "thm_gensoln"
     "thm_uniqsoln"
     "thm_nonemsoln"
+    "cor_infsoln"
     "defn_rref"
-    "thm_rref")
+    "thm_rref"
+    "cor_soln"
+    "cor_solninvar")
    (LaTeX-add-amsthm-newtheorems
     "thm"
     "cor"
