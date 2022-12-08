@@ -336,16 +336,17 @@ Hello
 Let $V=W_{1}\oplus W_{2}$. A projection of $V$ on $W_{1}$ along $W_{2}$ is a linear function $T:V \to V$ such that for any $x \in V$ where $x=x_{1}+x_{2}$ $x_{1} \in W_{1}$ and $x_{2} \in W_{2}$ $T(x)=x_{1}$.
 \end{defn}
 \begin{thm}
-\label{projiff}
+\label{thm_projiff}
 A linear function $T:V \to V$ is a projection of $V$ on $W_{1}=\{x : T(x)=x \}$ along $\ker{T}$ if and only if $T=T^{2}$.
 \end{thm}
 \begin{proof}
-Trivial
+  If $T$ is a projection, then clearly $T=T^{2}$ by definition. Conversely, for $x \in V$ we know that $x=Tx+(x-Tx)$. But by assumption
+  $T^{2}x=Tx$, which means $T(Tx-x)=T(x-Tx)\bold{0}$. That is, $x-Tx \in \ker(T)$. Hence, $V=\{x \in V: Tx=x\} \oplus \ker(T)$ as $Tx=x$ and $Tx=0$  implies $x=0$($x \in \ker(T)$). And so for $x \in V$, we have $x=y+z$ for $y \in \{x \in V: Tx=x\}$ and $z\in \ker(T)$, and so $Tx=Ty+Tz=y$.
 \end{proof}
 \section{Orthogonal Projection}
 \begin{defn}
 \label{orthcomp}
-Let $W \subseteq V$. The orthogonal complement of $W$ is defined as $W^{\perp}=\{v \in V : \langle v, w \rangle=0 for all w \in W\}$.
+Let $W \subseteq V$. The orthogonal complement of $W$ is defined as $W^{\perp}=\{v \in V : \langle v, w \rangle=0 \text{ for all } w \in W\}$.
 \end{defn}
 \begin{thm}
 The following statments are true
@@ -355,7 +356,8 @@ The following statments are true
 \end{enumerate}
 \end{thm}
 \begin{proof}
-Trivial
+  Firstly, note that $ \langle \bold{0}, w\rangle=\bold{0}$ for all $w \in W$, so $\bold{0} \in W^{\perp}$. Furthermore, if $\langle w, c\rangle=0$ for some $w \in W$ then
+  $\langle aw, c \rangle = a \langle w, c \rangle =0 $ by linearity. Similarly, if $\langle w, a \rangle=0  $ and $\langle b, c \rangle=0  $ then $\langle w, a \rangle+ \langle b, c \rangle= \langle w+b, c \rangle =0$. Secondly,
 \end{proof}
 \begin{thm}
 \label{thm_orthodecomp}
@@ -379,11 +381,12 @@ Let $W \subseteq V$ $x \in V$ and $\beta=\{v_{1}, \dots v_{n}\}$ be an orthonorm
 \end{proof}
 \begin{cor}
   \label{cor_orthproj}
-$A^{*}A$ is a projection and $\im(A^{*}A)^{\perp}=\ker(A^{*}A)$.
+$AA^{*}$ is a projection and $\ker(AA^{*})=W^{\perp}$. Additionally, $AA^{*}$ is the unique such linear function.
 \end{cor}
 \begin{proof}
-trivial
+  Surely $AA^{*}$ is linear, and since we know that $x=x_{W}+x_{W^{\perp}}$ for all $x \in V$ it follows that $(AA^{*})^{2}x=AA^{*}x_{W}=x_{w}=AA^{*}x$. Thus the orthogonal projection is, in fact, a projection on $W^{\perp}=\{x \in V: AA^{*}x=x \}$ along $\ker(AA^{*})$, by theorem \ref{thm_projiff} ($V=W \oplus W^{\perp}$). Furthermore, if $x=x_{W}+x_{W^{\perp}}$ with $x_{W}=0$, $AA^{*}x=x_{W}=0$. The converse follows in the same way. Thus, $\ker(AA^{*})=W^{\perp}$ Similarly, we have $\im(AA^{*})=W$. Additionally, as a projection is defined uniquely in terms of its range, it is clear that any other projection $T$ on $W=\{x \in V: T(x)=x\}$ must be the same as $AA^{*}$.
 \end{proof}
+
 \begin{defn}
   There exists
 \end{defn}

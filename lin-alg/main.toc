@@ -11,4 +11,4 @@
 \contentsline {section}{\numberline {5.1}Inner Products}{13}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Projections}{13}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Orthogonal Projection}{13}{section.5.3}%
-\contentsline {chapter}{\numberline {A}Determinants as Permutations}{15}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Determinants as Permutations}{16}{appendix.A}%
