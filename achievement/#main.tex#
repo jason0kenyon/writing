@@ -1,0 +1,42 @@
+\documentclass{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{excs}{Exercise}[section]
+\numberwithin{equation}{section}
+
+\title{Goals}
+\author{Jason Kenyon}
+\date{August 2022}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+\section{Preliminary Remarks}
+Why bother rigorously structuring your life? The practices to follow may seem ``extreme" or ``superfluous." That's because they are. They are---if you are so arrogant as to think you can passively tame your own psyche, and be more than a spitting image of your predecessors. If you find such things futile, you should read something else. 
+
+
+
+\section{Why?}
+
+\section{The Normal Way}
+\section{Dynamic Document}
+\chapter{Foundational Structure}
+\chapter{Aims}
+\chapter{Action}
+\chapter{Maintenance}
+\chapter{Application}
+\appendix
+\chapter{stfu}
+\end{document}
+
