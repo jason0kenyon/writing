@@ -70,16 +70,53 @@ Hello
   A set of vectors $\{v_{1}, v_{2}, \dots v_{n}\}$ is linearly dependent if
   \[a_{1}v_{1}+a_{2}v_{2}+ \dots a_{n}v_{n}=\bold{0}\] for $a_{1}, a_{2}, \dots a_{n} \in \mathbb{F}$ not all zero. Similarly, a set of vectors is linearly independent if it is not linearly dependent.
 \end{defn}
+\begin{thm}
+  \label{thm_linind}
+If $S_{1}\subseteq S_{2} \subseteq V$ and $S_{1}$ is linearly dependent, then $S_{2}$ is linearly dependent as well. Similarly, if $S_{2}$ is linearly dependent, then $S_{1}$ is linearly dependent.
+\end{thm}
+\begin{proof}
+The proof should be clear when considering the above definition.
+\end{proof}
+\begin{thm}
+  \label{thm_span}
+Let $S$ be a linearly independent subset of $V$ and $v \in V$ such that $v \in S$. Then $S \cup \{v\}$ is linearly dependent if and only if $v \in \spn(S)$.
+\end{thm}
+\begin{proof}
+  If $S \cup \{v\}$ is linearly dependent then there exist scalars $a_{1}, a_{2}, \dots a_{n}, a_{v} \in \mathbb{F}$ not all zero such that \[a_{1}s_{1} +a_{2}s_{2}+\cdots +a_{n}s_{n}+a_{v}v=\bold{0}.\]
+  Therefore, $a_{v}\neq0$, for otherwise we would contradict the linear independence of $S$. This implies that \[v=-\frac{a_{1}s_{1}+ a_{2}s_{2}+ \cdots a_{n}s_{n}}{a_{v}}.\] and hence $v \in \spn(S)$. Conversely, if $v \in \spn(S)$, then \[v=a_{1}s_{1}+a_{2}s_{2}+\cdots a_{n}s_{n} \] for some scalars $a_{1},a_{2}, \cdots \in \mathbb{F}$ This implies that \[1(v)-(a_{1}s_{1}+\cdots a_{n}s_{n})=\bold{0}.\] which is a nontrivial solution, so the set $S \cup \{v\}$ is linearly dependent.
+\end{proof}
 \section{Bases}
+\begin{defn}
+  \label{defn_basis}
+A subset $\beta \subseteq V $ is a basis for $V$ if it is a linearly independent set such that $\spn(\beta)=V$.
+\end{defn}
+\begin{thm}
+  \label{thm_uniqbas}
+A subset $\beta=\{v_{1},v_{2}, \dots v_{n}\}$ of $V$ is a basis for $V$ if and only if for any vector $v \in V$ \[v=a_{1}v_{1}+\cdots a_{n}v_{n}\] for unique scalars $a_{1}, \dots a_{n} \in \mathbb{F}$.
+\end{thm}
+\begin{proof}
+Suppose that $\beta=\{v_{1}, \dots v_{n}\}$ is a linearly independent generating set of $V$. Then $v=a_{1}v_{1}+\cdots a_{n}v_{n}$ for scalars $a_{1}, \dots a_{n} \in \mathbb{F}$. Further, suppose that there exists another collection $b_{1}, \dots b_{n}$ of scalars such that $v=b_{1}v_{1}+\cdots b_{n}v_{n}$. Subtracting, we have \[(a_{1}-b_{1})v_{1}\cdots (a_{n}-b_{n})v_{n}=\bold{0}.\] Since $\beta$ is linearly independent, it follows that $a_{i}-b_{i}=0$, and hence $a_{i}=b_{i}$ for all $1 \leq i\leq n$. Therefore, the linear combination $a_{1}v_{1}+\cdots a_{n}v_{n}$ is the unique representation of $V$ for $\beta$. Similarly, if we know that $v=a_{1}v_{1}\cdots a_{n}v_{n}$ for unique scalars, then \[(b_{1})v_{1}+\cdots(b_{n})v_{n}=\bold{0}=v-v.\] if and only if $b_{i}=a_{i}-a_{i}=0$ for all $1 \leq i \leq n$. And certainly $V=\spn(\beta)$, so $\beta$ is a basis for $V$.
+\end{proof}
+
+
+
+
 see this source \textcite{jechset}.
 \begin{thm}
 \label{thm_basis}
 Every vector space has a basis.
 \end{thm}
 \begin{proof}
-  Consider the set $L$ of all linearly independent subsets of a vector space $V$. Let $T \subseteq L$ be a chain. That is, for any two sets $A$ and $B$ in $T$ either $A \subseteq B$ or $B \subseteq A$. Hence, the set $\bigcup T \in L$. In other words, taking a union over a chain yields a maximal element under $\subseteq$ which must necessarily be in the set from whence it came. This ensures that $T$ is linearly ordered by $\subseteq$, for transitivity, reflexivity, and antisymmetry are already satisfied by definition of  a subset. Therefore, Zorn's lemma implies that there exists a maximal element in $L$. That is, there exists an element $l \in L$ such that for all $a \in L$ $a \subseteq l$. Moreover, we know that $l$ is linearly independent.
+  Consider the set $L$ of all linearly independent subsets of a vector space $V$. Let $T \subseteq L$ be a chain. That is, for any two sets $A$ and $B$ in $T$ either $A \subseteq B$ or $B \subseteq A$. Hence, any finite subset of $\bigcup T$ is in $L$. In other words, taking a union over a chain yields an upper bound under $\subseteq$ which must necessarily be in the set from whence it came. This ensures that $T$ is linearly ordered by $\subseteq$, for transitivity, reflexivity, and antisymmetry are already satisfied by definition of a subset. Therefore, Zorn's lemma implies that there exists a maximal element in $L$. That is, there exists an element $l \in L$ such that for all $A \in L$ $A \subseteq l$. Moreover, we know that $l$ is linearly independent by assumption.
 
-  To show that $l$ spans $V$, suppose that there were an element $v \in V$ such that $v\notin \spn(l)$. Then $l \cup \{v\}$ would be a linearly independent set, in which case $l \cup \{v\} \in L $. But $l \cup \{v \} \nsubseteq l$, contradicting the fact that $l$ is the maximal element of $L$.
+  To show that $l$ spans $V$, suppose that there were an element $v \in V$ such that $v\notin \spn(l)$. Then by theorem \ref{thm_span} $l \cup \{v\}$ would be a linearly independent set, in which case $l \cup \{v\} \in L $. But $l \cup \{v \} \nsubseteq l$, contradicting the fact that $l$ is the maximal element of $L$.
+\end{proof}
+\begin{cor}
+  \label{cor_bascard}
+If $V$ is generated by a finite set, then there exists a finite basis for $V$.
+\end{cor}
+\begin{proof}
+  Suppose that $\spn(S)=V$ for a finite set $S$. Consider an arbitrary linearly independent subset $\beta \subseteq S$ such that $\beta \cup \{v\}$ is linearly dependent for any $v \in S$ such that $v \notin \beta$. Such a set certainly exist because any set containing a single vector is linearly independent, and so we may continue to add vectors from $S$ into $\beta$ until another union results in a linearly dependent set. Hence if we demonstrate that $S \subseteq \spn(\beta)$ we will have that $\spn(S)\subseteq \spn(\beta)$, and we already know that $\spn(\beta)\subseteq V$. To show this, note that for any $v \in S$ if $v \in \beta$ then trivially $v \in \spn(\beta)$, and if $v \notin \beta$, then by assumption $\beta \cup \{v\}$ is linearly dependent, in which case $v \in \spn(\beta)$ by theorem \ref{thm_span}.
 \end{proof}
 \section{Direct Sum}
 yup

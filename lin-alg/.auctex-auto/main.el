@@ -5,13 +5,13 @@
                      '(("book" "oneside" "12pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("biblatex" "backend=biber")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -24,16 +24,17 @@
     "amssymb"
     "amsfonts"
     "hyperref")
-   (TeX-add-symbols
-    "rank"
-    "spn"
-    "im")
    (LaTeX-add-labels
     "defn_vspace"
     "defn_subspace"
     "thm_subspace"
     "defn_linind"
+    "thm_linind"
+    "thm_span"
+    "defn_basis"
+    "thm_uniqbas"
     "thm_basis"
+    "cor_bascard"
     "defn_elmop"
     "thm_elmop"
     "defn_rnk"
