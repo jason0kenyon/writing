@@ -1,5 +1,7 @@
 \documentclass[oneside, 12pt]{book}
 \usepackage{indentfirst}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{refs.bib}
 \usepackage{amsthm, amsmath, amssymb, amsfonts}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\spn}{span}
@@ -36,11 +38,57 @@ Hello
 \addcontentsline{toc}{chapter}{Preface}
 \mainmatter
 \chapter{Vector Spaces}
-\section{test}
+\section{Spaces and Subspaces}
+\begin{defn}
+  \label{defn_vspace}
+  A vector space $V$ over a field $\mathbb{F}$ is a set, along with a binary operation $+: V^{2} \to V$ and a binary operation $\boldsymbol{\cdot}: \mathbb{F} \times V \to V$ that satisfy the following properties:
+  \begin{enumerate}
+    \item $a\boldsymbol{\cdot}v+w \in V$
+    \item $v+w=w+v$
+    \item $v+(w+z)=(v+w)+z$
+    \item $\bold{1}v=v$
+    \item $(a\boldsymbol{\cdot}b)x=a\boldsymbol{\cdot}(bx)$
+    \item $a\boldsymbol{\cdot}(v+w)=av+aw$
+    \item $(a+b)v=a\boldsymbol{\cdot}v+b\boldsymbol{\cdot}v$
+    \item There exists an element $\bold{0} \in V$ such that $v+\bold{0}=v$
+    \item There exists an element $v^{-1}$ such that $v+v^{-1}=\bold{0}$
+  \end{enumerate}
+  for all $a, b \in \mathbb{F}$ and $v,w,z \in V$.
+\end{defn}
+\begin{defn}
+  \label{defn_subspace}
+  A subspace $W$ of a vector space $V$ is a set $W \subseteq V$ that is itself a vector space.
+\end{defn}
 \begin{thm}
-test
+  \label{thm_subspace}
+  Let $V$ be a vector space with zero element $\bold{0}$. Then a subset $W \subseteq V$
+  is a subspace of $V$ if and only if \[\bold{0} \in W\] and \[cx+y \in W\] for all $x,y \in V$ and $c \in \mathbb{F}$.
 \end{thm}
+\section{Linear Independence}
+\begin{defn}
+  \label{defn_linind}
+  A set of vectors $\{v_{1}, v_{2}, \dots v_{n}\}$ is linearly dependent if
+  \[a_{1}v_{1}+a_{2}v_{2}+ \dots a_{n}v_{n}=\bold{0}\] for $a_{1}, a_{2}, \dots a_{n} \in \mathbb{F}$ not all zero. Similarly, a set of vectors is linearly independent if it is not linearly dependent.
+\end{defn}
+\section{Bases}
+see this source \textcite{jechset}.
+\begin{thm}
+\label{thm_basis}
+Every vector space has a basis.
+\end{thm}
+\begin{proof}
+  Consider the set $L$ of all linearly independent subsets of a vector space $V$. Let $T \subseteq L$ be a chain. That is, for any two sets $A$ and $B$ in $T$ either $A \subseteq B$ or $B \subseteq A$. Hence, the set $\bigcup T \in L$. In other words, taking a union over a chain yields a maximal element under $\subseteq$ which must necessarily be in the set from whence it came. This ensures that $T$ is linearly ordered by $\subseteq$, for transitivity, reflexivity, and antisymmetry are already satisfied by definition of  a subset. Therefore, Zorn's lemma implies that there exists a maximal element in $L$. That is, there exists an element $l \in L$ such that for all $a \in L$ $a \subseteq l$. Moreover, we know that $l$ is linearly independent.
+
+  To show that $l$ spans $V$, suppose that there were an element $v \in V$ such that $v\notin \spn(l)$. Then $l \cup \{v\}$ would be a linearly independent set, in which case $l \cup \{v\} \in L $. But $l \cup \{v \} \nsubseteq l$, contradicting the fact that $l$ is the maximal element of $L$.
+\end{proof}
+\section{Direct Sum}
+yup
+\section{Tensor Product}
+yes
 \chapter{Linear Functions}
+\section{Linearity}
+\section{Matrices}
+\section{Abstract Spaces and Isomorphism}
 \chapter{Linear Systems of Equations}
 \section{Rank}
 \begin{defn}
@@ -326,7 +374,22 @@ Let $A$ be an $m \times n$ matrix and $C$ be an invertible $n \times n$ matrix. 
 \[Ax=b \text{and} CAx=Cb \] are equal.
 \end{cor}
 This follow directly from the invertibility, and fits with our intuition: as we row reduce a linear system, its solutions do not change.
+\chapter{The Determinant}
+\section{Permuations}
+define determinant
+show equal to cofactor expansion
+\section{Cofactor Expansion}
+deduce enough properties to define the determinat more formally
+\section{Multilinear and Alternating}
+demonstrate cofactor expansion is unqiue multilinear alternating etc
+hence permutation=cofactor=unique such function
+\section{Properties}
+deduce remaining important properties
+need invertible iff det nonzero
+\section{Measure}
 \chapter{Eigenspaces}
+\section{Characteristic Polynomial}
+\section{Diagonalization and Similarity}
 \chapter{Orthogonality}
 \section{Inner Products}
 Hello
@@ -386,15 +449,30 @@ $AA^{*}$ is a projection and $\ker(AA^{*})=W^{\perp}$. Additionally, $AA^{*}$ is
 \begin{proof}
   Surely $AA^{*}$ is linear, and since we know that $x=x_{W}+x_{W^{\perp}}$ for all $x \in V$ it follows that $(AA^{*})^{2}x=AA^{*}x_{W}=x_{w}=AA^{*}x$. Thus the orthogonal projection is, in fact, a projection on $W^{\perp}=\{x \in V: AA^{*}x=x \}$ along $\ker(AA^{*})$, by theorem \ref{thm_projiff} ($V=W \oplus W^{\perp}$). Furthermore, if $x=x_{W}+x_{W^{\perp}}$ with $x_{W}=0$, $AA^{*}x=x_{W}=0$. The converse follows in the same way. Thus, $\ker(AA^{*})=W^{\perp}$ Similarly, we have $\im(AA^{*})=W$. Additionally, as a projection is defined uniquely in terms of its range, it is clear that any other projection $T$ on $W=\{x \in V: T(x)=x\}$ must be the same as $AA^{*}$.
 \end{proof}
-
-\begin{defn}
-  There exists
-\end{defn}
+\section{The Adjoint}
+\section{Normal and Unitary Operators}
+self adjoint iff orthogonal projection
+all unitary operators are rotations
+\section{Definiteness}
+\chapter{Matrix Decomposition}
+\section{LU etc.}
+\section{Schur's Theorem}
+\section{Spectral Theorem}
+\section{Singular Value Decomposition}
+\section{Polar Decomposition}
 \appendix
-\chapter{Determinants as Permutations}
-Hello
-
-
+\chapter{Set Theory}
+Axiom of choice
+\chapter{The Complex Field}
+fundamental theorem of algebra
+\chapter{Block Matrices}
+need to prove result for diagonalization proof
+\chapter{Multilinearity and Sesquilinearity}
+pos definite matrices generate inner products uniquely
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[title={References}]
 
 
 

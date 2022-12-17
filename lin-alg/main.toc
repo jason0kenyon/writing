@@ -1,14 +1,42 @@
-\contentsline {chapter}{Preface}{ii}{chapter*.2}%
+\contentsline {chapter}{Preface}{iii}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Vector Spaces}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}test}{1}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Linear Functions}{2}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Linear Systems of Equations}{3}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Rank}{3}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Form}{8}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Solution}{10}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Eigenspaces}{12}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Orthogonality}{13}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Inner Products}{13}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Projections}{13}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Orthogonal Projection}{13}{section.5.3}%
-\contentsline {chapter}{\numberline {A}Determinants as Permutations}{16}{appendix.A}%
+\contentsline {section}{\numberline {1.1}Spaces and Subspaces}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Linear Independence}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Bases}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Direct Sum}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Tensor Product}{3}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Linear Functions}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Linearity}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Matrices}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Abstract Spaces and Isomorphism}{4}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Linear Systems of Equations}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Rank}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Form}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Solution}{12}{section.3.3}%
+\contentsline {chapter}{\numberline {4}The Determinant}{14}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Permuations}{14}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Cofactor Expansion}{14}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Multilinear and Alternating}{14}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Properties}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Measure}{14}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Eigenspaces}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Characteristic Polynomial}{15}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Diagonalization and Similarity}{15}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Orthogonality}{16}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Inner Products}{16}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Projections}{16}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Orthogonal Projection}{16}{section.6.3}%
+\contentsline {section}{\numberline {6.4}The Adjoint}{18}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Normal and Unitary Operators}{18}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Definiteness}{18}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Matrix Decomposition}{19}{chapter.7}%
+\contentsline {section}{\numberline {7.1}LU etc.}{19}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Schur's Theorem}{19}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Spectral Theorem}{19}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Singular Value Decomposition}{19}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Polar Decomposition}{19}{section.7.5}%
+\contentsline {chapter}{\numberline {A}Set Theory}{20}{appendix.A}%
+\contentsline {chapter}{\numberline {B}The Complex Field}{21}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Block Matrices}{22}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Multilinearity and Sesquilinearity}{23}{appendix.D}%
+\contentsline {chapter}{References}{24}{section*.3}%

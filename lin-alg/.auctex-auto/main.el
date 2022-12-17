@@ -3,6 +3,8 @@
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("book" "oneside" "12pt")))
+   (TeX-add-to-alist 'LaTeX-provided-package-options
+                     '(("biblatex" "backend=biber")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
@@ -16,12 +18,22 @@
     "book"
     "bk12"
     "indentfirst"
+    "biblatex"
     "amsthm"
     "amsmath"
     "amssymb"
     "amsfonts"
     "hyperref")
+   (TeX-add-symbols
+    "rank"
+    "spn"
+    "im")
    (LaTeX-add-labels
+    "defn_vspace"
+    "defn_subspace"
+    "thm_subspace"
+    "defn_linind"
+    "thm_basis"
     "defn_elmop"
     "thm_elmop"
     "defn_rnk"
@@ -48,6 +60,8 @@
     "orthcomp"
     "thm_orthodecomp"
     "cor_orthproj")
+   (LaTeX-add-bibliographies
+    "refs")
    (LaTeX-add-amsthm-newtheorems
     "thm"
     "cor"
