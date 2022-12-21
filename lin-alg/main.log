@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.17)  17 DEC 2022 12:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.17)  21 DEC 2022 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,7 +601,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 ...umberline {6}Orthogonality}{17}{chapter.6}
+l.25 ...umberline {6}Orthogonality}{19}{chapter.6}
                                                   % [1
 
 
@@ -620,23 +620,23 @@ d on input line 49.
 [1
 
 
-]
-Overfull \hbox (5.70692pt too wide) in paragraph at lines 85--85
+] [2]
+Overfull \hbox (5.70692pt too wide) in paragraph at lines 103--103
 []\OT1/cmr/m/n/12 If $\OML/cmm/m/it/12 S \OMS/cmsy/m/n/12 [ f\OML/cmm/m/it/12 v
 \OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 is lin-early de-pen-dent then there ex-ist 
 scalars $\OML/cmm/m/it/12 a[]; a[]; [] a[]; a[] \OMS/cmsy/m/n/12 2
  []
 
-[2] [3] [4]
+[3] [4] [5] [6]
 Chapter 2.
-[5
+[7
 
 ]
 Chapter 3.
-[6
+[8
 
-] [7] [8] [9] [10] [11]
-Overfull \hbox (33.41454pt too wide) in paragraph at lines 351--356
+] [9] [10] [11] [12] [13]
+Overfull \hbox (33.41454pt too wide) in paragraph at lines 406--411
 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and
  $\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 e[]\OT1/cmr/m/n/12 ) = 
 \OML/cmm/m/it/12 Ae[] \OT1/cmr/m/n/12 = []$. There-fore, since $\OML/cmm/m/it/1
@@ -644,45 +644,45 @@ Overfull \hbox (33.41454pt too wide) in paragraph at lines 351--356
 \OML/cmm/m/it/12 Ae[]; [] Ae[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
  []
 
-[12] [13] [14]
+[14] [15] [16]
 Chapter 4.
 
-Overfull \hbox (1.20566pt too wide) in paragraph at lines 421--423
+Overfull \hbox (1.20566pt too wide) in paragraph at lines 476--478
 []\OT1/cmr/m/n/12 demonstrate co-fac-tor ex-pan-sion is un-qiue mul-ti-lin-ear 
 al-ter-nat-ing etc hence
  []
 
-[15
+[17
 
 ]
 Chapter 5.
-[16
+[18
 
 ]
 Chapter 6.
-[17
+[19
 
-] [18] [19]
+] [20] [21]
 Chapter 7.
-[20
-
-]
-Appendix A.
-[21
-
-]
-Appendix B.
 [22
 
 ]
-Appendix C.
+Appendix A.
 [23
 
 ]
-Appendix D.
+Appendix B.
 [24
 
-] [25
+]
+Appendix C.
+[25
+
+]
+Appendix D.
+[26
+
+] [27
 
 
 ] (./main.aux)
@@ -693,13 +693,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16829 strings out of 478238
- 289142 string characters out of 5850455
- 986976 words of memory out of 5000000
- 34737 multiletter control sequences out of 15000+600000
+ 16847 strings out of 478238
+ 289305 string characters out of 5850455
+ 986168 words of memory out of 5000000
+ 34744 multiletter control sequences out of 15000+600000
  482183 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,17n,68p,931b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,17n,68p,932b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publ
@@ -713,10 +713,10 @@ s/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (29 pages, 229900 bytes).
+Output written on main.pdf (31 pages, 237966 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 491 compressed objects within 5 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 580 PDF objects out of 1000 (max. 8388607)
+ 511 compressed objects within 6 object streams
+ 171 named destinations out of 1000 (max. 500000)
  345 words of extra memory for PDF output out of 10000 (max. 10000000)
 

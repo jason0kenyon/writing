@@ -26,6 +26,8 @@
     "hyperref")
    (LaTeX-add-labels
     "defn_vspace"
+    "thm_canc"
+    "thm_alg"
     "defn_subspace"
     "thm_subspace"
     "defn_linind"
@@ -35,6 +37,11 @@
     "thm_uniqbas"
     "thm_basis"
     "cor_bascard"
+    "thm_replace"
+    "thm_dim"
+    "defn_dim"
+    "cor_base"
+    "cor_bassub"
     "defn_elmop"
     "thm_elmop"
     "defn_rnk"
