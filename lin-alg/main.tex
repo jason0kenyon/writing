@@ -248,7 +248,48 @@ Suppose that $f$ is injective and that $f(x)=\bold{0}$ for some $x \in V$. We ha
 \begin{proof}
   Applying, theorem \ref{thm_dimens} and theorem \ref{thm_inj} we have $f$ is injective if and only if $\ker(f)=\{\bold{0}\}$ if and only if $\dim(\ker(f))=0$ if and only if $\dim(\im(f))=\dim(V)=\dim(W)$. And by corollary \ref{cor_bassub} $\im(f)=W$.
 \end{proof}
+\begin{thm}
+\label{thm_uniqmap}
+Let $V$ and $W$ be vector spaces,  $\{v_{1},v_{2}, \dots v_{n}\}$ be a basis for $V$ and $\{w_{1},w_{2}, \dots w_{n}\} \subseteq W$. Then there exists a unique linear map $f: V \to W$ such that $f(v_{i})=w_{i}$.
+\end{thm}
+\begin{proof}
+For $x \in V$ let $x=\sum\limits_{i=1}^{n}a_{i}v_{i}$ and define $f:V \to W$ by \[f(\sum\limits_{i=1}^{n}a_{i}v_{i})=\sum\limits_{i=1}^{n}a_{i}w_{i}.\] Trivially $f$ is linear, and if we let $a_{i}=0$ for all $a_{i}\neq a_{j}$ and $a_{j}=1$, we have $f(v_{j})=w_{j}$. To show uniqueness, suppose that there exists another linear function $g:V \to W$ such that $g(v_{i})=w_{i}$. Then for $x \in V$ we have $x=\sum\limits_{i=1}^{n}a_{i}v_{i}$ and $g(x)=\sum\limits_{i=1}^{n}a_{i}g(v_{i})=\sum\limits_{i=1}^{n}a_{i}w_{i}=f(x)$.
+\end{proof}
 \section{Matrices}
+\begin{defn}
+  \label{defn_orbase}
+Let $V$ be a vector space with a basis $\{v_{1},\dots v_{n}\}$. An ordered basis for $V$ is a permutation of the $n-tuple$ $(v_{1}, \dots v_{n})$.
+\end{defn}
+
+\begin{defn}
+  \label{defn_mat}
+  Let $f: V \to W$ be a linear function between two vector spaces $V$ and $W$ and let $\beta=(v_{1}, \dots v_{n})$ and $\gamma=(w_{1}, \dots w_{m})$ be ordered bases for $V$ and $W$ respectively. Suppose that $f(v_{j})=\sum\limits_{i=1}^{m}a_{ij}w_{i}$. Then we call the $m \times n$ array with the scalar $a_{ij}$ in the $i^{th}$ row and $j^{th}$ column thereof the matrix representation of $f$ with respect to ordered bases $\beta$ and $\gamma$. We denote this by \[[f]_{\beta}^{\gamma} .\] Furthermore, given $x \in V$ with $x=\sum\limits_{i=1}^{n}b_{i}v_{i}$ we call the $n \times 1$ matrix whose $i^{th}$ row is $b_{i}$ the column vector of $x$ with respect to $\beta$. Analogously we may define the row vector of $x$ with respect to $\beta$.
+\end{defn}
+\begin{defn}
+  \label{defn_id}
+  $\delta_{ij}:X \to \{0,1\}$ is the map with \[\delta_{ij}=
+  \begin{cases}
+    1 & i=j \\
+    0 & i\neq j
+  \end{cases}.\]
+$e_{j}$ is the column vector with \[(e_{j})_{ij}=\delta_{ij}.\]
+The tuple $(e_{1}, e_{2}, \dots e_{n})$ is called the standard ordered basis for the vector space $\mathbb{F}^{n}$. The $m \times n$ matrix \[[Id_{V}]_{\beta}^{\beta}\] is called the $n \times n$ identity matrix.
+
+\end{defn}
+Note that the above definition is well founded as one may easily verify that $\mathbb{F}^{n}$ forms a vector space in the natural way, with vector addition and scalar multiplication defined coordinate-wise.
+Additionally, one can easily verify that the $n \times n$ identity matrix is the matrix whose $j^{th}$ column is $e_{j}$.
+\begin{thm}
+  \label{thm_spacelin}
+  Let $\mathcal{L}(V,W)$ be the set of all linear functions between two vector spaces $V$ and $W$ over a field $\mathbb{F}$. For $f,g \in \mathcal{L}(V,W)$ and all $x \in V$ define \[f+g=f(x)+g(x)\] and \[af=af(x)\] for all $a \in \mathbb{F}$. Additionally, define $\bold{0}(x)=\bold{0}$. Then $\mathcal{L}(V,W)$ forms a vector space.
+\end{thm}
+\begin{proof}
+Trivially, for any two linear functions $f,g \in \mathcal{L}$ and scalar $a \in \mathbb{F}$ $af+g$ is a linear function.
+\end{proof}
+\begin{thm}
+  \label{thm_matsum}
+Let $V$ and $W$ be vector spaces with ordered bases $\beta$ and $\gamma$ respectively, and let $f,g \in \mathcal{L}(V,W)$. Then \[[f+g]\beta^{\gamma}=[f]_{\beta}^{\gamma}+[g]_{\beta}^{\gamma}\] and \[[af]_{\beta}^{\gamma}=a[f]_{\beta}^{\gamma}\] where $a[f]_{\beta}^{\gamma}$ denotes multiplication of each entry of $[f]_{\beta}^{\gamma}$ by $a$.
+\end{thm}
+The proof follows from a direct application of the definition of a matrix.
 \section{Abstract Spaces and Isomorphism}
 \section{Dual Space and Transpose}
 \begin{defn}

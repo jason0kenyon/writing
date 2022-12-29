@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.17)  29 DEC 2022 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.17)  29 DEC 2022 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,7 +601,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 ...umberline {5.3}Dimension}{21}{section.5.3}
+l.25 ...umberline {5.3}Dimension}{23}{section.5.3}
                                                   % [1
 
 
@@ -631,12 +631,12 @@ scalars $\OML/cmm/m/it/12 a[]; a[]; [] a[]; a[] \OMS/cmsy/m/n/12 2
 Chapter 2.
 [7
 
-] [8] [9] [10]
+] [8] [9] [10] [11] [12]
 Chapter 3.
-[11
+[13
 
-] [12] [13] [14] [15] [16]
-Overfull \hbox (33.41454pt too wide) in paragraph at lines 491--496
+] [14] [15] [16] [17] [18]
+Overfull \hbox (33.41454pt too wide) in paragraph at lines 532--537
 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and
  $\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 e[]\OT1/cmr/m/n/12 ) = 
 \OML/cmm/m/it/12 Ae[] \OT1/cmr/m/n/12 = []$. There-fore, since $\OML/cmm/m/it/1
@@ -644,50 +644,50 @@ Overfull \hbox (33.41454pt too wide) in paragraph at lines 491--496
 \OML/cmm/m/it/12 Ae[]; [] Ae[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
  []
 
-[17] [18] [19]
+[19] [20] [21]
 Chapter 4.
 
-Overfull \hbox (1.20566pt too wide) in paragraph at lines 561--563
+Overfull \hbox (1.20566pt too wide) in paragraph at lines 602--604
 []\OT1/cmr/m/n/12 demonstrate co-fac-tor ex-pan-sion is un-qiue mul-ti-lin-ear 
 al-ter-nat-ing etc hence
  []
 
-[20
+[22
 
 ]
 Chapter 5.
-[21
+[23
 
 ]
 Chapter 6.
-[22
+[24
 
-] [23] [24]
+] [25] [26]
 Chapter 7.
 
-Overfull \hbox (14.05577pt too wide) in paragraph at lines 638--638
+Overfull \hbox (14.05577pt too wide) in paragraph at lines 679--679
 []\OT1/cmr/bx/n/17.28 Singular Value De-com-po-si-tion and Pseudo-
  []
 
-[25
-
-]
-Appendix A.
-[26
-
-]
-Appendix B.
 [27
 
 ]
-Appendix C.
+Appendix A.
 [28
 
 ]
-Appendix D.
+Appendix B.
 [29
 
-] [30
+]
+Appendix C.
+[30
+
+]
+Appendix D.
+[31
+
+] [32
 
 
 ] (./main.aux)
@@ -698,10 +698,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16877 strings out of 478238
- 289587 string characters out of 5850455
- 987464 words of memory out of 5000000
- 34754 multiletter control sequences out of 15000+600000
+ 16891 strings out of 478238
+ 289729 string characters out of 5850455
+ 987635 words of memory out of 5000000
+ 34760 multiletter control sequences out of 15000+600000
  482183 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,17n,68p,931b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -718,10 +718,10 @@ s/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (34 pages, 248172 bytes).
+Output written on main.pdf (36 pages, 255024 bytes).
 PDF statistics:
- 614 PDF objects out of 1000 (max. 8388607)
- 542 compressed objects within 6 object streams
- 191 named destinations out of 1000 (max. 500000)
+ 630 PDF objects out of 1000 (max. 8388607)
+ 556 compressed objects within 6 object streams
+ 199 named destinations out of 1000 (max. 500000)
  337 words of extra memory for PDF output out of 10000 (max. 10000000)
 
