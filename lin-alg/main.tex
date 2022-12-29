@@ -81,7 +81,13 @@ The elements of $V$ are called vectors, and the elements of $\mathbb{F}$ are cal
 \label{thm_subspace}
   Let $V$ be a vector space with zero element $\bold{0}$. Then a subset $W \subseteq V$
   is a subspace of $V$ if and only if \[\bold{0} \in W\] and \[cx+y \in W\] for all $x,y \in W$ and $c \in \mathbb{F}$.
+
 \end{thm}
+\begin{thm}
+\label{thm_spn}
+Let $S$ be a subset of a vector space $V$. Then $\spn(S)$ is a subspace of $V$, and if any subspace of $V$ contains $S$ must necessarily contain $\spn(S)$
+\end{thm}
+The proof follows directly from the definition of span. The span is defined precisely to generate a subspace in this way. Additionally, it should be clear that any linear combination of vectors in a subspace must be contained in that subspace as this is the defining characteristic of a vector space.
 \section{Linear Independence}
 \begin{defn}
   \label{defn_linind}
@@ -173,14 +179,93 @@ Additionally, any linearly independent subset of $V$ can have at most $n$ vector
   \label{cor_bassub}
 Let $W\subseteq V$ be a subspace. Then $\dim(W)\leq \dim(V)$, and if $\dim(W)=\dim(V)$ then $V=W$.
 \end{cor}
-\section{Direct Sum}
+\section{Direct Sum and Projections}
 yup
-\section{Tensor Product}
-yes
 \chapter{Linear Functions}
 \section{Linearity}
+\begin{defn}
+  \label{defn_lin}
+  A function $f: V \to W$ between two vector spaces $V$ and $W$ is linear if
+  \[f(ax+y)=af(x)+f(y)\] for all $x, y \in V$ and $a \in \mathbb{F}$.
+\end{defn}
+The following properties of linear functions go without saying:
+\begin{enumerate}
+  \item $f(\bold{0})=\bold{0}$
+  \item $f(\sum_{i=1}^{n}a_{i}x_{i})=\sum_{i=1}^{n}a_{i}f(x_{i})$
+\end{enumerate}
+It follows that linear functions are unique up to how they map basis elements.
+\begin{cor}
+  \label{cor_linbas}
+  Let $f:V \to W$ and $g: V \to W$ be linear and $\{v_{1}, \dots, v_{n}\}$ be a basis for $V$. Then $f=g$ if and only if $f(v_{i})=g(v_{i})$.
+\end{cor}
+
+\begin{defn}
+\label{defn_kerim}
+For a linear function $f: V \to W$ we define \[ \im(f)=\{y: f(x)=y \text{ for some } x\in V \} \]
+and
+\[\ker(f)=\{x \in V: f(x)=\bold{0} \}.\]
+\end{defn}
+\begin{thm}
+  \label{thm_kerim}
+Let $f: V \to W$ be a linear function. Then $\ker(f)$ and $\im(f)$ are subspaces of $V$ and $W$ respectively.
+\end{thm}
+\begin{proof}
+  We begin with $\ker(f)$. Surely, $\ker(f) \subseteq V$, so suppose that $x,y \in \ker(f)$ and $a \in \mathbb{F}$. We have \[f(x)=f(y)=\bold{0}\] hence \[af(x)+f(y)=f(ax+y)=\bold{0}\] by linearity. Additionally, we know that $f(\bold{0})=\bold{0}$. Thus, $ax+y, \bold{0} \in \ker(f)$, so by \ref{thm_subspace} we are done.
+
+  Now suppose that $x,y \in \im(f)$ and $a \in \mathbb{F}$ Then for some $x_{0},y_{0} \in V$, $f(x_{0})=x$ and $f(y_{0})=y$. Therefore, \[af(x_{0})+f(y_{0})=f(ax_{0}+y_{0})=ax+y \in \im(f).\] Furthermore, \[f(\bold{0})=\bold{0}\in \im(f).\]
+\end{proof}
+\begin{thm}
+  \label{thm_linspan}
+Let $f:V \to W$ be linear and $\beta=\{v_{1}, v_{2}, \dots v_{n}\}$ be a basis for $V$. Then \[\im(f)=\spn(f(\beta)).\]
+
+\end{thm}
+\begin{proof}
+Let $x \in V$. We have $x=\sum\limits_{i=1}^{n}a_{i}v_{i}$ for $a_{i} \in \mathbb{F}$ and $f(x)=\sum\limits_{i=1}^{n}a_{i}f(v_{i})$. That is, for an arbitrary element $f(x) \in \im(f)$ $f(x) \in \spn(f(\beta))$. The converse containment follows by the same logic.
+\end{proof}
+\begin{thm}[Dimension Theorem]
+  \label{thm_dimens}
+  Let $f: V \to W$ be linear. Then \[\dim(\ker(f)) + \dim(\im(f))=\dim(V).\]
+\end{thm}
+\begin{proof}
+Let $\{v_{1}, \dots v_{k}\}$ be a basis for $\ker(f)$. Then we may extend this basis to a basis $\{v_{1}, v_{2}, \dots v_{k}, v_{k+1}, \dots v_{n}\}$ for $V$. Now, by \ref{thm_linspan} \[\im(f)=\spn(f(\{v_{1}, \dots v_{n}\}))\] but since $\{v_{1}, \dots v_{k}\} \subseteq \ker(f)$ we have \[\im(f)=\spn(f(v_{k+1}, \dots v_{n})).\] To show that this set is, indeed a basis, for $\im(f)$, suppose that \[\sum_{i=k+1}^{n}a_{i}f(v_{i})=\bold{0}.\] The linearity of $f$ yields \[f(\sum_{i=k+1}^{n}a_{i}v_{i})=\bold{0}\] which is to say that \[\sum_{i=k+1}^{n}a_{i}v_{i} \in \ker(f).\] Thus we may represent this vector in the basis of $\ker(f)$. We have \[\sum_{i=k+1}^{n}a_{i}v_{i}- \sum_{i=1}^{k}b_{i}v_{i}=\bold{0}\] which implies that $a_{i}=0$ because we know that $\{v_{1}, \dots v_{n}\}$ is a basis for $V$. Therefore $\dim(\im(f))=\dim(V)-\dim(\ker(f))$.
+\end{proof}
+\begin{thm}
+  \label{thm_inj}
+Let $f: V \to W$ be linear. Then $f$ is injective if and only if $\ker(f)=\{\bold{0}\}$.
+\end{thm}
+\begin{proof}
+Suppose that $f$ is injective and that $f(x)=\bold{0}$ for some $x \in V$. We have that $f(x)=f(\bold{0})=\bold{0}$ so $x=\bold{0}$. Conversely, suppose $\ker(f)=\{\bold{0}\}$. Then if $f(x)=f(y)$ we know that $f(x-y)=\bold{0}$, and hence $x-y=\bold{0}$.
+\end{proof}
+\begin{thm}
+  \label{thm_injsur}
+  Let $f: V \to W$ be linear. If $\dim(V)=\dim(W)$ then the following statements are equivalent:
+  \begin{enumerate}
+    \item $f$ is injective
+    \item $f$ is surjective
+    \item $\dim(\im(f))=\dim(V)$
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  Applying, theorem \ref{thm_dimens} and theorem \ref{thm_inj} we have $f$ is injective if and only if $\ker(f)=\{\bold{0}\}$ if and only if $\dim(\ker(f))=0$ if and only if $\dim(\im(f))=\dim(V)=\dim(W)$. And by corollary \ref{cor_bassub} $\im(f)=W$.
+\end{proof}
 \section{Matrices}
 \section{Abstract Spaces and Isomorphism}
+\section{Dual Space and Transpose}
+\begin{defn}
+  Let $V$ be a vector space over a field $\mathbb{F}$. Then the dual space $V^{*}$ of $V$ is defined as $\mathcal{L}(V,\mathbb{F})$.
+\end{defn}
+\begin{defn}
+Let $\beta=\{v_{1}, \dots v_{n}\}$ be a basis for a vector space $V$.
+The map $\alpha_{i}: \mathbb{F}^{n} \to \mathbb{F}$ is defined by \[\alpha_{j}(\sum_{i}a_{i}v_{i})=v_{j}.\]
+\end{defn}
+\begin{thm}
+  \label{thm_dualbase}
+  The functions $\alpha_{1}, \dots \alpha_{n}$ form basis for $V^{*}$.
+\end{thm}
+\begin{defn}
+  \label{defn_transp}
+Let $A: V \to W$ be a linear function between vector spaces $V$ and $W$. Then the transpose of $A$ $A^{T}:W^{*}\to V^{*}$ is the linear map between the dual spaces of $W$ and $V$, respectively, defined by \[A^{T}(g)=g(A)\] for all $g \in W^{*}$.
+\end{defn}
 \chapter{Linear Systems of Equations}
 \section{Rank}
 \begin{defn}
@@ -370,7 +455,7 @@ We now apply the fruits of our investigation into vector spaces and linearity to
   If $b=\bold{0}$, the linear system is said to be homogenous.
 \end{defn}
 \begin{defn}
-\label{def_soln}
+
 A solution to a linear system is a vector $s \in \mathbb{F}^{n}$ such that $As=b$
 \end{defn}
 
@@ -482,10 +567,11 @@ need invertible iff det nonzero
 \chapter{Eigenspaces}
 \section{Characteristic Polynomial}
 \section{Diagonalization and Similarity}
+\section{Dimension}
 \chapter{Orthogonality}
 \section{Inner Products}
 Hello
-\section{Projections}
+\section{Orthogonal Projections}
 \begin{defn}
 \label{defn_prj}
 Let $V=W_{1}\oplus W_{2}$. A projection of $V$ on $W_{1}$ along $W_{2}$ is a linear function $T:V \to V$ such that for any $x \in V$ where $x=x_{1}+x_{2}$ $x_{1} \in W_{1}$ and $x_{2} \in W_{2}$ $T(x)=x_{1}$.
@@ -547,11 +633,9 @@ self adjoint iff orthogonal projection
 all unitary operators are rotations
 \section{Definiteness}
 \chapter{Matrix Decomposition}
-\section{LU etc.}
 \section{Schur's Theorem}
 \section{Spectral Theorem}
-\section{Singular Value Decomposition}
-\section{Polar Decomposition}
+\section{Singular Value Decomposition and Pseudo-inverse}
 \appendix
 \chapter{Set Theory}
 Axiom of choice
