@@ -265,6 +265,22 @@ Let $V$ be a vector space with a basis $\{v_{1},\dots v_{n}\}$. An ordered basis
   \label{defn_mat}
   Let $f: V \to W$ be a linear function between two vector spaces $V$ and $W$ and let $\beta=(v_{1}, \dots v_{n})$ and $\gamma=(w_{1}, \dots w_{m})$ be ordered bases for $V$ and $W$ respectively. Suppose that $f(v_{j})=\sum\limits_{i=1}^{m}a_{ij}w_{i}$. Then we call the $m \times n$ array with the scalar $a_{ij}$ in the $i^{th}$ row and $j^{th}$ column thereof the matrix representation of $f$ with respect to ordered bases $\beta$ and $\gamma$. We denote this by \[[f]_{\beta}^{\gamma} .\] Furthermore, given $x \in V$ with $x=\sum\limits_{i=1}^{n}b_{i}v_{i}$ we call the $n \times 1$ matrix whose $i^{th}$ row is $b_{i}$ the column vector of $x$ with respect to $\beta$. Analogously we may define the row vector of $x$ with respect to $\beta$.
 \end{defn}
+
+\begin{thm}
+  \label{thm_matt}
+  Let $A$ be an $m \times n$ matrix $B$ and $C$ be $n \times p$ matrices and $D$ and $E$ be $q \times m$ matrices. Then
+  \begin{enumerate}
+    \item $A(B+C)=AB+AC$ and $(D+E)A=DA+EA$
+    \item $a(AB)=(aA)B=A(aB)$
+    \item$I_{m}A=A=AI_{n}$
+  \end{enumerate}
+\end{thm}
+The proof follows from a direct application of the definition \ref{defn_mat}.
+\begin{thm}
+  \label{mat_assc}
+  Let $A$ $B$ and $C$ be matrices such that $A(BC)$. Then $AB(C)$ is defined and \[A(BC)=AB(C).\]
+\end{thm}
+The proof follows by a direct application of matrix multiplication. Analogous results hold for linear functions, all of which follow from the definition of a linear function.
 \begin{defn}
   \label{defn_id}
   $\delta_{ij}:X \to \{0,1\}$ is the map with \[\delta_{ij}=
@@ -287,9 +303,78 @@ Trivially, for any two linear functions $f,g \in \mathcal{L}$ and scalar $a \in 
 \end{proof}
 \begin{thm}
   \label{thm_matsum}
-Let $V$ and $W$ be vector spaces with ordered bases $\beta$ and $\gamma$ respectively, and let $f,g \in \mathcal{L}(V,W)$. Then \[[f+g]\beta^{\gamma}=[f]_{\beta}^{\gamma}+[g]_{\beta}^{\gamma}\] and \[[af]_{\beta}^{\gamma}=a[f]_{\beta}^{\gamma}\] where $a[f]_{\beta}^{\gamma}$ denotes multiplication of each entry of $[f]_{\beta}^{\gamma}$ by $a$.
+  Let $V$ and $W$ be vector spaces with ordered bases $\beta$ and $\gamma$ respectively, and let $f,g \in \mathcal{L}(V,W)$. Then the following hold:
+  \begin{enumerate}
+          \item $[f+g]_{\beta}^{\gamma}=[f]_{\beta}^{\gamma}+[g]_{\beta}^{\gamma}$
+          \item $[af]_{\beta}^{\gamma}=a[f]_{\beta}^{\gamma}$
+  \end{enumerate}
 \end{thm}
 The proof follows from a direct application of the definition of a matrix.
+\begin{thm}
+  \label{thm_matcomp}
+  Let $f:V \to W$ $g:Z \to V$ and $h:Z \to V$ be linear functions and $V,W, Z$ be vector spaces. Then the following hold:
+  \begin{enumerate}
+    \item $f(g+h)=f(g)+f(h)$
+    \item If $Z=W$ then $(g+h)(f)=g(f)+h(f)$
+    \item $a(f(g))=af(g)=f(ag)$ for all $a \in \mathbb{F}$
+  \end{enumerate}
+\end{thm}
+The proof follows directly from linearity.
+\begin{defn}
+  \label{defn_matprod}
+  Let $A$ be an $m \times n$ matrix and $B$ be an $n \times p$ matrix, then the product of $A$ and $B$ denoted $AB$ is the $n \times p$ matrix defined by
+  \[(AB)_{ij}=\sum_{k=1}^{n}A_{ik}B_{kj}.\]
+\end{defn}
+\begin{thm}
+  \label{thm_matprod}
+  Let $f: V \to W$ be a linear function between two vector spaces $V$ and $W$ and $g: W \to Z$ be a linear function between $W$ and a vector space $Z$. Let $\alpha \beta \gamma$ be ordered bases for $V W Z$ respectively. Then
+  \[[f(g)]_{\alpha}^{\gamma}=[f]_{\alpha}^{\beta}[g]_{\beta}^{\gamma}.\]
+\end{thm}
+\begin{proof}
+  Let $\alpha=(v_{1}, \dots v_{n})$, $\beta=(w_{1}, \dots w_{m})$ and $\gamma=(z_{1}, \dots z_{p})$. We have \[f(g(v_{j}))=f(\sum_{k=1}^{m}B_{kj}w_{k})=\sum_{k=1}^{m}B_{kj}f(w_{k})=\sum_{k=1}^{m}B_{kj}(\sum_{i=1}^{p}A_{ik}z_{i})=\sum_{i=1}^{p}(\sum_{k=1}^{m}A_{ik}B_{kj})z_{i}\]
+\end{proof}
+\begin{cor}
+  \label{cor_colvec}
+  \[[f(x)]_{\gamma}=[f]_{\beta}^{\gamma}[x]_{\beta}\] hence \[\im(f)=\im([f]_{\beta}^{\gamma}[\cdot]_{\beta})\]
+\end{cor}
+
+\begin{cor}
+  \label{cor_leftmult}
+  Let $A$ be an $m \times n$ matrix over $\mathbb{F}$.
+The mapping $L_{A}: \mathbb{F}^{n}\to \mathbb{F}^{m}$ defined by $A \to Ax$ for $x \in \mathbb{F}^{n}$ is linear and \[[L_{A}]_{e}^{e'}=A\] where $e$ and $e'$ are the standard ordered bases for $\mathbb{F}^{n}$ and $\mathbb{F}^{m}$ respectively.
+\end{cor}
+\begin{proof}
+  The linearity of $L_{A}$ follows from theorem \ref{thm_matt} The $j^{th}$ column of $[L_{A}]_{e}^{e'}$ is $L_{A}(e_{j})=Ae_{j}$ which is the $j^{th}$ column of $A$.
+\end{proof}
+\begin{thm}
+  \label{thm_matiso}
+  Let $V$ and $W$ be vector spaces over $\mathbb{F}$ with dimension $n$ and $m$ respectively. Let $\beta$ and $\gamma$ be ordered bases for $V$ and $W$ respectively. Then there exists an isomorphism between the space $\mathcal{L}(V,W)$ and the space $M_{m \times n}(\mathbb{F})$ of $m \times n$ matrices with entries in $\mathbb{F}$.
+\end{thm}
+\begin{proof}
+  It should be clear that $M_{m \times n}(\mathbb{F})$ is in fact a vector space itself. This space is defined analogously to $\mathbb{F}^{m}$ for an element thereof is nothing but a column vector, and hence a matrix. The \emph{standard} basis for this space is also defined in a similar way, with $1$ in a single entry and $0$ everywhere else.
+  By theorem \ref{thm_matsum} this map is linear. By theorem \ref{thm_uniqmap} there exists a unique linear function $T: V \to W$ with $T(v_{i})=w_{i}$ for all $1 \leq i \leq n$. Therefore, there is a unique map $T':V \to W$ such that \[T(v_{i})=\sum_{i=1}^{m}A_{ij}w_{i}.\] That is to say that $[T]_{\beta}^{\gamma}=A$ for some $m \times n$ matrix $A$.
+\end{proof}
+It follows that we can uniquely associate arrays with matrices, and matrices with linear functions. Thus, we may phrase all of our results on linear functions in terms of multiplying arrays of numbers.
+\begin{cor}
+  \label{thm_matinv}
+Let $f: V \to W$ be linear. Then $[f]_{\beta}^{\gamma}$ is invertible if and only if $f$ is invertible. And $([f]_{\beta}^{\gamma})^{-1}=[f^{-1}]_{\gamma}^{\beta}$
+\end{cor}
+\begin{proof}
+  If $[f]_{\beta}^{\gamma}$ is invertible then $[f]_{\beta}^{\gamma}A=A[f]_{\beta}^{\gamma}=I_{n}$ And for some linear function $S$ $B=[S]_{\gamma}^{\beta}$ so
+  \[[f]_{\beta}^{\gamma}[S]_{\gamma}^{\beta}=[f(s)]_{\gamma}=I_{n}=[Id_{W}]_{\gamma}\] and \[[S]_{\gamma}^{\beta}[f]_{\beta}^{\gamma}=[S(f)]_{\beta}=I_{n}=[Id_{V}]_{\beta}.\]
+  That is, $f(S)=Id_{W}$ and $S(f)=Id_{V}$, whence $S=f^{-1}$.
+
+  Conversely if $f$ is invertible, then \[f^{-1}(f)=Id_{V}\] so \[[f^{-1}(f)]_{\beta}=[Id_{V}]_{\beta}=I_{n}=[f^{-1}]_{\gamma}^{\beta}[f]_{\beta}^{\gamma}.\]Similarly, \[[f]_{\beta}^{\gamma}[f^{-1}]_{\gamma}^{\beta}=I_{n}.\]
+\end{proof}
+\begin{thm}
+  \label{thm_iso}
+  Let $V$ and $W$ be vector spaces over a field. Then $V$ is isomorphic to $W$ if and only if $\dim(V)=\dim(W)$.
+\end{thm}
+\begin{proof}
+  If $T:V \to W$ is an isomorphism then $T$ is, by definition, bijective and linear, and hence by theorem \ref{thm_dimens}
+  \[\dim(\im(T))=\dim(W)=\dim(V).\] Conversely, if $\dim(V)=\dim(W)$ and $\beta=\{v_{1}, \dots v_{n}\}$ and $\gamma =\{w_{1}, \dots w_{n}\}$. By theorem \ref{thm_uniqmap} there is a unique linear map such that $T(v_{i})=w_{i}$. Furthermore by theorem \ref{thm_spn} \[\im(T)=\spn(T(\beta))=\spn(\gamma)=W.\]
+\end{proof}
+Therefore, we have shown that an arbitrary vector space is isomorphic to some $\mathbb{F}^{n}$, the cannonical, most intuitive vector space there is, hence demystifying the idea of an abstract vector space. This is a common theme in linear algebra.
 \section{Abstract Spaces and Isomorphism}
 \section{Dual Space and Transpose}
 \begin{defn}
@@ -335,7 +420,7 @@ The rank of a matrix $A$ is defined as the rank of the linear function $L_{A}=Ax
 \end{thm}
 \begin{proof}
   Consider the map $\phi_{\beta}:V \to \mathbb{F}^{n}$. That is, the function mapping a vector to its representation in coordinates. This is linear by definition and invertible as we know that any basis represents a vector uniquely as a linear combination of its elements. We have
-  \[L_{A}(\mathbb{F}^{n})=L_{A}\phi_{\beta}(V)=\phi_{\gamma}(T(V)).\] It follows that \[\dim(\im(L_{A}))=\dim(\im(T))\] because $\phi_{\gamma}$ is an isomorphism.
+  \[L_{A}(\mathbb{F}^{n})=L_{A}\phi_{\beta}(V)=\phi_{\gamma}(T(V)).\] It follows  that \[\dim(\im(L_{A}))=\dim(\im(T))\] because $\phi_{\gamma}$ is an isomorphism.
 \end{proof}
 \begin{thm}
 \label{thm_rnkprp}

@@ -7,35 +7,35 @@
 \contentsline {chapter}{\numberline {2}Linear Functions}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Linearity}{7}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Matrices}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Abstract Spaces and Isomorphism}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Dual Space and Transpose}{12}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Linear Systems of Equations}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Rank}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Form}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Solution}{20}{section.3.3}%
-\contentsline {chapter}{\numberline {4}The Determinant}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Permuations}{22}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Cofactor Expansion}{22}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Multilinear and Alternating}{22}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Properties}{22}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Measure}{22}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Eigenspaces}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Characteristic Polynomial}{23}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Diagonalization and Similarity}{23}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Dimension}{23}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Orthogonality}{24}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Inner Products}{24}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Orthogonal Projections}{24}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Orthogonal Projection}{24}{section.6.3}%
-\contentsline {section}{\numberline {6.4}The Adjoint}{26}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Normal and Unitary Operators}{26}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Definiteness}{26}{section.6.6}%
-\contentsline {chapter}{\numberline {7}Matrix Decomposition}{27}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Schur's Theorem}{27}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Spectral Theorem}{27}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Singular Value Decomposition and Pseudo-inverse}{27}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Set Theory}{28}{appendix.A}%
-\contentsline {chapter}{\numberline {B}The Complex Field}{29}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Block Matrices}{30}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Multilinearity and Sesquilinearity}{31}{appendix.D}%
-\contentsline {chapter}{References}{32}{section*.3}%
+\contentsline {section}{\numberline {2.3}Abstract Spaces and Isomorphism}{15}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Dual Space and Transpose}{15}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Linear Systems of Equations}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Rank}{16}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Form}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Solution}{23}{section.3.3}%
+\contentsline {chapter}{\numberline {4}The Determinant}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Permuations}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Cofactor Expansion}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Multilinear and Alternating}{25}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Properties}{25}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Measure}{25}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Eigenspaces}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Characteristic Polynomial}{26}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Diagonalization and Similarity}{26}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Dimension}{26}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Orthogonality}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Inner Products}{27}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Orthogonal Projections}{27}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Orthogonal Projection}{27}{section.6.3}%
+\contentsline {section}{\numberline {6.4}The Adjoint}{29}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Normal and Unitary Operators}{29}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Definiteness}{29}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Matrix Decomposition}{30}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Schur's Theorem}{30}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Spectral Theorem}{30}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Singular Value Decomposition and Pseudo-inverse}{30}{section.7.3}%
+\contentsline {chapter}{\numberline {A}Set Theory}{31}{appendix.A}%
+\contentsline {chapter}{\numberline {B}The Complex Field}{32}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Block Matrices}{33}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Multilinearity and Sesquilinearity}{34}{appendix.D}%
+\contentsline {chapter}{References}{35}{section*.3}%
