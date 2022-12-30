@@ -415,12 +415,19 @@ The proof is a tedious verification of cases; the elementary matrices are define
 The rank of a matrix $A$ is defined as the rank of the linear function $L_{A}=Ax$
 \end{defn}
 \begin{thm}
+  \label{thm_subiso}
+Let $T: V \to W$ be an isomorphism and $V_{0} \subseteq V$ be a subspace of $V$. Then $T(V_{0})\subseteq W$ is a subspace of $W$. Moreover $\dim(V_{0})=\dim(T(V_{0}))$
+\end{thm}
+\begin{proof}
+  If $V_{0}\subseteq V$ is a subspace of $V$ then $T(V_{0})$ is a subspace of $W$ because $T$ is linear. Further, we may consider the map $T':V_{0} \subseteq T(V_{0})$ such that $T'(x)=T(x)$ for all $x \in V_{0}$. By theorem \ref{thm_dimens} we have \[\dim(\ker(T'))+\dim(\im(T'))=0+ \dim(T(V_{0}))=\dim(V_{0}).\]
+\end{proof}
+\begin{thm}
 \label{rnkeq}
   Let $T: V \to W$ be linear and $A=[T]_{\beta}^{\gamma}$. Then $\rank(T)=\rank(L_{A})$
 \end{thm}
 \begin{proof}
   Consider the map $\phi_{\beta}:V \to \mathbb{F}^{n}$. That is, the function mapping a vector to its representation in coordinates. This is linear by definition and invertible as we know that any basis represents a vector uniquely as a linear combination of its elements. We have
-  \[L_{A}(\mathbb{F}^{n})=L_{A}\phi_{\beta}(V)=\phi_{\gamma}(T(V)).\] It follows  that \[\dim(\im(L_{A}))=\dim(\im(T))\] because $\phi_{\gamma}$ is an isomorphism.
+  \[L_{A}(\mathbb{F}^{n})=L_{A}\phi_{\beta}(V)=\phi_{\gamma}(T(V)).\] It follows, by theorem \ref{thm_subiso},  that \[\dim(\im(L_{A}))=\dim(\im(T))\] because $\phi_{\gamma}$ is an isomorphism.
 \end{proof}
 \begin{thm}
 \label{thm_rnkprp}
