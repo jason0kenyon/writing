@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.17)  30 DEC 2022 18:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.17)  2 JAN 2023 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,7 +601,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...umberline {6}Orthogonality}{26}{chapter.6}
+l.24 ...umberline {6}Orthogonality}{27}{chapter.6}
                                                   % [1
 
 
@@ -627,12 +627,21 @@ Overfull \hbox (5.70692pt too wide) in paragraph at lines 109--109
 scalars $\OML/cmm/m/it/12 a[]; a[]; [] a[]; a[] \OMS/cmsy/m/n/12 2
  []
 
-[3] [4] [5] [6]
-Chapter 2.
-[7
+[3] [4] [5]
+Overfull \hbox (47.43362pt too wide) in paragraph at lines 189--190
+\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 v[]; [] v[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/it
+/12 is a ba-sis for $\OML/cmm/m/it/12 W[]$ \OT1/cmr/m/it/12 and $\OMS/cmsy/m/n/
+12 f\OML/cmm/m/it/12 w[]; [] w[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/it/12 is a ba-si
+s for $\OML/cmm/m/it/12 W[]$ \OT1/cmr/m/it/12 then $\OMS/cmsy/m/n/12 f\OML/cmm/
+m/it/12 v[]; [] v[]; w[]; [] w[]\OMS/cmsy/m/n/12 g$
+ []
 
-] [8] [9] [10] [11]
-Overfull \hbox (29.72725pt too wide) detected at line 309
+[6] [7]
+Chapter 2.
+[8
+
+] [9] [10] [11] [12]
+Overfull \hbox (29.72725pt too wide) detected at line 342
 \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/
 m/it/12 v[]\OT1/cmr/m/n/12 )) = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 ([] \OML/cmm/
 m/it/12 B[]w[]\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 B[]f\OT1/cmr/m/n/12 (\OML
@@ -641,12 +650,12 @@ m/it/12 B[]w[]\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 B[]f\OT1/cmr/m/n/12 (\OML
 r/m/n/12 )\OML/cmm/m/it/12 z[]
  []
 
-[12] [13] [14]
+[13] [14] [15]
 Chapter 3.
-[15
+[16
 
-] [16] [17] [18] [19] [20]
-Overfull \hbox (33.41454pt too wide) in paragraph at lines 594--599
+] [17] [18] [19] [20] [21]
+Overfull \hbox (33.41454pt too wide) in paragraph at lines 627--632
 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and
  $\OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 e[]\OT1/cmr/m/n/12 ) = 
 \OML/cmm/m/it/12 Ae[] \OT1/cmr/m/n/12 = []$. There-fore, since $\OML/cmm/m/it/1
@@ -654,64 +663,64 @@ Overfull \hbox (33.41454pt too wide) in paragraph at lines 594--599
 \OML/cmm/m/it/12 Ae[]; [] Ae[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 ,
  []
 
-[21] [22] [23]
+[22] [23] [24]
 Chapter 4.
 
-Overfull \hbox (1.20566pt too wide) in paragraph at lines 664--666
+Overfull \hbox (1.20566pt too wide) in paragraph at lines 697--699
 []\OT1/cmr/m/n/12 demonstrate co-fac-tor ex-pan-sion is un-qiue mul-ti-lin-ear 
 al-ter-nat-ing etc hence
  []
 
-[24
-
-]
-Chapter 5.
 [25
 
 ]
-Chapter 6.
+Chapter 5.
 [26
 
-] [27] [28]
+]
+Chapter 6.
+[27
+
+] [28] [29]
 Chapter 7.
 
-Overfull \hbox (14.05577pt too wide) in paragraph at lines 741--741
+Overfull \hbox (14.05577pt too wide) in paragraph at lines 788--788
 []\OT1/cmr/bx/n/17.28 Singular Value De-com-po-si-tion and Pseudo-
  []
 
-[29
-
-]
-Appendix A.
 [30
 
 ]
-Appendix B.
+Appendix A.
 [31
 
 ]
-Appendix C.
+Appendix B.
 [32
 
 ]
-Appendix D.
+Appendix C.
 [33
 
-] [34
+]
+Appendix D.
+[34
+
+] [35
 
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 58A64A302658B5692D58B3BC9D71D928;5358.
+(rerunfilecheck)             Checksum: B423C5D295B3956D863D4EF35C8F6CC3;5195.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16906 strings out of 478238
- 289852 string characters out of 5850455
- 986831 words of memory out of 5000000
- 34765 multiletter control sequences out of 15000+600000
+ 16925 strings out of 478238
+ 290094 string characters out of 5850455
+ 986914 words of memory out of 5000000
+ 34767 multiletter control sequences out of 15000+600000
  482183 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,17n,68p,931b,1429s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -728,10 +737,10 @@ s/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (38 pages, 262946 bytes).
+Output written on main.pdf (39 pages, 267798 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 575 compressed objects within 6 object streams
- 209 named destinations out of 1000 (max. 500000)
- 321 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 673 PDF objects out of 1000 (max. 8388607)
+ 596 compressed objects within 6 object streams
+ 226 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

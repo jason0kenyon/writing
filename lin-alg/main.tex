@@ -180,7 +180,40 @@ Additionally, any linearly independent subset of $V$ can have at most $n$ vector
 Let $W\subseteq V$ be a subspace. Then $\dim(W)\leq \dim(V)$, and if $\dim(W)=\dim(V)$ then $V=W$.
 \end{cor}
 \section{Direct Sum and Projections}
-yup
+\begin{defn}
+  \label{defn_dirsum}
+Let $V$ be a vector space with subspaces $W_{1}$ and $W_{2}$ such that $W_{1}\cap W_{2}=\{\bold{0}\}$. Then we call the direct sum of $W_{1}$ and $W_{2}$ \[W_{1}\oplus W_{2}= \{w_{1}+w_{2}: w_{1} \in W_{1} \text{ and } w_{2} \in W_{2}\}.\]
+\end{defn}
+\begin{thm}
+  \label{thm_dirsum}
+  Let $V=W_{1} \oplus W_{2}$ for some subspaces $W_{1}, W_{2}$ of $V$. If $\{v_{1}, \dots v_{k}\}$ is a basis for $W_{1}$ and $\{w_{1}, \dots w_{l}\}$ is  a basis for $W_{2}$ then $\{v_{1}, \dots v_{k}, w_{1}, \dots w_{l}\}$ is a basis for $V$. Hence $\dim(V)=\dim(W_{1})+\dim(W_{2})$.
+\end{thm}
+\begin{proof}
+  Let $x \in V$ and $x=x_{1}+x_{2}$ for $x_{1} \in W_{1}$ and $x_{2} \in W_{2}$. Then \[x=a_{1}v_{1}+ \cdots a_{k}v_{k}+b_{1}w_{1}+ \cdots b_{l}w_{l}\]
+  If $x=\bold{0}$ then it must be that $x_{1}=-x_{2}$. Hence $x_{1}=x_{2}=\bold{0}$ for otherwise $-x_{2} \in W_{1}$ and $-x_{2}\notin W_{2}$, which would contradict our assumption that $W_{2}$ is a subspace of $V$. Moreover, since $\{v_{1}, \dots v_{k}\}$ and $\{w_{1}, \dots w_{l}\}$ are both linearly indpendent, it must be that $a_{i}=0$ for all $1\le i \leq k$ and $b_{i}=0$ for all $1 \leq i \leq l $.
+\end{proof}
+\begin{defn}
+\label{defn_prj}
+ If $V=W_{1}\oplus W_{2}$ then a projection of $V$ on $W_{1}$ along $W_{2}$ is a linear function $T:V \to V$ such that for any $x \in V$ where $x=x_{1}+x_{2}$ $x_{1} \in W_{1}$ and $x_{2} \in W_{2}$ $T(x)=x_{1}$.
+\end{defn}
+\begin{thm}
+\label{thm_projiff}
+A linear function $T:V \to V$ is a projection of $V$ on $W_{1}=\{x : T(x)=x \}$ along $\ker{T}$ if and only if $T=T^{2}$.
+\end{thm}
+\begin{proof}
+  We have, for all $x \in V$ $x=x_{1}+x_{2}$ where $x_{1} \in W_{1}$ and $x_{2} \in \ker(T)$ so that
+  \begin{align}
+    TT(x)&=TT(x_{1}+x_{2}) \\
+         &=Tx_{1} \\
+         &= x_{1} \\
+    &= Tx
+  \end{align}
+  Conversely, if $T^{2}=T$, we know that for all $x \in V$ $Tx=Tx+(x-Tx)$. This implies that $T(Tx)=Tx+\bold{0}$. Since $T(Tx)=Tx$, $Tx \in \{y: Ty=y\}$. Furthermore, If $Tx=x$ and $Tx=\bold{0}$ for some $x \in V$ then $x= \bold{0}$. That is \[\{y:Ty=y\}\cap \ker T=\{\bold{0}\}\] hence
+  $V= \{y: Ty=y\} \oplus \ker T$ and so for any $x \in V$ we have $x=x_{1}+x_{2}$ for some $x_{1}\in \{y:Ty=y\}$ and $x_{2} \in \ker(T)$
+  whence
+  \[Tx=x_{1}\]
+\end{proof}
+
 \chapter{Linear Functions}
 \section{Linearity}
 \begin{defn}
@@ -674,24 +707,41 @@ need invertible iff det nonzero
 \chapter{Orthogonality}
 \section{Inner Products}
 Hello
+
+\section{The Adjoint}
 \section{Orthogonal Projections}
-\begin{defn}
-\label{defn_prj}
-Let $V=W_{1}\oplus W_{2}$. A projection of $V$ on $W_{1}$ along $W_{2}$ is a linear function $T:V \to V$ such that for any $x \in V$ where $x=x_{1}+x_{2}$ $x_{1} \in W_{1}$ and $x_{2} \in W_{2}$ $T(x)=x_{1}$.
-\end{defn}
-\begin{thm}
-\label{thm_projiff}
-A linear function $T:V \to V$ is a projection of $V$ on $W_{1}=\{x : T(x)=x \}$ along $\ker{T}$ if and only if $T=T^{2}$.
-\end{thm}
-\begin{proof}
-  If $T$ is a projection, then clearly $T=T^{2}$ by definition. Conversely, for $x \in V$ we know that $x=Tx+(x-Tx)$. But by assumption
-  $T^{2}x=Tx$, which means $T(Tx-x)=T(x-Tx)\bold{0}$. That is, $x-Tx \in \ker(T)$. Hence, $V=\{x \in V: Tx=x\} \oplus \ker(T)$ as $Tx=x$ and $Tx=0$  implies $x=0$($x \in \ker(T)$). And so for $x \in V$, we have $x=y+z$ for $y \in \{x \in V: Tx=x\}$ and $z\in \ker(T)$, and so $Tx=Ty+Tz=y$.
-\end{proof}
-\section{Orthogonal Projection}
 \begin{defn}
 \label{orthcomp}
 Let $W \subseteq V$. The orthogonal complement of $W$ is defined as $W^{\perp}=\{v \in V : \langle v, w \rangle=0 \text{ for all } w \in W\}$.
 \end{defn}
+
+\begin{thm}
+\label{thm_orthodecomp}
+  Let $W \subseteq V$.Then for any $x \in V$ there exist unique vectors $x_{w} \in W$ and $x^{\perp} \in W^{\perp}$ such that $x=x_{W}+x^{\perp}$. In other words $V=W \oplus W^{\perp}$.
+\end{thm}
+\begin{proof}
+  Let $\{w_{1}, \dots w_{n}\}$ be an orthonormal basis for $W$ $x_{W}=\sum_{i=1}^{n}\langle x, w_{i} \rangle w_{i}$ and $x^{\perp}=x-x_{W}$. Certainly $x_{W} \in W$ and $x=x_{W}+x^{\perp}$. To show that $x^{\perp} \in W^{\perp}$ we have
+  \begin{align}
+    \langle x^{\perp},w_{j}\rangle &= \langle x-x_{W}, w_{j} \rangle \\
+                   &= \langle x- \sum_{i=1}^{n} \langle x, w_{i} \rangle w_{i}, w_{j} \rangle \\
+                   &= \langle x, w_{j} \rangle - \sum_{i=1}^{n}\langle x, w_{i} \rangle \langle w_{i}, w_{j} \rangle \\
+    &= 0
+  \end{align}
+  For uniqueness, suppose that $x=y+z$ for $y \in W$ and $z \in W^{\perp}$. Then $x_{W}+x^{\perp}=y+z$ and so \[x_{W}-y=z-x^{\perp} \in W \cap W^{\perp}.\]
+  But $W \cap W^{\perp}=\{\bold{0}\}$ so $x_{W}=y$ and $x^{\perp}=z$.
+\end{proof}
+\begin{cor}
+  \label{cor_min}
+For all $y \in W$ \[||x-x_{W}||\leq ||x-y||\]
+\end{cor}
+\begin{proof}
+\begin{align}
+  ||x-y||^{2} &= ||x_{W}+x^{\perp}-y||^{2} \\
+              &=||(x_{W}-y)+x^{\perp}||^{2} \\
+              &= ||x_{W}-y||^{2}+||x^{\perp}||^{2} \\
+              &\geq ||x^{\perp}||^{2} = ||x-x_{W}||.
+\end{align}
+\end{proof}
 \begin{thm}
 The following statments are true
 \begin{enumerate}
@@ -701,36 +751,33 @@ The following statments are true
 \end{thm}
 \begin{proof}
   Firstly, note that $ \langle \bold{0}, w\rangle=\bold{0}$ for all $w \in W$, so $\bold{0} \in W^{\perp}$. Furthermore, if $\langle w, c\rangle=0$ for some $w \in W$ then
-  $\langle aw, c \rangle = a \langle w, c \rangle =0 $ by linearity. Similarly, if $\langle w, a \rangle=0  $ and $\langle b, c \rangle=0  $ then $\langle w, a \rangle+ \langle b, c \rangle= \langle w+b, c \rangle =0$. Secondly,
-\end{proof}
-\begin{thm}
-\label{thm_orthodecomp}
-  Let $W \subseteq V$.Then for any $x \in V$ there exist unique vectors $y \in W$ and $z \in W^{\perp}$ such that $x=y+z$. Furthermore, for all $w \in W$
-s  \[ ||y-x|| \leq ||w-x||\] and we call $y$ the orthogonal projection of $z$ on $w$, denoted $x_{w}$. Similarly, $z$ is denoted $x_{\perp}$.
-\end{thm}
-\begin{proof}
-trivial
+  $\langle aw, c \rangle = a \langle w, c \rangle =0 $ by linearity. Similarly, if $\langle w, a \rangle=0  $ and $\langle b, c \rangle=0  $ then $\langle w, a \rangle+ \langle b, c \rangle= \langle w+b, c \rangle =0$. Secondly, $V= W^{\perp} \oplus W$ implies that $\dim(V)=\dim(W^{\perp})+\dim(W)$.
 \end{proof}
 
 \begin{thm}
-Let $W \subseteq V$ $x \in V$ and $\beta=\{v_{1}, \dots v_{n}\}$ be an orthonormal basis for $W$ and $A$ be the matrix whose $j^{th}$ column is $v_{j}$. Then the orthogonal projection of $x$ on $W$ $x_{w}=AA^{*}x$.
+Let $W \subseteq V$ $x \in V$ and $\beta=\{v_{1}, \dots v_{n}\}$ be an orthonormal basis for $W$ and $A$ be the matrix whose $j^{th}$ column is $v_{j}$. Then the orthogonal projection of $x$ on $W$ $x_{W}=AA^{*}x$.
 \end{thm}
 
 \begin{proof}
   We begin by demonstrating that $W^{\perp}=\ker A^{*}$. We have
   \[A^{*}x= \begin{pmatrix}v_{1}^{*}x \\ \vdots \\ v_{n}^{*}x \end{pmatrix}=\begin{pmatrix}\langle v_{1}, x \rangle \\  \vdots \\ \langle v_{n}, x \rangle\end{pmatrix}.\] Certainly
-  $Ax=\bold{0}$ if and only if $\langle v_{i}, x \rangle=0$ for all $1 \leq i \leq n$. But that is to say $x \in W^{\perp}$, and so \[\ker(A^{*})=W^{\perp}.\]
-  Note that $Ax=\spn\beta$ by definition. Therefore, for some $c \in \mathbb{F}^{n}$ $Ac=x_{w}$, which means that $x-x_{W}=x-Ac \in W^{\perp}$. It follows that
-  $A^{*}(x-Ac)=0$ and so \[A^{*}Ac=A^{*}x.\] Thus, if we see that $x_{w}=Ac$. Furthermore, since $\beta$ is orthonormal, $A$ must be unitary, in which case \[Ac=AA^{*}x=x_{W}.\]
+  $A^{*}x=\bold{0}$ if and only if $\langle v_{i}, x \rangle=0$ for all $1 \leq i \leq n$. But that is to say $x \in W^{\perp}$, and so \[\ker(A^{*})=W^{\perp}.\]
+  Let $x=x_{W}+x_{\perp}$ be the orthogonal decomposition of $x$ with respect to $W$.
+  Note that $\im(A)=\spn\beta$. Therefore, for some vector $c$ $Ac=x_{W}$, which means that $x-x_{W}=x-Ac \in W^{\perp}$. It follows that
+  $A^{*}(x-Ac)=0$ and so \[A^{*}Ac=A^{*}x.\] Thus, we see that $x_{W}=Ac$. Furthermore, since $\beta$ is orthonormal, $A$ must be unitary, in which case \[Ac=AA^{*}x=x_{W}.\]
 \end{proof}
 \begin{cor}
   \label{cor_orthproj}
-$AA^{*}$ is a projection and $\ker(AA^{*})=W^{\perp}$. Additionally, $AA^{*}$ is the unique such linear function.
+$AA^{*}$ is the unique projection of $V$ on $W=\{x \in V: AA^{*}x=x\}$ along $W^{\perp}=\ker(AA^{*})$. Additionally, $AA^{*}$ is self adjoint.
 \end{cor}
 \begin{proof}
-  Surely $AA^{*}$ is linear, and since we know that $x=x_{W}+x_{W^{\perp}}$ for all $x \in V$ it follows that $(AA^{*})^{2}x=AA^{*}x_{W}=x_{w}=AA^{*}x$. Thus the orthogonal projection is, in fact, a projection on $W^{\perp}=\{x \in V: AA^{*}x=x \}$ along $\ker(AA^{*})$, by theorem \ref{thm_projiff} ($V=W \oplus W^{\perp}$). Furthermore, if $x=x_{W}+x_{W^{\perp}}$ with $x_{W}=0$, $AA^{*}x=x_{W}=0$. The converse follows in the same way. Thus, $\ker(AA^{*})=W^{\perp}$ Similarly, we have $\im(AA^{*})=W$. Additionally, as a projection is defined uniquely in terms of its range, it is clear that any other projection $T$ on $W=\{x \in V: T(x)=x\}$ must be the same as $AA^{*}$.
+  Surely $AA^{*}$ is linear, and since we know that $x=x_{W}+x_{W^{\perp}}$ for all $x \in V$ it follows that $(AA^{*})^{2}x=AA^{*}x_{W}=x_{w}=AA^{*}x$. Thus the orthogonal projection is, in fact, a projection on $W=\{x \in V: AA^{*}x=x \}$ along $W^{\perp}=\ker(AA^{*})$, by theorem \ref{thm_projiff} ($V=W \oplus W^{\perp}$). Since we know that the orthogonal decomposition of a vector with respect to a given subspace is unique, it follows that $AA^{*}$ is unique.
+  Furthermore,
+  \begin{align}
+    (AA^{*})^{*}&=(A^{*})^{*}A^{*} \\
+    &=AA^{*}.
+  \end{align}
 \end{proof}
-\section{The Adjoint}
 \section{Normal and Unitary Operators}
 self adjoint iff orthogonal projection
 all unitary operators are rotations

@@ -5,13 +5,13 @@
                      '(("book" "oneside" "12pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("biblatex" "backend=biber")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -43,6 +43,10 @@
     "defn_dim"
     "cor_base"
     "cor_bassub"
+    "defn_dirsum"
+    "thm_dirsum"
+    "defn_prj"
+    "thm_projiff"
     "defn_lin"
     "cor_linbas"
     "defn_kerim"
@@ -86,10 +90,9 @@
     "thm_rref"
     "cor_soln"
     "cor_solninvar"
-    "defn_prj"
-    "thm_projiff"
     "orthcomp"
     "thm_orthodecomp"
+    "cor_min"
     "cor_orthproj")
    (LaTeX-add-bibliographies
     "refs")
