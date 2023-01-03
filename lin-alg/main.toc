@@ -31,8 +31,3 @@
 \contentsline {section}{\numberline {7.1}Schur's Theorem}{30}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Spectral Theorem}{30}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Singular Value Decomposition and Pseudo-inverse}{30}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Set Theory}{31}{appendix.A}%
-\contentsline {chapter}{\numberline {B}The Complex Field}{32}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Block Matrices}{33}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Multilinearity and Sesquilinearity}{34}{appendix.D}%
-\contentsline {chapter}{References}{35}{section*.3}%

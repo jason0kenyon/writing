@@ -1,7 +1,5 @@
 \documentclass[oneside, 12pt]{book}
 \usepackage{indentfirst}
-\usepackage[backend=biber]{biblatex}
-\addbibresource{refs.bib}
 \usepackage{amsthm, amsmath, amssymb, amsfonts}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\spn}{span}
@@ -63,16 +61,20 @@ The elements of $V$ are called vectors, and the elements of $\mathbb{F}$ are cal
   The zero element of $V$ is unique.
   The additive inverse in $V$ is unique for each vector in $V$.
 \end{thm}
+
+
+
+
 \begin{thm}
 \label{thm_alg}
-
+The following are true
 \begin{enumerate}
   \item $0(x)=\bold{0}$
   \item $(-a)x=-(ax)=a(-x)$
   \item $a(\bold{0})=\bold{0}$
 \end{enumerate}
-
 \end{thm}
+
 \begin{defn}
 \label{defn_subspace}
   A subspace $W$ of a vector space $V$ is a set $W \subseteq V$ that is itself a vector space.
@@ -121,11 +123,6 @@ A subset $\beta=\{v_{1},v_{2}, \dots v_{n}\}$ of $V$ is a basis for $V$ if and o
 \begin{proof}
 Suppose that $\beta=\{v_{1}, \dots v_{n}\}$ is a linearly independent generating set of $V$. Then $v=a_{1}v_{1}+\cdots a_{n}v_{n}$ for scalars $a_{1}, \dots a_{n} \in \mathbb{F}$. Further, suppose that there exists another collection $b_{1}, \dots b_{n}$ of scalars such that $v=b_{1}v_{1}+\cdots b_{n}v_{n}$. Subtracting, we have \[(a_{1}-b_{1})v_{1}\cdots (a_{n}-b_{n})v_{n}=\bold{0}.\] Since $\beta$ is linearly independent, it follows that $a_{i}-b_{i}=0$, and hence $a_{i}=b_{i}$ for all $1 \leq i\leq n$. Therefore, the linear combination $a_{1}v_{1}+\cdots a_{n}v_{n}$ is the unique representation of $V$ for $\beta$. Similarly, if we know that $v=a_{1}v_{1}\cdots a_{n}v_{n}$ for unique scalars, then \[(b_{1})v_{1}+\cdots(b_{n})v_{n}=\bold{0}=v-v.\] if and only if $b_{i}=a_{i}-a_{i}=0$ for all $1 \leq i \leq n$. And certainly $V=\spn(\beta)$, so $\beta$ is a basis for $V$.
 \end{proof}
-
-
-
-
-see this source \textcite{jechset}.
 \begin{thm}
 \label{thm_basis}
 Every vector space has a basis.
@@ -697,6 +694,8 @@ deduce enough properties to define the determinat more formally
 demonstrate cofactor expansion is unqiue multilinear alternating etc
 hence permutation=cofactor=unique such function
 \section{Properties}
+det of block matrix
+
 deduce remaining important properties
 need invertible iff det nonzero
 \section{Measure}
@@ -782,26 +781,9 @@ $AA^{*}$ is the unique projection of $V$ on $W=\{x \in V: AA^{*}x=x\}$ along $W^
 self adjoint iff orthogonal projection
 all unitary operators are rotations
 \section{Definiteness}
+pos definite iff inner product
 \chapter{Matrix Decomposition}
 \section{Schur's Theorem}
 \section{Spectral Theorem}
 \section{Singular Value Decomposition and Pseudo-inverse}
-\appendix
-\chapter{Set Theory}
-Axiom of choice
-\chapter{The Complex Field}
-fundamental theorem of algebra
-\chapter{Block Matrices}
-need to prove result for diagonalization proof
-\chapter{Multilinearity and Sesquilinearity}
-pos definite matrices generate inner products uniquely
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{References}
-\printbibliography[title={References}]
-
-
-
-
-
 \end{document}
