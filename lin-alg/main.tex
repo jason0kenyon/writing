@@ -848,7 +848,7 @@ Let $\beta=\{v_{1}, \dots v_{n}\}$ be an orthonormal basis for an inner product 
 The function $\langle \cdot , \cdot \rangle: \mathbb{C}^{n} \times \mathbb{C}^{n} \to \mathbb{C}$ is an inner product if and only if \[\langle v , w \rangle=v^{*}Aw\] for some positive definite matrix $A$.
 \end{thm}
 \begin{proof}
-  Notice that $v^{*}Aw= v \cdot Aw=v \cdot x$ for an arbitrary $x \in \mathbb{F}^{n}$ ($A$ is invertible) so if $v^{*}Aw= \langle v, w \rangle$ we are done.
+  By the above theorem, $\langle v , w \rangle= [v]_{\beta} \cdot [w]_{\beta}$. If we let $P$ be the change of basis matrix converting the standard basis into $\beta$ then \[\langle v , w\rangle = Pv \cdot Pw=v^{*}(P^{*}P)w.\] But we know that $P^{*}P$ is positive definite.
   Conversely, suppose that $\langle v, w \rangle = v^{*}Aw$ for some positive definite matrix $A$. We have
   \begin{align}
     \langle v , w \rangle &= v^{*}Aw \\
