@@ -3,13 +3,13 @@
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("book" "oneside" "12pt")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -54,17 +54,20 @@
     "thm_uniqmap"
     "defn_orbase"
     "defn_mat"
+    "cor_leftmult"
     "defn_id"
     "thm_spacelin"
     "thm_matsum"
     "defn_matprod"
     "thm_matprod"
-    "cor_leftmult"
+    "cor_matapp"
     "thm_matt"
     "mat_assc"
     "thm_matiso"
     "thm_matinv"
     "thm_iso"
+    "thm_chbase"
+    "cor_chbas"
     "defn_elmop"
     "thm_elmop"
     "defn_rnk"
@@ -86,6 +89,25 @@
     "thm_rref"
     "cor_soln"
     "cor_solninvar"
+    "defn_diagonalizable"
+    "denf_eigen"
+    "thm_eigendet"
+    "defn_charpol"
+    "thm_charpol"
+    "thm_eigenind"
+    "cor_diseign"
+    "defn_mult"
+    "defn_eigensp"
+    "thm_dimeigen"
+    "thm_diageigen"
+    "defn_innerprod"
+    "thm_inprodprop"
+    "defn_orthog"
+    "defn_norm"
+    "thm_orthovec"
+    "cor_ortholinind"
+    "thm_graham-schmidt"
+    "defn_hermconj"
     "orthcomp"
     "thm_orthodecomp"
     "cor_min"

@@ -296,6 +296,15 @@ Let $V$ be a vector space with a basis $\{v_{1},\dots v_{n}\}$. An ordered basis
   Let $f: V \to W$ be a linear function between two vector spaces $V$ and $W$ and let $\beta=(v_{1}, \dots v_{n})$ and $\gamma=(w_{1}, \dots w_{m})$ be ordered bases for $V$ and $W$ respectively. Suppose that $f(v_{j})=\sum\limits_{i=1}^{m}a_{ij}w_{i}$. Then we call the $m \times n$ array with the scalar $a_{ij}$ in the $i^{th}$ row and $j^{th}$ column thereof the matrix representation of $f$ with respect to ordered bases $\beta$ and $\gamma$. We denote this by \[[f]_{\beta}^{\gamma} .\] Furthermore, given $x \in V$ with $x=\sum\limits_{i=1}^{n}b_{i}v_{i}$ we call the $n \times 1$ matrix whose $i^{th}$ row is $b_{i}$ the column vector of $x$ with respect to $\beta$. Analogously we may define the row vector of $x$ with respect to $\beta$.
 \end{defn}
 
+
+\begin{cor}
+\label{cor_leftmult}
+  Let $A$ be an $m \times n$ matrix over $\mathbb{F}$.
+The mapping $L_{A}: \mathbb{F}^{n}\to \mathbb{F}^{m}$ defined by $A \to Ax$ for $x \in \mathbb{F}^{n}$ is linear and \[[L_{A}]_{e_{n}}^{e_{m}}=A\] where $e_{n}$ and $e_{m}$ are the standard ordered bases for $\mathbb{F}^{n}$ and $\mathbb{F}^{m}$ respectively.
+\end{cor}
+\begin{proof}
+  The linearity of $L_{A}$ follows from theorem \ref{thm_matt} The $j^{th}$ column of $[L_{A}]_{e_{n}}^{e_{m}}$ is $L_{A}(e_{j})=Ae_{j}$ which is the $j^{th}$ column of $A$.
+\end{proof}
 \begin{defn}
 \label{defn_id}
   $\delta_{ij}:X \to \{0,1\}$ is the map with \[\delta_{ij}=
@@ -333,19 +342,19 @@ The proof follows from a direct application of the definition of a matrix.
 \begin{thm}
 \label{thm_matprod}
   Let $f: V \to W$ be a linear function between two vector spaces $V$ and $W$ and $g: W \to Z$ be a linear function between $W$ and a vector space $Z$. Let $\alpha \beta \gamma$ be ordered bases for $V W Z$ respectively. Then
-  \[[f(g)]_{\alpha}^{\gamma}=[f]_{\alpha}^{\beta}[g]_{\beta}^{\gamma}.\]
+  \[[f(g)]_{\alpha}^{\gamma}=[f]_{\beta}^{\gamma}[g]_{\alpha}^{\beta}.\]
 \end{thm}
 \begin{proof}
   Let $\alpha=(v_{1}, \dots v_{n})$, $\beta=(w_{1}, \dots w_{m})$ and $\gamma=(z_{1}, \dots z_{p})$. We have \[f(g(v_{j}))=f(\sum_{k=1}^{m}B_{kj}w_{k})=\sum_{k=1}^{m}B_{kj}f(w_{k})=\sum_{k=1}^{m}B_{kj}(\sum_{i=1}^{p}A_{ik}z_{i})=\sum_{i=1}^{p}(\sum_{k=1}^{m}A_{ik}B_{kj})z_{i}\]
 \end{proof}
-
 \begin{cor}
-\label{cor_leftmult}
-  Let $A$ be an $m \times n$ matrix over $\mathbb{F}$.
-The mapping $L_{A}: \mathbb{F}^{n}\to \mathbb{F}^{m}$ defined by $A \to Ax$ for $x \in \mathbb{F}^{n}$ is linear and \[[L_{A}]_{e}^{e'}=A\] where $e$ and $e'$ are the standard ordered bases for $\mathbb{F}^{n}$ and $\mathbb{F}^{m}$ respectively.
+  \label{cor_matapp}
+  Let $f: V \to W$ be linear and $\beta$ and $\gamma$ be ordered basis for $V$ and $W$ respectively. Then for all $v \in V$
+  \[[f(v)]_{\gamma}=[f]_{\beta}^{\gamma}[v]_{\beta}.\]
 \end{cor}
 \begin{proof}
-  The linearity of $L_{A}$ follows from theorem \ref{thm_matt} The $j^{th}$ column of $[L_{A}]_{e}^{e'}$ is $L_{A}(e_{j})=Ae_{j}$ which is the $j^{th}$ column of $A$.
+By the last theorem
+\[[f(v)]_{\gamma}=[f(Id_{V}(v))]_{\gamma}=[f]_{\beta}^{\gamma}[Id_{V}(v)]_{\beta}=[f]_{\beta}^{\gamma}[v]_{\beta}.\]
 \end{proof}
 
 \begin{thm}
@@ -363,6 +372,7 @@ The proof follows from a direct application of the definition \ref{defn_matprod}
   Let $A$ $B$ and $C$ be matrices such that $A(BC)$. Then $AB(C)$ is defined and \[A(BC)=AB(C).\]
 \end{thm}
 The proof follows by a direct application of matrix multiplication. Analogous results hold for linear functions, all of which follow from the definition of a linear function.
+\section{Isomorphism}
 \begin{thm}
 \label{thm_matiso}
   Let $V$ and $W$ be vector spaces over $\mathbb{F}$ with dimension $n$ and $m$ respectively. Let $\beta$ and $\gamma$ be ordered bases for $V$ and $W$ respectively. Then there exists an isomorphism between the space $\mathcal{L}(V,W)$ and the space $M_{m \times n}(\mathbb{F})$ of $m \times n$ matrices with entries in $\mathbb{F}$.
@@ -392,6 +402,22 @@ Let $f: V \to W$ be linear. Then $[f]_{\beta}^{\gamma}$ is invertible if and onl
   \[\dim(\im(T))=\dim(W)=\dim(V).\] Conversely, if $\dim(V)=\dim(W)$ and $\beta=\{v_{1}, \dots v_{n}\}$ and $\gamma =\{w_{1}, \dots w_{n}\}$. By theorem \ref{thm_uniqmap} there is a unique linear map such that $T(v_{i})=w_{i}$. Furthermore by theorem \ref{thm_spn} \[\im(T)=\spn(T(\beta))=\spn(\gamma)=W.\]
 \end{proof}
 Therefore, we have shown that an arbitrary vector space is isomorphic to some $\mathbb{F}^{n}$, the cannonical, most intuitive vector space there is, hence demystifying the idea of an abstract vector space. This is a common theme in linear algebra.
+
+
+\section{Change of Basis}
+\begin{thm}
+  \label{thm_chbase}
+  Let $\beta$ and $\beta'$ be bases for a vector space $V$. And let \[Q=[Id_{V}]_{\beta'}^{\beta}.\]
+  Then $Q$ is invertible and \[[v]_{\beta}=Q[v]_{\beta'}\] for any $v \in V$.
+\end{thm}
+\begin{proof}
+  By theorem \ref{thm_matinv} $Q$ is invertible. Moreover \[[v]_{\beta}=[Id_{V}(v)]_{\beta}=[Id_{V}]_{\beta'}^{\beta}[v]_{\beta'}=Q[v]_{\beta'}\] by corollary \ref{cor_matapp}.
+\end{proof}
+\begin{cor}
+  \label{cor_chbas}
+Let $A \in M_{n}(\mathbb{F})$ and $\gamma=(v_{1}, v_{2}, \dots v_{n})$ be an ordered basis for $\mathbb{F}^{n}$.If $Q \in M_{n}(\mathbb{F})$ is the matrix whose $j^{th}$ column is $v_{j}$ then \[[L_{A}]_{\gamma}=Q^{-1}AQ.\]
+\end{cor}
+In this case, we say that the matrix $A$ is similar to the matrix $Q$.
 \chapter{Linear Systems of Equations}
 \section{Rank}
 \begin{defn}
@@ -700,14 +726,175 @@ deduce remaining important properties
 need invertible iff det nonzero
 \section{Measure}
 \chapter{Eigenspaces}
-\section{Characteristic Polynomial}
 \section{Diagonalization and Similarity}
+\begin{defn}
+  \label{defn_diagonalizable}
+Let $T$ be a linear operator on a vector space $V$. We say $T$ is diagonalizable if there exists an orderd basis $\beta$ for $V$ such that $[T]_{\beta}$ is a diagonal matrix. We say a matrix $A \in M_{n}(\mathbb{F})$ is diagonalizable if $L_{A}$ is diagonalizable.
+\end{defn}
+\begin{defn}
+  \label{denf_eigen}
+Let $T$ be a linear operator on a vector space $V$. If \[Tv=\lambda v\] for some $v \in V$ and $\lambda in \mathbb{F}$ we call $\lambda$ an eigenvalue of $T$ and $v$ an eigenvector of $T$.
+\end{defn}
+\begin{thm}
+If $T$ is diagonalizable and $\beta$ is the basis of V for which $D=[T]_{\beta}$ is diagonal, then $\beta$ is a set of eigenvectors of $T$ and the diagonal entries of $D$ are eigenvalues of $T$. Similarly, if $A$ is diagonalizable then \[A=QDQ^{-1}\] for a diagonal matrix $D$ and matrix $Q$ whose columns are eigenvectors of $A$.
+\end{thm}
+This is hardly a theorem. Our definitions are designed such that this is the case.
+\begin{thm}
+  \label{thm_eigendet}
+Let $A \in M_{n}(\mathbb{F})$. Then $\lambda$ is an eigenvalue of $A$ if and only if \[\det(A-\lambda I)=0.\]
+\end{thm}
+\begin{proof}
+If $Av=\lambda v$ for some nonzero $v \in \mathbb{F}^{n}$ then $(A-\lambda I)(v)=\bold{0}$. That is to say that $\ker(A-\lambda I)\neq \{\bold{0}\}$ and hence $A-\lambda I$ is not invertible. However, this is only the case if $\det(A- \lambda I)=0$.
+\end{proof}
+\begin{defn}
+  \label{defn_charpol}
+We call \[f(t)=\det(A- tI)\] the characteristic polynomial of $A$.
+\end{defn}
+\begin{thm}
+  \label{thm_charpol}
+Let $A \in M_{n}(\mathbb{F})$. Then the characteristic polynomial of $A$ is a polynomial of degree $n$.
+\end{thm}
+This follows from a simple induction proof, applying cofactor expansion along the first row of $A$.
+\begin{cor}
+Any matrix $A \in M_{n}(\mathbb{F})$ has at most n distinct eigenvalues.
+\end{cor}
+This follows directly from the fundamental theorem of algebra.
+\begin{thm}
+  \label{thm_eigenind}
+  Let $T$ be a linear operator on a vector space $V$ with distinct eigenvalues $\lambda_{1}, \dots \lambda_{k}$. Let $S_{i}$ be a finite set of eigenvectors corresponding to $\lambda_{i}$. If each $S_{i}$ is linearly independent then $\bigcup_{i=1}^{k}S_{i}$ is linearly independent.
+\end{thm}
+\begin{proof}
+  We proceed by induction on $k$. If $k=1$ we are done. So suppose that our theorem holds for $k-1$ and that there exist $k$ distinct eigenvalues $\lambda_{1}, \dots \lambda_{k}$ of $T$. For each $i$ let \[S_{i}=\{v_{i1}, v_{i2}, \dots v_{in_{i}}\}\] be a finite set of $n_{i}$ eigenvectors corresponding to $\lambda_{i}$. Suppose \[\sum_{i=1}^{k}\sum_{j=1}^{n_{i}}a_{ij}v_{ij}=\bold{0}\] for some scalars $a_{ij} \in \mathbb{F}$. Applying $T-\lambda_{k}I$ to both sides yields
+  \[\sum_{i=1}^{k-1}\sum_{j=1}^{n_{i}}a_{ij}(\lambda_{i}-\lambda_{k})v_{ij}=\bold{0}.\]
+  By the induction hypothesis, $a_{ij}(\lambda_{i}-\lambda_{k})=0$ for $1\leq i \leq k-1$ and $1 \leq j \leq n_{i}$. Moreover, since $\lambda_{i}$ and $\lambda_{k}$ are distinct it must be that $a_{ij}=0$ for $1 \leq i \leq k-1$ and $1 \leq j \leq n_{i}$. But this implies that $\cup_{i=1}^{k}S_{i}$ is linearly independent because $S_{k}$ is linearly independent by assumption.
+\end{proof}
+\begin{cor}
+  \label{cor_diseign}
+If $T$ has $n$ distinct eigenvalues then $T$ is diagonalizable.
+\end{cor}
+\begin{defn}
+  \label{defn_mult}
+Let $\lambda$ be an eigenvalue of an operator. The multiplicity of $\lambda$ is the largest integer $k$ such that $(t-\lambda)^{k}$ is a factor of the characteristic polynomial of that operator.
+\end{defn}
+\begin{defn}
+\label{defn_eigensp}
+Let $\lambda$ be an eigenvalue of an operator $T$. Then the eigenspace of $\lambda$ is defined as \[E_{\lambda}=\{v: Tv=\lambda v\}.\]
+\end{defn}
+\begin{thm}
+\label{thm_dimeigen}
+Let $T$ be a linear operator on $V$. And suppose that $\lambda$ is an eigenvalue of $T$ with multiplicity $m$. Then \[1 \leq \dim(E_{\lambda}) \leq m.\]
+\end{thm}
+\begin{proof}
+  Let $\{v_{1}, \dots v_{p}\}$ be a basis for for $E_{\lambda}$ and extend it to a basis $\beta=\{v_{1}, \dots v_{p}, \dots v_{n}\}$ for $V$. Since $v_{i}$ is an eigenvector for $T$ for $1 \leq i \leq p$ corresponding to $\lambda$ \[[T]_{\beta}=
+    \begin{pmatrix}
+      \lambda I_{p} & B \\
+      0 & C
+                                                                                                                                     \end{pmatrix}\]
+                                                                                                                                   The characteristic polynomial of $T$ is then \[\det((\lambda -t))I_{p} \cdot \det(C-tI_{n-p})=(\lambda-t)^{p}\cdot \det(C-tI_{n-p}).\] Hence the multiplicity of $\lambda$ is at least $p$ and so
+                                                                                                                                   \[\dim(E_{\lambda})=p\leq m.\]
+\end{proof}
+\begin{thm}
+  \label{thm_diageigen}
+  Let $T$ be a linear operator on $V$ with distinct eigenvalues $\lambda_{1}, \dots \lambda_{k}$ with multiplicities $m_{i}$. And let $\dim(V)=n$ Then
+  \begin{enumerate}
+    \item $T$ is diagonalizable if and only if the multiplicity of $\lambda_{i}$ is equal to $\dim(E_{\lambda_{i}})$ for $1 \leq i \leq k$.
+          \item $T$ is diagonalizable and if $\beta_{i}$ is a basis for $E_{\lambda_{i}}$ then $\bigcup_{i=1}^{k}\beta_{i}$ is a basis for $V$ consisting of eigenvectors of $T$. In other words, $\bigoplus_{i=1}^{k}E_{\lambda_{i}}=V$.
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+Firstly, suppose $T$ is diagonalizable.Let $\beta$ be a basis for $V$ consisting of eigenvectors of $T$. Let $\beta_{i}=\beta\cap E_{\lambda_{i}}$. Certainly, $|\beta_{i}| \leq \dim(E_{\lambda_{i}})$ as $\beta_{i}$ is a collection of linearly independent vectors of a vector space $E_{\lambda_{i}}$. Additionally, both the $|\beta_{i}|$ and $m_{i}$ must sum to $n$ for $\beta_{i}$ are linearly independent and the degree of the characteristic polynomial is equal to the sum of the multiplicities of the eigenvalues of $T$.
+It follows that \[n=\sum_{i=1}^{k}|\beta_{i}|\leq \sum_{i=1}^{k}\dim(E_{\lambda_{i}}) \leq \sum_{i=1}^{k}m_{i}=n.\] Hence, $m_{i}=\dim(E_{\lambda_{i}})$.
+Conversely, if $\dim(E_{\lambda_{i}})=m_{i}$ then if we let $\beta= \bigcup_{i=1}^{k}\beta_{i} $ for bases $\beta_{i}$ of $E_{\lambda_{i}}$ $\beta$ is necessarily linearly independent by theorem \ref{thm_eigenind}. Moreover,
+\[\sum_{i=1}^{k}\dim(E_{\lambda_{i}})=\sum_{i=1}^{k}m_{i}=n=|\beta|.\] Thus $\beta$ is a basis for $V$ consisting of eigenvectors of $T$.
+\end{proof}
+Therefore, to prove that an operator $T$ is diagonalizable, it suffices to show that the multiplicity of $\lambda$ is equal to $\dim(\ker(T-\lambda I))$ for all eigenvalues $\lambda$ of $T$.
 \section{Dimension}
 \chapter{Orthogonality}
 \section{Inner Products}
-Hello
-
+\begin{defn}
+  \label{defn_innerprod}
+  Let $V$ be a vector space over a field $\mathbb{F}$. An inner product $\langle \cdot , \cdot \rangle: V \times V \to \mathbb{F}$ is  function such that
+  for all $x, y, z \in V$ and $a \in \mathbb{F}$
+  \begin{enumerate}
+    \item $\langle ax + z , y \rangle = a\langle x , y \rangle + \langle z , y \rangle$.
+    \item $\langle x , y \rangle = \overline{ \langle y , x \rangle }$.
+    \item $\langle x , x \rangle > 0$ whenever $x \neq \bold{0}$.
+  \end{enumerate}
+\end{defn}
+\begin{thm}
+  \label{thm_inprodprop}
+  Let $V$ be an inner product space. Then for all $x,y,z \in V$ and $c \in \mathbb{F}$
+  \begin{enumerate}
+    \item $\langle x , y+z \rangle = \langle x , y \rangle + \langle x , z \rangle$.
+    \item $\langle x, cy \rangle=\bar{c} \langle x , y \rangle $.
+    \item $\langle \bold{0} ,  x \rangle= \langle x , \bold{0} \rangle = 0$.
+    \item If $\langle x , y \rangle= \langle x , z \rangle$ then $y=z$.
+  \end{enumerate}
+  \begin{proof}
+\begin{align}
+  \langle x , y+z \rangle &= \overline{\langle y+z , x \rangle} \\
+              &= \overline{\langle y , x \rangle} + \overline{\langle z , x \rangle} \\
+              &= \langle x , y \rangle + \langle x , z \rangle
+\end{align}
+\begin{align}
+  \langle x , cy \rangle &= \overline{\langle cy , x \rangle} \\
+             &= \overline{c \langle y , x \rangle} \\
+             &= \bar{c} \overline{\langle y , x \rangle} \\
+             &= \bar{c} \langle x , y \rangle
+\end{align}
+\begin{align}
+  \langle \bold{0}, x \rangle &= \langle 0(\bold{0}), x \rangle \\
+                  &= 0\langle\bold{0}, x \rangle \\
+                  &= 0 \\
+                  &= \overline{\langle x , 0(\bold{0})} \\
+                  &= \overline{0\langle x , \bold{0} \rangle} \\
+\end{align}
+$\langle x , y-z \rangle=0$ for all $x \in V$ so $\langle y-z , y-z \rangle = 0$, which implies $y-z=0$ and $y=z$.
+\end{proof}
+\end{thm}
+\begin{defn}
+  \label{defn_orthog}
+A subset $\{v_{1}, \dots v_{n}\}$ of an inner product space $V$ is called orthogonal if $\langle v_{i}, v_{j} \rangle = 0$ whenever $i \neq j$ .Moreover, if $\langle v_{j} , v_{j} \rangle=1$ it is called orthonormal.
+\end{defn}
+\begin{defn}
+  \label{defn_norm}
+  Let $V$ be a vector space over a field $\mathbb{F}$. \\ A norm $|| \cdot ||: V \to \mathbb{R}$  is a function such that for all $x,y \in V$ and $a \in \mathbb{F}$
+  \begin{enumerate}
+    \item $||x|| \geq 0$ and $||x||=0$ if and only if $x= \bold{0}$.
+    \item $||ax||=|a| \cdot ||x||$.
+    \item $||x+y|| \leq ||x|| + ||y||$.
+  \end{enumerate}
+\end{defn}
+It should be clear that an inner product induces a norm \[||x||=\sqrt{\langle x , x \rangle}.\]
+\begin{thm}
+  \label{thm_orthovec}
+  Let $V$ be an inner product space and $\{v_{1}, \dots v_{n}\} \subseteq V$ be orthogonal.
+  Then for all $y \in \spn(\{v_{1}, \dots v_{n}\})$
+  \[y= \sum_{i=1}^{n}\frac{\langle y , v_{i} \rangle}{||v_{i}||^{2}}v_{i}.\]
+\end{thm}
+\begin{proof}
+For all $y=\sum_{i=1}^{n}a_{i}v_{i}$ \[\langle y , v_{j} \rangle= \sum_{i=1}^{n}a_{i}\langle v_{i}, v_{j} \rangle=a_{j}\langle v_{j}, v_{j} \rangle=a_{j}||v_{j}||^{2}.\]
+\end{proof}
+\begin{cor}
+  \label{cor_ortholinind}
+  Let $V$ be an inner product space and $S \subseteq V$ be orthogonal. Then $S$ is linearly independent.
+\end{cor}
+\begin{thm}[Graham-Schmidt Process]
+  \label{thm_graham-schmidt}
+Let $V$ be an inner product space and $S=\{w_{1} ,\dots w_{n}\}$ be a linearly indepedent subset of $V$. Let $S'=\{v_{1}, \dots v_{n}\}$ where $v_{1}=w_{1}$ and \[v_{n}= w_{n}- \sum_{j=1}^{n-1}\frac{\langle w_{n}, v_{j} \rangle}{||v_{j}||^{2}}.\]
+Then $S'$ is an orthogonal set of nonzero vectors such that $\spn(S)=\spn(S')$.
+\end{thm}
+\begin{proof}
+Suppose $n=1$, then we are done. So suppose the theorem holds for $n-1$. We now show that $S'=\{v_{1}, \dots v_{n-1}, v_{n}\}$ satisfies the theorem where $v_{n}$ is defined as stated above. If $v_{n}= \bold{0}$ then $w_{n} \in \spn\{v_{1}, \dots v_{n-1}\}=\spn\{w_{1}, \dots w_{n-1}\}$ contradicting our assumption that $S$ is linearly independent.
+Moreover, for all $1 \leq i \leq n-1$
+\[\langle v_{n}, v_{i} \rangle = \langle w_{n}, v_{i} \rangle- \sum_{j=1}^{n-1}\frac{\langle w_{n}, v_{j} \rangle}{||v_{j}||^{2}}\langle v_{j}, v_{i} \rangle = \langle w_{n} , v_{i} \rangle - \frac{\langle w_{k} , v_{i} \rangle}{||v_{i}||^{2}}||v_{i}||^{2}=0\] by the induction hypothesis.
+Finally, by assumption, $\spn(S') \subseteq \spn(S)$. The orthogonality of $S'$ implies that it $S'$ is linearly independent so that $\dim(\spn(S'))=\dim(\spn(S))=n$. Thus, $\spn(S) \subseteq \spn(S')$ and $\spn(S')=\spn(S)$ by corollary \ref{cor_bassub}.
+\end{proof}
 \section{The Adjoint}
+\begin{defn}
+  \label{defn_hermconj}
+Let $A \in M_{m \times n}(\mathbb{F})$. The matrix $A^{*}$ defined by $(A^{*})_{ij}=\overline{A}_{ji}$ is called the hermitian conjugate of $A$.
+\end{defn}
 \section{Orthogonal Projections}
 \begin{defn}
 \label{orthcomp}
@@ -796,10 +983,11 @@ Let $T$ be an operator on an inner product space $V$. If $T$ is an orthogonal pr
   \end{align}
 \end{proof}
 \section{Normal and Unitary Operators}
-self adjoint iff orthogonal projection
-all unitary operators are rotations
+\chapter{Matrix Decomposition}
+\section{Schur's Theorem}
+\section{Spectral Theorem}
+\section{Singular Value Decomposition and Pseudo-inverse}
 \section{Definiteness}
-pos definite iff inner product
 \begin{defn}
   \label{defn_posdef}
   An $n \times n$ matrix $A$ with complex entries is called positive-definite if \[x^{*}Ax>0\] for all $x \in \mathbb{C}^{n}\backslash\{\bold{0} \}.$
@@ -870,8 +1058,4 @@ The function $\langle \cdot , \cdot \rangle: \mathbb{C}^{n} \times \mathbb{C}^{n
   \end{align}
 And finally, $\langle v , v \rangle=v^{*}Av>0$ for all nonzero $v \in \mathbb{F}^{n}$ by assumption and $\langle \bold{0}, \bold{0} \rangle=\bold{0}^{*}A\bold{0}=0$.
 \end{proof}
-\chapter{Matrix Decomposition}
-\section{Schur's Theorem}
-\section{Spectral Theorem}
-\section{Singular Value Decomposition and Pseudo-inverse}
 \end{document}
