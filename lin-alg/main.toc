@@ -25,9 +25,9 @@
 \contentsline {section}{\numberline {6.1}Inner Products}{27}{section.6.1}%
 \contentsline {section}{\numberline {6.2}The Adjoint}{27}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Orthogonal Projections}{27}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Normal and Unitary Operators}{29}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Definiteness}{29}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Matrix Decomposition}{30}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Schur's Theorem}{30}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Spectral Theorem}{30}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Singular Value Decomposition and Pseudo-inverse}{30}{section.7.3}%
+\contentsline {section}{\numberline {6.4}Normal and Unitary Operators}{30}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Definiteness}{30}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Matrix Decomposition}{33}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Schur's Theorem}{33}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Spectral Theorem}{33}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Singular Value Decomposition and Pseudo-inverse}{33}{section.7.3}%

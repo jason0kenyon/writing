@@ -15,7 +15,6 @@
     "latex2e"
     "book"
     "bk12"
-    "indentfirst"
     "amsthm"
     "amsmath"
     "amssymb"
@@ -90,7 +89,15 @@
     "orthcomp"
     "thm_orthodecomp"
     "cor_min"
-    "cor_orthproj")
+    "ortho_proj"
+    "cor_orthproj"
+    "thm_orthprojsubsp"
+    "defn_posdef"
+    "thm_posdef"
+    "cor_posdefspace"
+    "thm_orthoinprod"
+    "thm_innerproddot"
+    "thm_definprod")
    (LaTeX-add-amsthm-newtheorems
     "thm"
     "cor"
