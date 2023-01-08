@@ -15,6 +15,8 @@
     "latex2e"
     "book"
     "bk12"
+    "indentfirst"
+    "enumitem"
     "amsthm"
     "amsmath"
     "amssymb"
@@ -22,9 +24,11 @@
     "hyperref")
    (LaTeX-add-labels
     "defn_vspace"
-    "thm_canc"
+    "cond_zero"
+    "cond_inv"
     "thm_alg"
     "defn_subspace"
+    "defn_lincom"
     "thm_subspace"
     "thm_spn"
     "defn_linind"

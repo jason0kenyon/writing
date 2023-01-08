@@ -1,5 +1,6 @@
 \documentclass[oneside, 12pt]{book}
-%\usepackage{indentfirst}
+\usepackage{indentfirst}
+\usepackage{enumitem}
 \usepackage{amsthm, amsmath, amssymb, amsfonts}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\spn}{span}
@@ -32,80 +33,74 @@
 \pdfbookmark{\contentsname}{toc}
 \tableofcontents
 \chapter*{Preface}
-Hello
+The following is my attempt at a summary of the theory of finite dimensional inner product spaces. That is, finite dimensional vector spaces equipped with a sesquilinear innner product. I have tried my best to include only the essential developments required to understand such spaces and omit excessive details, which serve only to distract the reader. Additionally, I aim to motivate certain topics in functional analysis by treating the infinite dimensional case in some instances. When appropriate, I also comment on which results extend, or fail to extend, to infinite dimensional vector spaces, as well as provide some inuition as to why. Primarily, however, these are notes on linear algebra.
+
+Throughout, I assume familiarity with the elements of Zermlo-Fraenkel-Choice set theory, and work within this context; however, I rarely appeal directly to the axioms thereof; rather, I take a naive approach. In addition, the reader should have a cursory understanding of algebraic structures such as groups and fields, and in particular, the properties of the complex field.
 \addcontentsline{toc}{chapter}{Preface}
 \mainmatter
 \chapter{Vector Spaces}
 \section{Spaces and Subspaces}
 \begin{defn}
 \label{defn_vspace}
-  A vector space $V$ over a field $\mathbb{F}$ is a set, along with a binary operation $+: V^{2} \to V$ and a binary operation $\boldsymbol{\cdot}: \mathbb{F} \times V \to V$ that satisfy the following properties:
+A vector space over a field $\mathbb{F}$ is a set $V$, along with two binary functions $+: V \times V \to  V$ and $\boldsymbol{\cdot}: \mathbb{F} \times V \to V$ such that for all $a, b \in \mathbb{F}$ and $v,w,z \in V$
   \begin{enumerate}
-    \item $a\boldsymbol{\cdot}v+w \in V$
-    \item $v+w=w+v$
-    \item $v+(w+z)=(v+w)+z$
-    \item $\bold{1}v=v$
-    \item $(a\boldsymbol{\cdot}b)x=a\boldsymbol{\cdot}(bx)$
-    \item $a\boldsymbol{\cdot}(v+w)=av+aw$
-    \item $(a+b)v=a\boldsymbol{\cdot}v+b\boldsymbol{\cdot}v$
-    \item There exists an element $\bold{0} \in V$ such that $v+\bold{0}=v$
-    \item There exists an element $v^{-1}$ such that $v+v^{-1}=\bold{0}$
+    \item $a\boldsymbol{\cdot}v+w \in V$.
+    \item $v+w=w+v$.
+    \item $v+(w+z)=(v+w)+z$.
+    \item $\bold{1}v=v$.
+    \item $(a\boldsymbol{\cdot}b)x=a\boldsymbol{\cdot}(bx)$.
+    \item $a\boldsymbol{\cdot}(v+w)=av+aw$.
+    \item $(a+b)v=a\boldsymbol{\cdot}v+b\boldsymbol{\cdot}v$.
+    \item There exists an element $\bold{0} \in V$ such that $v+\bold{0}=v$. \label{cond_zero}
+    \item There exists an element $-v \in V$ such that $v+(-v)=\bold{0}$. \label{cond_inv}
   \end{enumerate}
-  for all $a, b \in \mathbb{F}$ and $v,w,z \in V$.
 \end{defn}
-The elements of $V$ are called vectors, and the elements of $\mathbb{F}$ are called scalars. The operations $+$ and $\boldsymbol{\cdot}$ are called vector addition and scalar multiplication, respectively. We omit the $\boldsymbol{\cdot}$ and do not explicitly apply $+$ for clarity. The $\bold{1}$ is the identity element of $\mathbb{F}$. $-a$ will denote the additive inverse of $a \in \mathbb{F}$ for the field $\mathbb{F}$, and $-v=v^{-1}$ will denote the additive inverse of a vector $v \in V$ under vector addition, while $-a(v)$ will denote multiplication of a vector by a scalar's additive inverse in $\mathbb{F}$.
-
-\begin{thm}
-\label{thm_canc}
-  Let $x$, $y$, and $z$ be vectors in $V$. If $x+z=y+z$, then $x=y$.
-  The zero element of $V$ is unique.
-  The additive inverse in $V$ is unique for each vector in $V$.
-\end{thm}
-
-
-
-
+The elements of $V$ are called vectors, and the elements of $\mathbb{F}$ are called scalars. Any vector $\bold{0} \in V$ that satisfies condition~\ref{cond_zero} is called a \textbf{zero vector}, and any vector $-v \in V$ that satisfies~\ref{cond_inv} is called an \textbf{additive inverse} of $v$. Moreover, we adopt the convention that any vector denoted by $\bold{0}$ satisfies condition~\ref{cond_zero} and any vector denoted by $-v$ for some $v \in V$ satisfies condition~\ref{cond_inv}. The functions $+$ and $\boldsymbol{\cdot}$ are called vector addition and scalar multiplication, respectively. We omit the $\boldsymbol{\cdot}$ and do not explicitly apply $+$ for clarity. For the sake of brevity, we will refer to a vector space $(V, \mathbb{F}, +, \boldsymbol{\cdot})$ as $V$ when there is no ambiguity. Unless otherwise specified, we assume that any vector space is over an arbitrary field $\mathbb{F}$. Note that $\bold{1}$ will denote the identity element in $\mathbb{F}$, and for all $a \in \mathbb{F}$ $-a$ will denote the additive inverse of $a$. We shall now establish some foundational properties of vector addition and scalar multiplication.
 \begin{thm}
 \label{thm_alg}
-The following are true
-\begin{enumerate}
-  \item $0(x)=\bold{0}$
-  \item $(-a)x=-(ax)=a(-x)$
-  \item $a(\bold{0})=\bold{0}$
+Let $V$ be a vecor space. Then for all $x,y,z \in V$ and $a \in \mathbb{F}$
+\begin{enumerate}[label=(\roman*)]
+  \item If $x+z=y+z$ then $x=y$ for all $x,y,z \in V$.
+  \item The zero vector is unique.
+  \item The additive inverse of $x$ is unique.
+  \item $0x=\bold{0}$.
+  \item $(-a)x=-(ax)=a(-x)$.
+  \item $a\bold{0}=\bold{0}$.
 \end{enumerate}
 \end{thm}
 
 \begin{defn}
 \label{defn_subspace}
-  A subspace $W$ of a vector space $V$ is a set $W \subseteq V$ that is itself a vector space.
+A subspace $W$ of a vector space $V$ over a field $\mathbb{F}$ is a subset $W \subseteq V$ that is a vector space over $\mathbb{F}$.
+\end{defn}
+\begin{defn}
+  \label{defn_lincom}
+  Let $V$ be a vector space. A linear combination of a set $\{v_{1}, v_{2}, \dots, v_{n}\} \subseteq V$ is a sum of the form
+  \[\sum_{i=1}^{n}a_{i}v_{i}\] where $a_{i} \in \mathbb{F}$ for all $1 \leq i \leq n$. Furthermore, we define the span of such a set \[\spn(\{v_{1}, v_{2}, \dots, v_{n}\})\] to be the set of all linear combinations thereof.
 \end{defn}
 \begin{thm}
 \label{thm_subspace}
-  Let $V$ be a vector space with zero element $\bold{0}$. Then a subset $W \subseteq V$
-  is a subspace of $V$ if and only if \[\bold{0} \in W\] and \[cx+y \in W\] for all $x,y \in W$ and $c \in \mathbb{F}$.
-
+  Let $V$ be a vector space. Then $W$ is a subspace of $V$ if and only if $\bold{0} \in W$ and $cx+y \in W$ for all $x,y \in W$ and $a \in \mathbb{F}$.
 \end{thm}
 \begin{thm}
 \label{thm_spn}
-Let $S$ be a subset of a vector space $V$. Then $\spn(S)$ is a subspace of $V$, and if any subspace of $V$ contains $S$ must necessarily contain $\spn(S)$
+Let $S$ be a subset of a vector space $V$. Then $\spn(S)$ is a subspace of $V$, and any subspace of $V$ contains $S$ must necessarily contain $\spn(S)$
 \end{thm}
-The proof follows directly from the definition of span. The span is defined precisely to generate a subspace in this way. Additionally, it should be clear that any linear combination of vectors in a subspace must be contained in that subspace as this is the defining characteristic of a vector space.
+The proof follows directly from the definition of span. The span is defined precisely to generate a subspace. Additionally, it should be clear that any linear combination of vectors in a subspace must be contained in that subspace, as this is the defining characteristic of a vector space.
 \section{Linear Independence}
 \begin{defn}
 \label{defn_linind}
-  A set of vectors $\{v_{1}, v_{2}, \dots v_{n}\}$ is linearly dependent if
-  \[a_{1}v_{1}+a_{2}v_{2}+ \dots a_{n}v_{n}=\bold{0}\] for $a_{1}, a_{2}, \dots a_{n} \in \mathbb{F}$ not all zero. Similarly, a set of vectors is linearly independent if it is not linearly dependent.
+  A set of vectors $\{v_{1}, v_{2}, \dots, v_{n}\}$ is linearly dependent if
+  \[a_{1}v_{1}+a_{2}v_{2}+ \dots +a_{n}v_{n}=\bold{0}\] for $a_{1}, a_{2}, \dots ,a_{n} \in \mathbb{F}$ not all zero. Similarly, a set of vectors is linearly independent if it is not linearly dependent.
 \end{defn}
 \begin{thm}
 \label{thm_linind}
 If $S_{1}\subseteq S_{2} \subseteq V$ and $S_{1}$ is linearly dependent, then $S_{2}$ is linearly dependent as well. Similarly, if $S_{2}$ is linearly dependent, then $S_{1}$ is linearly dependent.
 \end{thm}
-\begin{proof}
 The proof should be clear when considering the above definition.
-\end{proof}
 \begin{thm}
 \label{thm_span}
-Let $S$ be a linearly independent subset of $V$ and $v \in V$ such that $v \in S$. Then $S \cup \{v\}$ is linearly dependent if and only if $v \in \spn(S)$.
+Let $S$ be a linearly independent subset of a vector space $V$, and let $v \in V \backslash S$. Then $S \cup \{v\}$ is linearly dependent if and only if $v \in \spn(S)$.
 \end{thm}
 \begin{proof}
   If $S \cup \{v\}$ is linearly dependent then there exist scalars $a_{1}, a_{2}, \dots a_{n}, a_{v} \in \mathbb{F}$ not all zero such that \[a_{1}s_{1} +a_{2}s_{2}+\cdots +a_{n}s_{n}+a_{v}v=\bold{0}.\]
